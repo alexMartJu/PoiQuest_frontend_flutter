@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:poiquest_frontend_flutter/catalog/demos/buttons_demo.dart';
 import 'package:poiquest_frontend_flutter/catalog/demos/badges_demo.dart';
+import 'package:poiquest_frontend_flutter/preferences/preferences_page.dart';
 
 class CatalogPage extends StatelessWidget {
   const CatalogPage({super.key});
@@ -11,6 +12,17 @@ class CatalogPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Catálogo de Componentes'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            tooltip: 'Preferencias',
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const PreferencesPage()),
+              );
+            },
+          ),
+        ],
       ),
       body: ListView(
         children: [
