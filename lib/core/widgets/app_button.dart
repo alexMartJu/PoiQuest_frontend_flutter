@@ -21,28 +21,16 @@ class AppButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final palette = appPaletteOf(context);
-
-    // Colores base según variante
-    final (bg, fg, border) = switch (variant) {
-      // Primary: fondo blanco, borde gris, texto gris oscuro
-      AppButtonVariant.primary => (palette.surface, palette.textPrimary, palette.border),
-      // Danger: fondo rojo, texto blanco
-      AppButtonVariant.danger => (palette.danger, palette.onDanger, Colors.transparent),
-    };
-
-    // Estado deshabilitado
-    final effectiveBg = disabled ? palette.border.withValues(alpha: 0.5) : bg;
-    final effectiveFg = disabled ? palette.textSecondary.withValues(alpha: 0.6) : fg;
-    final effectiveBorder = disabled ? palette.border.withValues(alpha: 0.5) : border;
+    final (bg, fg, border) = _colorsForVariant(variant, palette, disabled);
 
     return TextButton(
       style: TextButton.styleFrom(
-        backgroundColor: effectiveBg,
-        foregroundColor: effectiveFg,
+        backgroundColor: bg,
+        foregroundColor: fg,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
-          side: BorderSide(color: effectiveBorder, width: 1.4),
+          side: BorderSide(color: border, width: 1.4),
         ),
         textStyle: const TextStyle(
           fontWeight: FontWeight.w600,
@@ -55,4 +43,26 @@ class AppButton extends StatelessWidget {
   }
 }
 
+// Función privada: lógica interna de colores
+(Color, Color, Color) _colorsForVariant(
+  AppButtonVariant variant,
+  AppPalette palette,
+  bool disabled,
+) {
+  final (bg, fg, border) = switch (variant) {
+    AppButtonVariant.primary =>
+        (palette.surface, palette.textPrimary, palette.border),
+    AppButtonVariant.danger =>
+        (palette.danger, palette.onDanger, Colors.transparent),
+  };
 
+  if (disabled) {
+    return (
+      palette.border.withValues(alpha: 0.5),
+      palette.textSecondary.withValues(alpha: 0.6),
+      palette.border.withValues(alpha: 0.5),
+    );
+  }
+
+  return (bg, fg, border);
+}

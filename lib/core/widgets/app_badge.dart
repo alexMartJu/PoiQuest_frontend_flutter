@@ -26,26 +26,7 @@ class AppBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final palette = appPaletteOf(context);
-
-    // Colores base por tipo de badge
-    final (bg, fg, border) = switch (variant) {
-      // Filtros
-      AppBadgeVariant.filter => selected
-          ? (palette.primary, palette.onPrimary, Colors.transparent)
-          : (palette.border.withValues(alpha: 0.5), palette.textPrimary, Colors.transparent),
-
-      // Estado (Activo)
-      AppBadgeVariant.status => (palette.secondary, palette.onSecondary, Colors.transparent),
-
-      // Recompensas (+150)
-      AppBadgeVariant.reward => (palette.warning, palette.onWarning, Colors.transparent),
-
-      // Información neutral (200 puntos)
-      AppBadgeVariant.info => (palette.border.withValues(alpha: 0.5), palette.textPrimary, Colors.transparent),
-
-      // Categorías (Cultura...)
-      AppBadgeVariant.category => (palette.border.withValues(alpha: 0.5), palette.textPrimary, Colors.transparent),
-    };
+    final (bg, fg, border) = _colorsForBadge(variant, palette, selected);
 
     final badge = AnimatedContainer(
       duration: const Duration(milliseconds: 180),
@@ -71,4 +52,32 @@ class AppBadge extends StatelessWidget {
         ? GestureDetector(onTap: onTap, child: badge)
         : badge;
   }
+}
+
+// Función privada: lógica interna de colores
+(Color, Color, Color) _colorsForBadge(
+  AppBadgeVariant variant,
+  AppPalette palette,
+  bool selected,
+) {
+  return switch (variant) {
+    AppBadgeVariant.filter => selected
+        ? (palette.primary, palette.onPrimary, Colors.transparent)
+        : (palette.border.withValues(alpha: 0.5), palette.textPrimary,
+            Colors.transparent),
+    AppBadgeVariant.status =>
+        (palette.secondary, palette.onSecondary, Colors.transparent),
+    AppBadgeVariant.reward =>
+        (palette.warning, palette.onWarning, Colors.transparent),
+    AppBadgeVariant.info => (
+        palette.border.withValues(alpha: 0.5),
+        palette.textPrimary,
+        Colors.transparent,
+      ),
+    AppBadgeVariant.category => (
+        palette.border.withValues(alpha: 0.5),
+        palette.textPrimary,
+        Colors.transparent,
+      ),
+  };
 }
