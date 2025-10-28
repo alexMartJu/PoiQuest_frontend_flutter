@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:poiquest_frontend_flutter/catalog/widgets/showcase_scaffold.dart';
 import 'package:poiquest_frontend_flutter/core/widgets/app_badge.dart';
+import 'package:poiquest_frontend_flutter/core/l10n/app_localizations.dart';
 
 class BadgesDemo extends StatefulWidget {
   const BadgesDemo({super.key});
@@ -10,18 +11,28 @@ class BadgesDemo extends StatefulWidget {
 }
 
 class _BadgesDemoState extends State<BadgesDemo> {
-  String selectedFilter = 'Todos';
-  final filters = ['Todos', 'Musica', 'Arte', 'Deportes'];
+  String selectedFilter = '';
 
   @override
   Widget build(BuildContext context) {
+    final filters = [
+      AppLocalizations.of(context)!.filterAll,
+      AppLocalizations.of(context)!.filterMusic,
+      AppLocalizations.of(context)!.filterArt,
+      AppLocalizations.of(context)!.filterSports,
+    ];
+
+    if (selectedFilter.isEmpty) {
+      selectedFilter = filters.first;
+    }
+
     return ShowcaseScaffold(
-      title: 'Badges',
+      title: AppLocalizations.of(context)!.badgesDemo,
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           // Filtros
-          const Text('Badges de filtro'),
+          Text(AppLocalizations.of(context)!.badgesFilterTitle),
           const SizedBox(height: 8),
           Wrap(
             spacing: 8,
@@ -38,12 +49,12 @@ class _BadgesDemoState extends State<BadgesDemo> {
           const SizedBox(height: 24),
 
           // Estado
-          const Text('Estado'),
+          Text(AppLocalizations.of(context)!.statusTitle),
           const SizedBox(height: 8),
-          const Align(
+          Align(
             alignment: Alignment.centerLeft,
             child: AppBadge(
-              label: 'Activo',
+              label: AppLocalizations.of(context)!.active,
               variant: AppBadgeVariant.status,
             ),
           ),
@@ -51,7 +62,7 @@ class _BadgesDemoState extends State<BadgesDemo> {
           const SizedBox(height: 24),
 
           // Recompensa
-          const Text('Recompensa'),
+          Text(AppLocalizations.of(context)!.rewardTitle),
           const SizedBox(height: 8),
           const Align(
             alignment: Alignment.centerLeft,
@@ -64,12 +75,12 @@ class _BadgesDemoState extends State<BadgesDemo> {
           const SizedBox(height: 24),
 
           // Información
-          const Text('Info'),
+          Text(AppLocalizations.of(context)!.infoTitle),
           const SizedBox(height: 8),
-          const Align(
+          Align(
             alignment: Alignment.centerLeft,
             child: AppBadge(
-              label: '200 puntos',
+              label: AppLocalizations.of(context)!.points(200),
               variant: AppBadgeVariant.info,
             ),
           ),
@@ -77,12 +88,12 @@ class _BadgesDemoState extends State<BadgesDemo> {
           const SizedBox(height: 24),
 
           // Categoría
-          const Text('Categoría'),
+          Text(AppLocalizations.of(context)!.categoryTitle),
           const SizedBox(height: 8),
-          const Align(
+          Align(
             alignment: Alignment.centerLeft,
             child: AppBadge(
-              label: 'Reviews',
+              label: AppLocalizations.of(context)!.reviews,
               variant: AppBadgeVariant.category,
             ),
           ),

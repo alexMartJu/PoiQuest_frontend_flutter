@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:poiquest_frontend_flutter/catalog/demos/buttons_demo.dart';
 import 'package:poiquest_frontend_flutter/catalog/demos/badges_demo.dart';
 import 'package:poiquest_frontend_flutter/features/preferences/presentation/pages/preferences_page.dart';
+import 'package:poiquest_frontend_flutter/core/l10n/app_localizations.dart';
 
 
 class CatalogPage extends StatelessWidget {
@@ -11,12 +12,12 @@ class CatalogPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Catálogo de Componentes'),
+        title:  Text(AppLocalizations.of(context)!.titleCatalog),
         centerTitle: true,
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
-            tooltip: 'Preferencias',
+            tooltip: AppLocalizations.of(context)!.preferences,
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => const PreferencesPage()),
@@ -28,8 +29,8 @@ class CatalogPage extends StatelessWidget {
       body: ListView(
         children: [
           ListTile(
-            title: const Text('Botones'),
-            subtitle: const Text('Variantes, estados y tamaños'),
+            title: Text(AppLocalizations.of(context)!.buttonsDemo),
+            subtitle: Text(AppLocalizations.of(context)!.buttonsSubtitle),
             trailing: const Icon(Icons.chevron_right),
             onTap: () {
               Navigator.of(
@@ -39,8 +40,8 @@ class CatalogPage extends StatelessWidget {
           ),
 
           ListTile(
-            title: const Text('Badges'),
-            subtitle: const Text('Filtros, estados y categorías'),
+            title: Text(AppLocalizations.of(context)!.badgesDemo),
+            subtitle: Text(AppLocalizations.of(context)!.badgesSubtitle),
             trailing: const Icon(Icons.chevron_right),
             onTap: () {
               Navigator.of(context).push(

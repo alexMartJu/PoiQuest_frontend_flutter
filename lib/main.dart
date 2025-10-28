@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:poiquest_frontend_flutter/app/theme/app_theme.dart';
 import 'package:poiquest_frontend_flutter/catalog/catalog_page.dart';
 import 'package:poiquest_frontend_flutter/features/preferences/presentation/providers/preferences_providers.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:poiquest_frontend_flutter/core/l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,6 +30,22 @@ class MainApp extends ConsumerWidget {
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: darkMode ? ThemeMode.dark : ThemeMode.light,
+
+      // i18n config
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('es'),
+        Locale('en'),
+      ],
+      locale: Locale(
+        prefsAsync.maybeWhen(data: (p) => p.language, orElse: () => 'es')
+      ),
+
       home: const CatalogPage(),
     );
   }

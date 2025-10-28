@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:poiquest_frontend_flutter/features/preferences/presentation/providers/preferences_providers.dart';
+import 'package:poiquest_frontend_flutter/core/l10n/app_localizations.dart';
 
 // Página de preferencias del usuario.
 // Permite cambiar el modo oscuro, idioma y notificaciones.
@@ -14,11 +15,11 @@ class PreferencesPage extends ConsumerWidget {
     return prefsAsync.when(
       data: (prefs) {
         return Scaffold(
-          appBar: AppBar(title: const Text('Preferencias')),
+          appBar: AppBar(title: Text(AppLocalizations.of(context)!.preferences)),
           body: ListView(
             children: [
               SwitchListTile(
-                title: const Text('Modo oscuro'),
+                title: Text(AppLocalizations.of(context)!.darkMode),
                 value: prefs.darkmode,
                 onChanged: (val) {
                   ref
@@ -28,13 +29,18 @@ class PreferencesPage extends ConsumerWidget {
               ),
               const Divider(),
               ListTile(
-                title: const Text('Idioma'),
+                title: Text(AppLocalizations.of(context)!.language),
                 trailing: DropdownButton<String>(
                   value: prefs.language,
-                  items: const [
-                    DropdownMenuItem(value: 'es', child: Text('Español')),
-                    DropdownMenuItem(value: 'en', child: Text('Inglés')),
-                    DropdownMenuItem(value: 'fr', child: Text('Francés')),
+                  items: [
+                    DropdownMenuItem(
+                      value: 'es',
+                      child: Text(AppLocalizations.of(context)!.spanish),
+                    ),
+                    DropdownMenuItem(
+                      value: 'en',
+                      child: Text(AppLocalizations.of(context)!.english),
+                    ),
                   ],
                   onChanged: (val) {
                     if (val != null) {
@@ -47,7 +53,7 @@ class PreferencesPage extends ConsumerWidget {
               ),
               const Divider(),
               SwitchListTile(
-                title: const Text('Notificaciones'),
+                title: Text(AppLocalizations.of(context)!.notifications),
                 value: prefs.notifications,
                 onChanged: (val) {
                   ref
