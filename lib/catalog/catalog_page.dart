@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:poiquest_frontend_flutter/catalog/demos/buttons_demo.dart';
 import 'package:poiquest_frontend_flutter/catalog/demos/badges_demo.dart';
-import 'package:poiquest_frontend_flutter/preferences/preferences_page.dart';
+import 'package:poiquest_frontend_flutter/features/preferences/presentation/pages/preferences_page.dart';
+
 
 class CatalogPage extends StatelessWidget {
   const CatalogPage({super.key});
