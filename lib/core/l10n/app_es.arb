@@ -1,0 +1,154 @@
+{
+  "@@locale": "es",
+
+  "titleCatalog": "Catálogo de Componentes",
+  "@titleCatalog": {
+    "description": "Título principal de la página del catálogo de componentes"
+  },
+
+  "buttonsDemo": "Botones",
+  "@buttonsDemo": {
+    "description": "Texto del menú para acceder a la demostración de botones"
+  },
+
+  "buttonsSubtitle": "Variantes, estados y tamaños",
+  "@buttonsSubtitle": {
+    "description": "Subtítulo para la demo de botones"
+  },
+
+  "badgesDemo": "Insignias",
+  "@badgesDemo": {
+    "description": "Texto del menú para acceder a la demo de insignias"
+  },
+
+  "badgesSubtitle": "Filtros, estados y categorías",
+  "@badgesSubtitle": {
+    "description": "Subtítulo para la demo de insignias"
+  },
+
+  "preferences": "Preferencias",
+  "@preferences": {
+    "description": "Título para la página de configuración de la aplicación"
+  },
+
+  "darkMode": "Modo oscuro",
+  "@darkMode": {
+    "description": "Opción para activar el modo oscuro"
+  },
+
+  "language": "Idioma",
+  "@language": {
+    "description": "Título de la sección para cambiar el idioma"
+  },
+
+  "notifications": "Notificaciones",
+  "@notifications": {
+    "description": "Opción para activar o desactivar notificaciones"
+  },
+
+  "badgesFilterTitle": "Badges de filtro",
+  "@badgesFilterTitle": {
+    "description": "Título de la sección de badges de filtro"
+  },
+
+  "filterAll": "Todos",
+  "@filterAll": {
+    "description": "Filtro: todos los elementos"
+  },
+
+  "filterMusic": "Música",
+  "@filterMusic": {
+    "description": "Filtro: música"
+  },
+
+  "filterArt": "Arte",
+  "@filterArt": {
+    "description": "Filtro: arte"
+  },
+
+  "filterSports": "Deportes",
+  "@filterSports": {
+    "description": "Filtro: deportes"
+  },
+
+  "statusTitle": "Estado",
+  "@statusTitle": {
+    "description": "Título para badges de estado"
+  },
+
+  "rewardTitle": "Recompensa",
+  "@rewardTitle": {
+    "description": "Título para badges de recompensa"
+  },
+
+  "infoTitle": "Info",
+  "@infoTitle": {
+    "description": "Título para badges informativos"
+  },
+
+  "categoryTitle": "Categoría",
+  "@categoryTitle": {
+    "description": "Título para badges de categoría"
+  },
+
+  "active": "Activo",
+  "@active": {
+    "description": "Badge de estado activo"
+  },
+
+  "reviews": "Reviews",
+  "@reviews": {
+    "description": "Etiqueta para reviews"
+  },
+
+  "primaryButtonsTitle": "Primary (Descargar / Compartir)",
+  "@primaryButtonsTitle": {
+    "description": "Título sección de botones primarios"
+  },
+
+  "download": "Descargar",
+  "@download": {
+    "description": "Texto del botón descargar"
+  },
+
+  "share": "Compartir",
+  "@share": {
+    "description": "Texto del botón compartir"
+  },
+
+  "dangerButtonsTitle": "Danger (Cancelar / Eliminar)",
+  "@dangerButtonsTitle": {
+    "description": "Título sección botones de peligro"
+  },
+
+  "cancelTicket": "Cancelar entrada",
+  "@cancelTicket": {
+    "description": "Botón para cancelar ticket"
+  },
+
+  "disabled": "Desactivado",
+  "@disabled": {
+    "description": "Texto para botones desactivados"
+  },
+
+  "spanish": "Español",
+  "@spanish": {
+    "description": "Nombre del idioma Español"
+  },
+
+  "english": "Inglés",
+  "@english": {
+    "description": "Nombre del idioma Inglés"
+  },
+
+  "points": "{value, plural, =0{0 puntos} =1{1 punto} other{{value} puntos}}",
+  "@points": {
+    "description": "Muestra la cantidad de puntos del usuario",
+    "placeholders": {
+      "value": {
+        "type": "num",
+        "example": "200"
+      }
+    }
+  }
+}

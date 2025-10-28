@@ -1,0 +1,154 @@
+{
+  "@@locale": "en",
+
+  "titleCatalog": "Components Catalog",
+  "@titleCatalog": {
+    "description": "Main title of the components catalog page"
+  },
+
+  "buttonsDemo": "Buttons",
+  "@buttonsDemo": {
+    "description": "Menu option to go to the buttons showcase"
+  },
+
+  "buttonsSubtitle": "Variants, states and sizes",
+  "@buttonsSubtitle": {
+    "description": "Subtitle for the buttons demo"
+  },
+
+  "badgesDemo": "Badges",
+  "@badgesDemo": {
+    "description": "Menu option to go to the badges showcase"
+  },
+
+  "badgesSubtitle": "Filters, states and categories",
+  "@badgesSubtitle": {
+    "description": "Subtitle for the badges demo"
+  },
+
+  "preferences": "Preferences",
+  "@preferences": {
+    "description": "Title for the app settings page"
+  },
+
+  "darkMode": "Dark mode",
+  "@darkMode": {
+    "description": "Option to enable dark mode"
+  },
+
+  "language": "Language",
+  "@language": {
+    "description": "Section title to change the language"
+  },
+
+  "notifications": "Notifications",
+  "@notifications": {
+    "description": "Option to enable or disable notifications"
+  },
+
+  "badgesFilterTitle": "Filter badges",
+  "@badgesFilterTitle": {
+    "description": "Title for filter badges section"
+  },
+
+  "filterAll": "All",
+  "@filterAll": {
+    "description": "Filter: show all items"
+  },
+
+  "filterMusic": "Music",
+  "@filterMusic": {
+    "description": "Filter: music"
+  },
+
+  "filterArt": "Art",
+  "@filterArt": {
+    "description": "Filter: art"
+  },
+
+  "filterSports": "Sports",
+  "@filterSports": {
+    "description": "Filter: sports"
+  },
+
+  "statusTitle": "Status",
+  "@statusTitle": {
+    "description": "Title for status badges"
+  },
+
+  "rewardTitle": "Reward",
+  "@rewardTitle": {
+    "description": "Title for reward badges"
+  },
+
+  "infoTitle": "Info",
+  "@infoTitle": {
+    "description": "Title for info badges"
+  },
+
+  "categoryTitle": "Category",
+  "@categoryTitle": {
+    "description": "Title for category badges"
+  },
+
+  "active": "Active",
+  "@active": {
+    "description": "Active status badge"
+  },
+
+  "reviews": "Reviews",
+  "@reviews": {
+    "description": "Label for reviews"
+  },
+
+  "primaryButtonsTitle": "Primary (Download / Share)",
+  "@primaryButtonsTitle": {
+    "description": "Title for primary button section"
+  },
+
+  "download": "Download",
+  "@download": {
+    "description": "Text for download button"
+  },
+
+  "share": "Share",
+  "@share": {
+    "description": "Text for share button"
+  },
+
+  "dangerButtonsTitle": "Danger (Cancel / Delete)",
+  "@dangerButtonsTitle": {
+    "description": "Title for danger button section"
+  },
+
+  "cancelTicket": "Cancel ticket",
+  "@cancelTicket": {
+    "description": "Button to cancel ticket"
+  },
+
+  "disabled": "Disabled",
+  "@disabled": {
+    "description": "Text for disabled buttons"
+  },
+
+  "spanish": "Spanish",
+  "@spanish": {
+    "description": "Language name Spanish"
+  },
+
+  "english": "English",
+  "@english": {
+    "description": "Language name English"
+  },
+
+  "points": "{value, plural, =0{0 points} =1{1 point} other{{value} points}}",
+  "@points": {
+    "description": "Displays the user's points",
+    "placeholders": {
+      "value": {
+        "type": "num",
+        "example": "200"
+      }
+    }
+  }
+}
