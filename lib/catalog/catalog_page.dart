@@ -3,7 +3,7 @@ import 'package:poiquest_frontend_flutter/catalog/demos/buttons_demo.dart';
 import 'package:poiquest_frontend_flutter/catalog/demos/badges_demo.dart';
 import 'package:poiquest_frontend_flutter/features/preferences/presentation/pages/preferences_page.dart';
 import 'package:poiquest_frontend_flutter/core/l10n/app_localizations.dart';
-
+import 'package:poiquest_frontend_flutter/catalog/demos/navigation_demo.dart';
 
 class CatalogPage extends StatelessWidget {
   const CatalogPage({super.key});
@@ -49,6 +49,18 @@ class CatalogPage extends StatelessWidget {
               );
             },
           ),
+
+          ListTile(
+            title: const Text('Navigation Demo'),
+            subtitle: const Text('AppBar + NavigationBar'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const NavigationDemo()),
+              );
+            },
+          ),
+
         ],
       ),
     );
