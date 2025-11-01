@@ -150,5 +150,20 @@
         "example": "200"
       }
     }
+  },
+
+  "filterChipsDemo": "Filtros",
+  "@filterChipsDemo": {
+    "description": "Opción del menú para ver los chips de filtros"
+  },
+
+  "filterChipsSubtitle": "Opciones de filtro seleccionables",
+  "@filterChipsSubtitle": {
+    "description": "Subtítulo para la demo de chips de filtro"
+  },
+
+  "filterChipsTitle": "Opciones de filtro",
+  "@filterChipsTitle": {
+    "description": "Título encima de los chips de filtro"
   }
 }

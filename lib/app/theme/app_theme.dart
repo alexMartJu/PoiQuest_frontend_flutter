@@ -16,7 +16,7 @@ class AppTheme {
     labelSmall: TextStyle(fontSize: 11, letterSpacing: 0.2),
   );
 
-  // ================== COLOR SCHEME (M3 SAFE) ==================
+  // ================== COLOR SCHEME ==================
   static ColorScheme _scheme(AppPalette p, Brightness brightness) {
     return ColorScheme(
       brightness: brightness,
@@ -49,7 +49,7 @@ class AppTheme {
   // ================== APP BAR THEME ==================
   static AppBarTheme _appBarTheme(ColorScheme c) {
     return AppBarTheme(
-      backgroundColor: c.surfaceContainerHigh, // Elevation layer
+      backgroundColor: c.surfaceContainerHigh,
       foregroundColor: c.onSurface,
       elevation: 0,
       centerTitle: true,
@@ -90,6 +90,29 @@ class AppTheme {
     );
   }
 
+  // ================== CHIP THEME ==================
+  static ChipThemeData _chipTheme(ColorScheme c) {
+    return ChipThemeData(
+      backgroundColor: c.surfaceContainer.withValues(alpha: 0.6),
+      selectedColor: c.primary,
+      checkmarkColor: c.onPrimary,
+      showCheckmark: false,
+      labelStyle: TextStyle(
+        fontWeight: FontWeight.w600,
+        color: c.onSurface,
+      ),
+      secondaryLabelStyle: TextStyle(
+        fontWeight: FontWeight.w600,
+        color: c.onPrimary,
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: BorderSide(color: c.outline.withValues(alpha: 0.6)),
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+    );
+  }
+
   // ================== FINAL THEMES ==================
   static ThemeData light = ThemeData(
     useMaterial3: true,
@@ -100,6 +123,7 @@ class AppTheme {
     cardColor: appPaletteLight.surface,
     appBarTheme: _appBarTheme(_scheme(appPaletteLight, Brightness.light)),
     navigationBarTheme: _navTheme(_scheme(appPaletteLight, Brightness.light)),
+    chipTheme: _chipTheme(_scheme(appPaletteLight, Brightness.light)),
   );
 
   static ThemeData dark = ThemeData(
@@ -111,13 +135,14 @@ class AppTheme {
     cardColor: appPaletteDark.surface,
     appBarTheme: _appBarTheme(_scheme(appPaletteDark, Brightness.dark)),
     navigationBarTheme: _navTheme(_scheme(appPaletteDark, Brightness.dark)),
+    chipTheme: _chipTheme(_scheme(appPaletteDark, Brightness.dark)),
   );
 }
 
 // ================== TOKENS ==================
 extension AppColorTokens on ColorScheme {
   Color get success =>
-      brightness == Brightness.dark ? appPaletteDark.primary : appPaletteLight.primary;
+      brightness == Brightness.dark ? appPaletteDark.secondary : appPaletteLight.secondary;
 
   Color get onSuccess =>
       brightness == Brightness.dark ? appPaletteDark.onPrimary : appPaletteLight.onPrimary;
@@ -140,4 +165,3 @@ extension AppColorTokens on ColorScheme {
   Color get titles =>
       brightness == Brightness.dark ? appPaletteDark.primary : appPaletteLight.primary;
 }
-

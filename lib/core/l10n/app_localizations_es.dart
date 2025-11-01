@@ -103,4 +103,13 @@ class AppLocalizationsEs extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get filterChipsDemo => 'Filtros';
+
+  @override
+  String get filterChipsSubtitle => 'Opciones de filtro seleccionables';
+
+  @override
+  String get filterChipsTitle => 'Opciones de filtro';
 }

@@ -271,6 +271,24 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'{value, plural, =0{0 puntos} =1{1 punto} other{{value} puntos}}'**
   String points(num value);
+
+  /// Opción del menú para ver los chips de filtros
+  ///
+  /// In es, this message translates to:
+  /// **'Filtros'**
+  String get filterChipsDemo;
+
+  /// Subtítulo para la demo de chips de filtro
+  ///
+  /// In es, this message translates to:
+  /// **'Opciones de filtro seleccionables'**
+  String get filterChipsSubtitle;
+
+  /// Título encima de los chips de filtro
+  ///
+  /// In es, this message translates to:
+  /// **'Opciones de filtro'**
+  String get filterChipsTitle;
 }
 
 class _AppLocalizationsDelegate
