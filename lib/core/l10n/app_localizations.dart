@@ -125,7 +125,7 @@ abstract class AppLocalizations {
   /// Subtítulo para la demo de insignias
   ///
   /// In es, this message translates to:
-  /// **'Filtros, estados y categorías'**
+  /// **'Estados y categorías'**
   String get badgesSubtitle;
 
   /// Título para la página de configuración de la aplicación
@@ -289,6 +289,54 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Opciones de filtro'**
   String get filterChipsTitle;
+
+  /// Opción del menú para ver la navegación
+  ///
+  /// In es, this message translates to:
+  /// **'Navegación'**
+  String get navigationDemo;
+
+  /// Subtítulo para la demo de navegación
+  ///
+  /// In es, this message translates to:
+  /// **'AppBar y barra inferior'**
+  String get navigationDemoSubtitle;
+
+  /// Elemento de navegación inferior: eventos
+  ///
+  /// In es, this message translates to:
+  /// **'Eventos'**
+  String get navEvents;
+
+  /// Elemento de navegación inferior: entradas
+  ///
+  /// In es, this message translates to:
+  /// **'Entradas'**
+  String get navTickets;
+
+  /// Elemento de navegación inferior: escanear
+  ///
+  /// In es, this message translates to:
+  /// **'Escanear'**
+  String get navScan;
+
+  /// Elemento de navegación inferior: explorar
+  ///
+  /// In es, this message translates to:
+  /// **'Explorar'**
+  String get navExplore;
+
+  /// Elemento de navegación inferior: perfil
+  ///
+  /// In es, this message translates to:
+  /// **'Perfil'**
+  String get navProfile;
+
+  /// Muestra la pestaña seleccionada
+  ///
+  /// In es, this message translates to:
+  /// **'Pestaña actual: {value}'**
+  String currentTab(int value);
 }
 
 class _AppLocalizationsDelegate

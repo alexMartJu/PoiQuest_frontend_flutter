@@ -21,7 +21,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get badgesDemo => 'Badges';
 
   @override
-  String get badgesSubtitle => 'Filters, states and categories';
+  String get badgesSubtitle => 'States and categories';
 
   @override
   String get preferences => 'Preferences';
@@ -112,4 +112,30 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get filterChipsTitle => 'Filter options';
+
+  @override
+  String get navigationDemo => 'Navigation';
+
+  @override
+  String get navigationDemoSubtitle => 'AppBar and bottom bar';
+
+  @override
+  String get navEvents => 'Events';
+
+  @override
+  String get navTickets => 'Tickets';
+
+  @override
+  String get navScan => 'Scan';
+
+  @override
+  String get navExplore => 'Explore';
+
+  @override
+  String get navProfile => 'Profile';
+
+  @override
+  String currentTab(int value) {
+    return 'Current tab: $value';
+  }
 }

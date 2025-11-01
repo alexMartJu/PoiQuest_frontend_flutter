@@ -21,7 +21,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get badgesDemo => 'Insignias';
 
   @override
-  String get badgesSubtitle => 'Filtros, estados y categorías';
+  String get badgesSubtitle => 'Estados y categorías';
 
   @override
   String get preferences => 'Preferencias';
@@ -112,4 +112,30 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get filterChipsTitle => 'Opciones de filtro';
+
+  @override
+  String get navigationDemo => 'Navegación';
+
+  @override
+  String get navigationDemoSubtitle => 'AppBar y barra inferior';
+
+  @override
+  String get navEvents => 'Eventos';
+
+  @override
+  String get navTickets => 'Entradas';
+
+  @override
+  String get navScan => 'Escanear';
+
+  @override
+  String get navExplore => 'Explorar';
+
+  @override
+  String get navProfile => 'Perfil';
+
+  @override
+  String currentTab(int value) {
+    return 'Pestaña actual: $value';
+  }
 }

@@ -21,7 +21,7 @@
     "description": "Texto del menú para acceder a la demo de insignias"
   },
 
-  "badgesSubtitle": "Filtros, estados y categorías",
+  "badgesSubtitle": "Estados y categorías",
   "@badgesSubtitle": {
     "description": "Subtítulo para la demo de insignias"
   },
@@ -165,5 +165,46 @@
   "filterChipsTitle": "Opciones de filtro",
   "@filterChipsTitle": {
     "description": "Título encima de los chips de filtro"
+  },
+
+  "navigationDemo": "Navegación",
+  "@navigationDemo": { 
+    "description": "Opción del menú para ver la navegación" 
+  },
+
+  "navigationDemoSubtitle": "AppBar y barra inferior",
+  "@navigationDemoSubtitle": { 
+    "description": "Subtítulo para la demo de navegación" 
+  },
+
+  "navEvents": "Eventos",
+  "@navEvents": { 
+    "description": "Elemento de navegación inferior: eventos" 
+  },
+
+  "navTickets": "Entradas",
+  "@navTickets": { 
+    "description": "Elemento de navegación inferior: entradas" 
+  },
+
+  "navScan": "Escanear",
+  "@navScan": { 
+    "description": "Elemento de navegación inferior: escanear" 
+  },
+
+  "navExplore": "Explorar",
+  "@navExplore": { 
+    "description": "Elemento de navegación inferior: explorar" 
+  },
+
+  "navProfile": "Perfil",
+  "@navProfile": { 
+    "description": "Elemento de navegación inferior: perfil" 
+  },
+
+  "currentTab": "Pestaña actual: {value}",
+  "@currentTab": {
+    "description": "Muestra la pestaña seleccionada",
+    "placeholders": { "value": { "type": "int" } }
   }
 }

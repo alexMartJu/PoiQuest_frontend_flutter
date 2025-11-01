@@ -12,14 +12,16 @@ class CatalogPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
     return Scaffold(
       appBar: AppBar(
-        title:  Text(AppLocalizations.of(context)!.titleCatalog),
+        title: Text(t.titleCatalog),
         centerTitle: true,
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
-            tooltip: AppLocalizations.of(context)!.preferences,
+            tooltip: t.preferences,
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => const PreferencesPage()),
@@ -31,19 +33,19 @@ class CatalogPage extends StatelessWidget {
       body: ListView(
         children: [
           ListTile(
-            title: Text(AppLocalizations.of(context)!.buttonsDemo),
-            subtitle: Text(AppLocalizations.of(context)!.buttonsSubtitle),
+            title: Text(t.buttonsDemo),
+            subtitle: Text(t.buttonsSubtitle),
             trailing: const Icon(Icons.chevron_right),
             onTap: () {
-              Navigator.of(
-                context,
-              ).push(MaterialPageRoute(builder: (_) => const ButtonsDemo()));
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const ButtonsDemo()),
+              );
             },
           ),
 
           ListTile(
-            title: Text(AppLocalizations.of(context)!.badgesDemo),
-            subtitle: Text(AppLocalizations.of(context)!.badgesSubtitle),
+            title: Text(t.badgesDemo),
+            subtitle: Text(t.badgesSubtitle),
             trailing: const Icon(Icons.chevron_right),
             onTap: () {
               Navigator.of(context).push(
@@ -53,18 +55,20 @@ class CatalogPage extends StatelessWidget {
           ),
 
           ListTile(
-            title: Text(AppLocalizations.of(context)!.filterChipsDemo),
-            subtitle: Text(AppLocalizations.of(context)!.filterChipsSubtitle),
+            title: Text(t.filterChipsDemo),
+            subtitle: Text(t.filterChipsSubtitle),
             trailing: const Icon(Icons.chevron_right),
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => const FilterChipsDemo()),
-            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const FilterChipsDemo()),
+              );
+            },
           ),
 
           ListTile(
-            title: const Text('Navigation Demo'),
-            subtitle: const Text('AppBar + NavigationBar'),
+            title: Text(t.navigationDemo),
+            subtitle: Text(t.navigationDemoSubtitle),
             trailing: const Icon(Icons.chevron_right),
             onTap: () {
               Navigator.of(context).push(
@@ -72,7 +76,6 @@ class CatalogPage extends StatelessWidget {
               );
             },
           ),
-
         ],
       ),
     );

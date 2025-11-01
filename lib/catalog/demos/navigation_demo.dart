@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:poiquest_frontend_flutter/catalog/widgets/showcase_scaffold.dart';
 import 'package:poiquest_frontend_flutter/core/widgets/app_app_bar.dart';
 import 'package:poiquest_frontend_flutter/core/widgets/app_navigation_bar.dart';
+import 'package:poiquest_frontend_flutter/core/l10n/app_localizations.dart';
 
 class NavigationDemo extends StatefulWidget {
   const NavigationDemo({super.key});
@@ -15,8 +16,10 @@ class _NavigationDemoState extends State<NavigationDemo> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
     return ShowcaseScaffold(
-      title:'Navigation Demo',
+      title: t.navigationDemo,
       body: Scaffold(
         appBar: const AppAppBar(),
         bottomNavigationBar: AppNavigationBar(
@@ -25,7 +28,7 @@ class _NavigationDemoState extends State<NavigationDemo> {
         ),
         body: Center(
           child: Text(
-            'Current tab: $selectedIndex',
+            t.currentTab(selectedIndex),
             style: Theme.of(context).textTheme.titleLarge,
           ),
         ),

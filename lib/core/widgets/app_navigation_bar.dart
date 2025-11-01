@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:poiquest_frontend_flutter/core/l10n/app_localizations.dart';
 
 class AppNavigationBar extends StatelessWidget {
   final int currentIndex;
@@ -12,37 +13,38 @@ class AppNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
     return NavigationBar(
       selectedIndex: currentIndex,
       onDestinationSelected: onTap,
-      destinations: const [
+      destinations: [
         NavigationDestination(
-          icon: Icon(Icons.event_outlined),
-          selectedIcon: Icon(Icons.event),
-          label: 'Events',
+          icon: const Icon(Icons.event_outlined),
+          selectedIcon: const Icon(Icons.event),
+          label: t.navEvents,
         ),
         NavigationDestination(
-          icon: Icon(Icons.confirmation_number_outlined),
-          selectedIcon: Icon(Icons.confirmation_number),
-          label: 'Tickets',
+          icon: const Icon(Icons.confirmation_number_outlined),
+          selectedIcon: const Icon(Icons.confirmation_number),
+          label: t.navTickets,
         ),
         NavigationDestination(
-          icon: Icon(Icons.qr_code_scanner),
-          selectedIcon: Icon(Icons.qr_code_scanner),
-          label: 'Scan',
+          icon: const Icon(Icons.qr_code_scanner),
+          selectedIcon: const Icon(Icons.qr_code_scanner),
+          label: t.navScan,
         ),
         NavigationDestination(
-          icon: Icon(Icons.travel_explore_outlined),
-          selectedIcon: Icon(Icons.travel_explore),
-          label: 'Explore',
+          icon: const Icon(Icons.travel_explore_outlined),
+          selectedIcon: const Icon(Icons.travel_explore),
+          label: t.navExplore,
         ),
         NavigationDestination(
-          icon: Icon(Icons.person_outline),
-          selectedIcon: Icon(Icons.person),
-          label: 'Profile',
+          icon: const Icon(Icons.person_outline),
+          selectedIcon: const Icon(Icons.person),
+          label: t.navProfile,
         ),
       ],
     );
   }
 }
-

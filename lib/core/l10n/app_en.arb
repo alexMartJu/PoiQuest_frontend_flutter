@@ -21,7 +21,7 @@
     "description": "Menu option to go to the badges showcase"
   },
 
-  "badgesSubtitle": "Filters, states and categories",
+  "badgesSubtitle": "States and categories",
   "@badgesSubtitle": {
     "description": "Subtitle for the badges demo"
   },
@@ -165,6 +165,47 @@
   "filterChipsTitle": "Filter options",
   "@filterChipsTitle": {
     "description": "Title above filter chips section"
+  },
+
+  "navigationDemo": "Navigation",
+  "@navigationDemo": { 
+    "description": "Menu option to view navigation" 
+  },
+
+  "navigationDemoSubtitle": "AppBar and bottom bar",
+  "@navigationDemoSubtitle": { 
+    "description": "Subtitle for the navigation demo" 
+  },
+
+  "navEvents": "Events",
+  "@navEvents": { 
+    "description": "Bottom navigation item: events" 
+  },
+
+  "navTickets": "Tickets",
+  "@navTickets": { 
+    "description": "Bottom navigation item: tickets" 
+  },
+
+  "navScan": "Scan",
+  "@navScan": { 
+    "description": "Bottom navigation item: scan QR" 
+  },
+
+  "navExplore": "Explore",
+  "@navExplore": { 
+    "description": "Bottom navigation item: explore" 
+  },
+
+  "navProfile": "Profile",
+  "@navProfile": { 
+    "description": "Bottom navigation item: profile" 
+  },
+
+  "currentTab": "Current tab: {value}",
+  "@currentTab": {
+    "description": "Shows current selected tab",
+    "placeholders": { "value": { "type": "int" } }
   }
 
 }
