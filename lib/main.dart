@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:poiquest_frontend_flutter/app/router.dart';
 import 'package:poiquest_frontend_flutter/app/theme/app_theme.dart';
-import 'package:poiquest_frontend_flutter/catalog/catalog_page.dart';
 import 'package:poiquest_frontend_flutter/features/preferences/presentation/providers/preferences_providers.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:poiquest_frontend_flutter/core/l10n/app_localizations.dart';
@@ -21,15 +21,21 @@ class MainApp extends ConsumerWidget {
 
     // Usamos maybeWhen para obtener el valor del modo oscuro
     final darkMode = prefsAsync.maybeWhen(
-      data: (prefs) => prefs.darkmode, // si ya cargó, usa el valor real
-      orElse: () => false,             // si aún carga o hay error, usa false por defecto
+      data: (p) => p.darkmode,
+      orElse: () => false,
     );
 
-    return MaterialApp(
+    final language = prefsAsync.maybeWhen(
+      data: (p) => p.language,
+      orElse: () => 'es',
+    );
+
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: darkMode ? ThemeMode.dark : ThemeMode.light,
+      routerConfig: appRouter,
 
       // i18n config
       localizationsDelegates: const [
@@ -38,15 +44,8 @@ class MainApp extends ConsumerWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: const [
-        Locale('es'),
-        Locale('en'),
-      ],
-      locale: Locale(
-        prefsAsync.maybeWhen(data: (p) => p.language, orElse: () => 'es')
-      ),
-
-      home: const CatalogPage(),
+      supportedLocales: const [Locale('es'), Locale('en')],
+      locale: Locale(language),
     );
   }
 }

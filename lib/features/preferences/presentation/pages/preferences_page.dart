@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:poiquest_frontend_flutter/features/preferences/presentation/providers/preferences_providers.dart';
 import 'package:poiquest_frontend_flutter/core/l10n/app_localizations.dart';
 
@@ -13,58 +14,59 @@ class PreferencesPage extends ConsumerWidget {
     final prefsAsync = ref.watch(preferencesProvider);
 
     return prefsAsync.when(
-      data: (prefs) {
-        return Scaffold(
-          appBar: AppBar(title: Text(AppLocalizations.of(context)!.preferences)),
-          body: ListView(
-            children: [
-              SwitchListTile(
-                title: Text(AppLocalizations.of(context)!.darkMode),
-                value: prefs.darkmode,
+      data: (prefs) => Scaffold(
+        appBar: AppBar(title: Text(AppLocalizations.of(context)!.preferences)),
+        body: ListView(
+          children: [
+            SwitchListTile(
+              title: Text(AppLocalizations.of(context)!.darkMode),
+              value: prefs.darkmode,
+              onChanged: (val) =>
+                ref.read(preferencesProvider.notifier).updatePreferences(
+                      prefs.copyWith(darkmode: val),
+                    ),
+            ),
+            const Divider(),
+            ListTile(
+              title: Text(AppLocalizations.of(context)!.language),
+              trailing: DropdownButton<String>(
+                value: prefs.language,
+                items: [
+                  DropdownMenuItem(
+                    value: 'es',
+                    child: Text(AppLocalizations.of(context)!.spanish),
+                  ),
+                  DropdownMenuItem(
+                    value: 'en',
+                    child: Text(AppLocalizations.of(context)!.english),
+                  ),
+                ],
                 onChanged: (val) {
-                  ref
-                      .read(preferencesProvider.notifier)
-                      .updatePreferences(prefs.copyWith(darkmode: val));
+                  if (val != null) {
+                    ref.read(preferencesProvider.notifier).updatePreferences(
+                          prefs.copyWith(language: val),
+                        );
+                  }
                 },
               ),
-              const Divider(),
-              ListTile(
-                title: Text(AppLocalizations.of(context)!.language),
-                trailing: DropdownButton<String>(
-                  value: prefs.language,
-                  items: [
-                    DropdownMenuItem(
-                      value: 'es',
-                      child: Text(AppLocalizations.of(context)!.spanish),
-                    ),
-                    DropdownMenuItem(
-                      value: 'en',
-                      child: Text(AppLocalizations.of(context)!.english),
-                    ),
-                  ],
-                  onChanged: (val) {
-                    if (val != null) {
-                      ref
-                          .read(preferencesProvider.notifier)
-                          .updatePreferences(prefs.copyWith(language: val));
-                    }
-                  },
-                ),
-              ),
-              const Divider(),
-              SwitchListTile(
-                title: Text(AppLocalizations.of(context)!.notifications),
-                value: prefs.notifications,
-                onChanged: (val) {
-                  ref
-                      .read(preferencesProvider.notifier)
-                      .updatePreferences(prefs.copyWith(notifications: val));
-                },
-              ),
-            ],
-          ),
-        );
-      },
+            ),
+            const Divider(),
+            SwitchListTile(
+              title: Text(AppLocalizations.of(context)!.notifications),
+              value: prefs.notifications,
+              onChanged: (val) =>
+                  ref.read(preferencesProvider.notifier).updatePreferences(
+                        prefs.copyWith(notifications: val),
+                      ),
+            ),
+            ListTile(
+              title: const Text('Ver catálogo de componentes'),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => context.push('/catalog'),
+            ),
+          ],
+        ),
+      ),
       loading: () => const Scaffold(
         body: Center(child: CircularProgressIndicator()),
       ),
