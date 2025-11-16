@@ -113,6 +113,21 @@ class AppTheme {
     );
   }
 
+  // ================== CARD THEME ==================
+  static CardThemeData _cardTheme(ColorScheme c) {
+    return CardThemeData(
+      color: c.surfaceContainerHigh,
+      elevation: 1,
+      surfaceTintColor: Colors.transparent,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+        side: BorderSide(color: c.outline, width: 1.4),
+      ),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+      clipBehavior: Clip.antiAlias,
+    );
+  }
+
   // ================== FINAL THEMES ==================
   static ThemeData light = ThemeData(
     useMaterial3: true,
@@ -124,6 +139,7 @@ class AppTheme {
     appBarTheme: _appBarTheme(_scheme(appPaletteLight, Brightness.light)),
     navigationBarTheme: _navTheme(_scheme(appPaletteLight, Brightness.light)),
     chipTheme: _chipTheme(_scheme(appPaletteLight, Brightness.light)),
+    cardTheme: _cardTheme(_scheme(appPaletteLight, Brightness.light)),
   );
 
   static ThemeData dark = ThemeData(
@@ -136,6 +152,7 @@ class AppTheme {
     appBarTheme: _appBarTheme(_scheme(appPaletteDark, Brightness.dark)),
     navigationBarTheme: _navTheme(_scheme(appPaletteDark, Brightness.dark)),
     chipTheme: _chipTheme(_scheme(appPaletteDark, Brightness.dark)),
+    cardTheme: _cardTheme(_scheme(appPaletteDark, Brightness.dark)),
   );
 }
 
