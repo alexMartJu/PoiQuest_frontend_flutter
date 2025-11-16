@@ -337,6 +337,108 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Pestaña actual: {value}'**
   String currentTab(int value);
+
+  /// Título para la sección de descubrimiento de eventos
+  ///
+  /// In es, this message translates to:
+  /// **'Descubre Eventos'**
+  String get discoverEvents;
+
+  /// Subtítulo para la sección de descubrimiento de eventos
+  ///
+  /// In es, this message translates to:
+  /// **'Encuentra eventos increíbles cerca de ti'**
+  String get findAmazingEvents;
+
+  /// Título para la sección de eventos destacados
+  ///
+  /// In es, this message translates to:
+  /// **'Eventos Destacados'**
+  String get featuredEvents;
+
+  /// Mensaje de error cuando las categorías no se cargan
+  ///
+  /// In es, this message translates to:
+  /// **'Error al cargar categorías: {error}'**
+  String errorLoadingCategories(String error);
+
+  /// Mensaje de error cuando los eventos no se cargan
+  ///
+  /// In es, this message translates to:
+  /// **'Error al cargar eventos'**
+  String get errorLoadingEvents;
+
+  /// Texto del botón para reintentar una acción
+  ///
+  /// In es, this message translates to:
+  /// **'Reintentar'**
+  String get retry;
+
+  /// Mensaje cuando no se encuentran eventos
+  ///
+  /// In es, this message translates to:
+  /// **'No hay eventos disponibles'**
+  String get noEventsAvailable;
+
+  /// Sugerencia cuando no se encuentran eventos
+  ///
+  /// In es, this message translates to:
+  /// **'Intenta seleccionar otra categoría'**
+  String get tryAnotherCategory;
+
+  /// Mensaje cuando se han cargado todos los eventos
+  ///
+  /// In es, this message translates to:
+  /// **'No hay más eventos'**
+  String get noMoreEvents;
+
+  /// Texto mostrado cuando el evento no tiene ubicación
+  ///
+  /// In es, this message translates to:
+  /// **'Sin ubicación'**
+  String get noLocation;
+
+  /// Etiqueta del chip de filtro para mostrar todos los eventos sin filtro de categoría
+  ///
+  /// In es, this message translates to:
+  /// **'Todas'**
+  String get allCategories;
+
+  /// Opción del menú para acceder a la demo de tarjetas
+  ///
+  /// In es, this message translates to:
+  /// **'Tarjetas'**
+  String get cardsDemo;
+
+  /// Subtítulo para la demo de tarjetas
+  ///
+  /// In es, this message translates to:
+  /// **'Tarjetas de eventos con diseño horizontal'**
+  String get cardsSubtitle;
+
+  /// Título para la sección de tarjeta de evento en demo
+  ///
+  /// In es, this message translates to:
+  /// **'Tarjeta de Evento'**
+  String get cardsDemoTitle;
+
+  /// Mensaje del snackbar cuando se toca una tarjeta de evento en demo
+  ///
+  /// In es, this message translates to:
+  /// **'¡Evento seleccionado!'**
+  String get eventTapped;
+
+  /// Título de evento de ejemplo para tarjeta demo
+  ///
+  /// In es, this message translates to:
+  /// **'Festival de Música de Verano'**
+  String get sampleEventTitle;
+
+  /// Ubicación de evento de ejemplo para tarjeta demo
+  ///
+  /// In es, this message translates to:
+  /// **'Parque Central'**
+  String get sampleEventLocation;
 }
 
 class _AppLocalizationsDelegate

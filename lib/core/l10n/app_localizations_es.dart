@@ -138,4 +138,57 @@ class AppLocalizationsEs extends AppLocalizations {
   String currentTab(int value) {
     return 'Pestaña actual: $value';
   }
+
+  @override
+  String get discoverEvents => 'Descubre Eventos';
+
+  @override
+  String get findAmazingEvents => 'Encuentra eventos increíbles cerca de ti';
+
+  @override
+  String get featuredEvents => 'Eventos Destacados';
+
+  @override
+  String errorLoadingCategories(String error) {
+    return 'Error al cargar categorías: $error';
+  }
+
+  @override
+  String get errorLoadingEvents => 'Error al cargar eventos';
+
+  @override
+  String get retry => 'Reintentar';
+
+  @override
+  String get noEventsAvailable => 'No hay eventos disponibles';
+
+  @override
+  String get tryAnotherCategory => 'Intenta seleccionar otra categoría';
+
+  @override
+  String get noMoreEvents => 'No hay más eventos';
+
+  @override
+  String get noLocation => 'Sin ubicación';
+
+  @override
+  String get allCategories => 'Todas';
+
+  @override
+  String get cardsDemo => 'Tarjetas';
+
+  @override
+  String get cardsSubtitle => 'Tarjetas de eventos con diseño horizontal';
+
+  @override
+  String get cardsDemoTitle => 'Tarjeta de Evento';
+
+  @override
+  String get eventTapped => '¡Evento seleccionado!';
+
+  @override
+  String get sampleEventTitle => 'Festival de Música de Verano';
+
+  @override
+  String get sampleEventLocation => 'Parque Central';
 }

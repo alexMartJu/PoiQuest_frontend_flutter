@@ -206,6 +206,92 @@
   "@currentTab": {
     "description": "Shows current selected tab",
     "placeholders": { "value": { "type": "int" } }
+  },
+
+  "discoverEvents": "Discover Events",
+  "@discoverEvents": {
+    "description": "Title for events discovery section"
+  },
+
+  "findAmazingEvents": "Find amazing events near you",
+  "@findAmazingEvents": {
+    "description": "Subtitle for events discovery section"
+  },
+
+  "featuredEvents": "Featured Events",
+  "@featuredEvents": {
+    "description": "Title for featured events section"
+  },
+
+  "errorLoadingCategories": "Error loading categories: {error}",
+  "@errorLoadingCategories": {
+    "description": "Error message when categories fail to load",
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "errorLoadingEvents": "Error loading events",
+  "@errorLoadingEvents": {
+    "description": "Error message when events fail to load"
+  },
+
+  "retry": "Retry",
+  "@retry": {
+    "description": "Button text to retry an action"
+  },
+
+  "noEventsAvailable": "No events available",
+  "@noEventsAvailable": {
+    "description": "Message when no events are found"
+  },
+
+  "tryAnotherCategory": "Try selecting another category",
+  "@tryAnotherCategory": {
+    "description": "Suggestion when no events are found"
+  },
+
+  "noMoreEvents": "No more events",
+  "@noMoreEvents": {
+    "description": "Message when all events have been loaded"
+  },
+
+  "noLocation": "No location",
+  "@noLocation": {
+    "description": "Placeholder when event has no location"
+  },
+
+  "allCategories": "All",
+  "@allCategories": {
+    "description": "Filter chip label to show all events without category filter"
+  },
+
+  "cardsDemo": "Cards",
+  "@cardsDemo": {
+    "description": "Menu option to go to the cards showcase"
+  },
+
+  "cardsSubtitle": "Event cards with horizontal layout",
+  "@cardsSubtitle": {
+    "description": "Subtitle for the cards demo"
+  },
+
+  "cardsDemoTitle": "Event Card",
+  "@cardsDemoTitle": {
+    "description": "Title for event card section in demo"
+  },
+
+  "eventTapped": "Event tapped!",
+  "@eventTapped": {
+    "description": "Snackbar message when an event card is tapped in demo"
+  },
+
+  "sampleEventTitle": "Summer Music Festival",
+  "@sampleEventTitle": {
+    "description": "Sample event title for demo card"
+  },
+
+  "sampleEventLocation": "Central Park",
+  "@sampleEventLocation": {
+    "description": "Sample event location for demo card"
   }
 
 }

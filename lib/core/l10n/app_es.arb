@@ -206,5 +206,91 @@
   "@currentTab": {
     "description": "Muestra la pestaña seleccionada",
     "placeholders": { "value": { "type": "int" } }
+  },
+
+  "discoverEvents": "Descubre Eventos",
+  "@discoverEvents": {
+    "description": "Título para la sección de descubrimiento de eventos"
+  },
+
+  "findAmazingEvents": "Encuentra eventos increíbles cerca de ti",
+  "@findAmazingEvents": {
+    "description": "Subtítulo para la sección de descubrimiento de eventos"
+  },
+
+  "featuredEvents": "Eventos Destacados",
+  "@featuredEvents": {
+    "description": "Título para la sección de eventos destacados"
+  },
+
+  "errorLoadingCategories": "Error al cargar categorías: {error}",
+  "@errorLoadingCategories": {
+    "description": "Mensaje de error cuando las categorías no se cargan",
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "errorLoadingEvents": "Error al cargar eventos",
+  "@errorLoadingEvents": {
+    "description": "Mensaje de error cuando los eventos no se cargan"
+  },
+
+  "retry": "Reintentar",
+  "@retry": {
+    "description": "Texto del botón para reintentar una acción"
+  },
+
+  "noEventsAvailable": "No hay eventos disponibles",
+  "@noEventsAvailable": {
+    "description": "Mensaje cuando no se encuentran eventos"
+  },
+
+  "tryAnotherCategory": "Intenta seleccionar otra categoría",
+  "@tryAnotherCategory": {
+    "description": "Sugerencia cuando no se encuentran eventos"
+  },
+
+  "noMoreEvents": "No hay más eventos",
+  "@noMoreEvents": {
+    "description": "Mensaje cuando se han cargado todos los eventos"
+  },
+
+  "noLocation": "Sin ubicación",
+  "@noLocation": {
+    "description": "Texto mostrado cuando el evento no tiene ubicación"
+  },
+
+  "allCategories": "Todas",
+  "@allCategories": {
+    "description": "Etiqueta del chip de filtro para mostrar todos los eventos sin filtro de categoría"
+  },
+
+  "cardsDemo": "Tarjetas",
+  "@cardsDemo": {
+    "description": "Opción del menú para acceder a la demo de tarjetas"
+  },
+
+  "cardsSubtitle": "Tarjetas de eventos con diseño horizontal",
+  "@cardsSubtitle": {
+    "description": "Subtítulo para la demo de tarjetas"
+  },
+
+  "cardsDemoTitle": "Tarjeta de Evento",
+  "@cardsDemoTitle": {
+    "description": "Título para la sección de tarjeta de evento en demo"
+  },
+
+  "eventTapped": "¡Evento seleccionado!",
+  "@eventTapped": {
+    "description": "Mensaje del snackbar cuando se toca una tarjeta de evento en demo"
+  },
+
+  "sampleEventTitle": "Festival de Música de Verano",
+  "@sampleEventTitle": {
+    "description": "Título de evento de ejemplo para tarjeta demo"
+  },
+
+  "sampleEventLocation": "Parque Central",
+  "@sampleEventLocation": {
+    "description": "Ubicación de evento de ejemplo para tarjeta demo"
   }
 }
