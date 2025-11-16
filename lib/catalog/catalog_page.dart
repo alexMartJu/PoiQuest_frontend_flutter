@@ -26,6 +26,12 @@ class CatalogPage extends StatelessWidget {
             onTap: () => context.push('/catalog/badges'),
           ),
           ListTile(
+            title: Text(t.cardsDemo),
+            subtitle: Text(t.cardsSubtitle),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => context.push('/catalog/cards'),
+          ),
+          ListTile(
             title: Text(t.filterChipsDemo),
             subtitle: Text(t.filterChipsSubtitle),
             trailing: const Icon(Icons.chevron_right),
