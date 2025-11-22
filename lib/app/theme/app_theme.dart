@@ -41,7 +41,8 @@ class AppTheme {
       outline: p.border,
       shadow: Colors.black,
       scrim: Colors.black,
-      inverseSurface: p.textPrimary,
+      onInverseSurface: p.textPrimary,
+      inverseSurface: p.surface.withValues(alpha: 0.95),
       inversePrimary: p.primary,
     );
   }
@@ -128,6 +129,56 @@ class AppTheme {
     );
   }
 
+  // ================== INPUT DECORATION THEME ==================
+  static InputDecorationTheme _inputDecorationTheme(ColorScheme c) {
+    return InputDecorationTheme(
+      filled: true,
+      fillColor: c.surfaceContainerHighest,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide.none,
+      ),
+      contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+    );
+  }
+
+  // ================== FILLED BUTTON THEME ==================
+  static FilledButtonThemeData _filledButtonTheme(ColorScheme c) {
+    return FilledButtonThemeData(
+      style: FilledButton.styleFrom(
+        backgroundColor: c.primary,
+        foregroundColor: c.onPrimary,
+        disabledBackgroundColor: c.onSurface.withValues(alpha: 0.12),
+        disabledForegroundColor: c.onSurface.withValues(alpha: 0.38),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+        elevation: 0,
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+        textStyle: const TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    );
+  }
+
+  // ================== SNACKBAR THEME ==================
+  static SnackBarThemeData _snackBarTheme(ColorScheme c) {
+    return SnackBarThemeData(
+      backgroundColor: c.inverseSurface,
+      contentTextStyle: TextStyle(
+        color: c.onInverseSurface,
+        fontSize: 14,
+      ),
+      behavior: SnackBarBehavior.floating,
+      elevation: 3,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+    );
+  }
+
   // ================== FINAL THEMES ==================
   static ThemeData light = ThemeData(
     useMaterial3: true,
@@ -140,6 +191,9 @@ class AppTheme {
     navigationBarTheme: _navTheme(_scheme(appPaletteLight, Brightness.light)),
     chipTheme: _chipTheme(_scheme(appPaletteLight, Brightness.light)),
     cardTheme: _cardTheme(_scheme(appPaletteLight, Brightness.light)),
+    inputDecorationTheme: _inputDecorationTheme(_scheme(appPaletteLight, Brightness.light)),
+    filledButtonTheme: _filledButtonTheme(_scheme(appPaletteLight, Brightness.light)),
+    snackBarTheme: _snackBarTheme(_scheme(appPaletteLight, Brightness.light)),
   );
 
   static ThemeData dark = ThemeData(
@@ -153,6 +207,9 @@ class AppTheme {
     navigationBarTheme: _navTheme(_scheme(appPaletteDark, Brightness.dark)),
     chipTheme: _chipTheme(_scheme(appPaletteDark, Brightness.dark)),
     cardTheme: _cardTheme(_scheme(appPaletteDark, Brightness.dark)),
+    inputDecorationTheme: _inputDecorationTheme(_scheme(appPaletteDark, Brightness.dark)),
+    filledButtonTheme: _filledButtonTheme(_scheme(appPaletteDark, Brightness.dark)),
+    snackBarTheme: _snackBarTheme(_scheme(appPaletteDark, Brightness.dark)),
   );
 }
 
