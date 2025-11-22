@@ -292,5 +292,323 @@
   "sampleEventLocation": "Parque Central",
   "@sampleEventLocation": {
     "description": "Ubicación de evento de ejemplo para tarjeta demo"
+  },
+
+  "textFieldsDemo": "Campos de Texto",
+  "@textFieldsDemo": {
+    "description": "Opción del menú para acceder a la demostración de campos de texto"
+  },
+
+  "textFieldsSubtitle": "Variantes texto, email y password",
+  "@textFieldsSubtitle": {
+    "description": "Subtítulo para la demo de campos de texto"
+  },
+
+  "textFieldsTextVariantTitle": "Variante texto (con y sin icono)",
+  "@textFieldsTextVariantTitle": {
+    "description": "Título para la sección de variante texto en demo de campos"
+  },
+
+  "textFieldsEmailVariantTitle": "Variante email (con y sin icono)",
+  "@textFieldsEmailVariantTitle": {
+    "description": "Título para la sección de variante email en demo de campos"
+  },
+
+  "textFieldsPasswordVariantTitle": "Variante password (con y sin icono)",
+  "@textFieldsPasswordVariantTitle": {
+    "description": "Título para la sección de variante password en demo de campos"
+  },
+
+  "textFieldsDisabledTitle": "Estado deshabilitado",
+  "@textFieldsDisabledTitle": {
+    "description": "Título para la sección de estado deshabilitado en demo de campos"
+  },
+
+  "textFieldsNameLabel": "Nombre",
+  "@textFieldsNameLabel": {
+    "description": "Etiqueta para campo de texto de nombre"
+  },
+
+  "textFieldsNameHint": "Ingresa tu nombre",
+  "@textFieldsNameHint": {
+    "description": "Hint para campo de texto de nombre"
+  },
+
+  "textFieldsEmailLabel": "Email",
+  "@textFieldsEmailLabel": {
+    "description": "Etiqueta para campo de texto de email"
+  },
+
+  "textFieldsEmailHint": "tu@email.com",
+  "@textFieldsEmailHint": {
+    "description": "Hint para campo de texto de email"
+  },
+
+  "textFieldsPasswordLabel": "Contraseña",
+  "@textFieldsPasswordLabel": {
+    "description": "Etiqueta para campo de texto de contraseña"
+  },
+
+  "signInRegister": "Iniciar sesión / Registrarse",
+  "@signInRegister": {
+    "description": "Texto del botón para ir a login/registro"
+  },
+
+  "exploreWithoutSignIn": "Puedes explorar eventos y POIs sin iniciar sesión",
+  "@exploreWithoutSignIn": {
+    "description": "Mensaje informativo sobre uso sin autenticación"
+  },
+
+  "signInToViewTickets": "Inicia sesión para ver tus entradas",
+  "@signInToViewTickets": {
+    "description": "Título de la página de tickets sin autenticar"
+  },
+
+  "signInToViewTicketsDesc": "Crea una cuenta o inicia sesión para comprar entradas, gestionar reservas y acceder a tus códigos QR.",
+  "@signInToViewTicketsDesc": {
+    "description": "Descripción de la página de tickets sin autenticar"
+  },
+
+  "signInToScanQR": "Inicia sesión para escanear códigos QR",
+  "@signInToScanQR": {
+    "description": "Título de la página de scan sin autenticar"
+  },
+
+  "signInToScanQRDesc": "Crea una cuenta o inicia sesión para escanear códigos QR, validar entradas y acceder a contenido exclusivo.",
+  "@signInToScanQRDesc": {
+    "description": "Descripción de la página de scan sin autenticar"
+  },
+
+  "signInToYourProfile": "Inicia sesión en tu perfil",
+  "@signInToYourProfile": {
+    "description": "Título de la página de perfil sin autenticar"
+  },
+
+  "signInToYourProfileDesc": "Crea una cuenta para personalizar tu experiencia, gestionar ajustes y ver tu historial de actividad.",
+  "@signInToYourProfileDesc": {
+    "description": "Descripción de la página de perfil sin autenticar"
+  },
+
+  "signInToContinue": "Inicia sesión para continuar",
+  "@signInToContinue": {
+    "description": "Subtítulo en la página de autenticación"
+  },
+
+  "login": "Iniciar sesión",
+  "@login": {
+    "description": "Texto de la pestaña de login"
+  },
+
+  "register": "Registrarse",
+  "@register": {
+    "description": "Texto de la pestaña de registro"
+  },
+
+  "email": "Email",
+  "@email": {
+    "description": "Etiqueta para campo de email"
+  },
+
+  "emailHint": "tu@email.com",
+  "@emailHint": {
+    "description": "Hint para campo de email"
+  },
+
+  "password": "Contraseña",
+  "@password": {
+    "description": "Etiqueta para campo de contraseña"
+  },
+
+  "forgotPassword": "¿Olvidaste tu contraseña?",
+  "@forgotPassword": {
+    "description": "Texto del enlace de contraseña olvidada"
+  },
+
+  "signIn": "Iniciar sesión",
+  "@signIn": {
+    "description": "Texto del botón de login"
+  },
+
+  "name": "Nombre",
+  "@name": {
+    "description": "Etiqueta para campo de nombre"
+  },
+
+  "lastname": "Apellido",
+  "@lastname": {
+    "description": "Etiqueta para campo de apellido"
+  },
+
+  "confirmPassword": "Confirmar contraseña",
+  "@confirmPassword": {
+    "description": "Etiqueta para campo de confirmar contraseña"
+  },
+
+  "welcomeMessage": "¡Bienvenido a PoiQuest, {name}!",
+  "@welcomeMessage": {
+    "description": "Mensaje de bienvenida tras login exitoso",
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "errorLogin": "Error al iniciar sesión: {error}",
+  "@errorLogin": {
+    "description": "Mensaje de error al iniciar sesión",
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "errorRegister": "Error al registrar: {error}",
+  "@errorRegister": {
+    "description": "Mensaje de error al registrar",
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "featureInDevelopment": "Funcionalidad en desarrollo",
+  "@featureInDevelopment": {
+    "description": "Mensaje para funcionalidad no implementada"
+  },
+
+  "filledButtonsSmall": "Botones rellenos - Pequeño",
+  "@filledButtonsSmall": {
+    "description": "Título para botones rellenos pequeños"
+  },
+
+  "filledButtonsMedium": "Botones rellenos - Mediano (Por defecto)",
+  "@filledButtonsMedium": {
+    "description": "Título para botones rellenos medianos"
+  },
+
+  "filledButtonsLarge": "Botones rellenos - Grande",
+  "@filledButtonsLarge": {
+    "description": "Título para botones rellenos grandes"
+  },
+
+  "withoutIcon": "Sin icono",
+  "@withoutIcon": {
+    "description": "Etiqueta para botón sin icono"
+  },
+
+  "withIcon": "Con icono",
+  "@withIcon": {
+    "description": "Etiqueta para botón con icono"
+  },
+
+  "loadingState": "Estado de carga",
+  "@loadingState": {
+    "description": "Título para sección de estado de carga"
+  },
+
+  "toggleLoading": "Alternar carga",
+  "@toggleLoading": {
+    "description": "Texto del botón para alternar estado de carga"
+  },
+
+  "processing": "Procesando...",
+  "@processing": {
+    "description": "Texto del botón en estado de carga"
+  },
+
+  "smallButton": "Botón pequeño",
+  "@smallButton": {
+    "description": "Texto de botón pequeño de ejemplo"
+  },
+
+  "mediumButton": "Botón mediano",
+  "@mediumButton": {
+    "description": "Texto de botón mediano de ejemplo"
+  },
+
+  "largeButton": "Botón grande",
+  "@largeButton": {
+    "description": "Texto de botón grande de ejemplo"
+  },
+
+  "validatorRequired": "Por favor ingresa {fieldName}",
+  "@validatorRequired": {
+    "description": "Mensaje de error cuando un campo requerido está vacío",
+    "placeholders": { "fieldName": { "type": "String" } }
+  },
+
+  "validatorRequiredDefault": "Por favor ingresa este campo",
+  "@validatorRequiredDefault": {
+    "description": "Mensaje de error cuando un campo requerido está vacío (sin nombre de campo)"
+  },
+
+  "validatorEmailRequired": "Por favor ingresa tu email",
+  "@validatorEmailRequired": {
+    "description": "Mensaje de error cuando el email está vacío"
+  },
+
+  "validatorEmailInvalid": "Ingresa un email válido",
+  "@validatorEmailInvalid": {
+    "description": "Mensaje de error cuando el formato del email es inválido"
+  },
+
+  "validatorEmailMaxLength": "El email no puede superar {maxLength} caracteres",
+  "@validatorEmailMaxLength": {
+    "description": "Mensaje de error cuando el email supera la longitud máxima",
+    "placeholders": { "maxLength": { "type": "int" } }
+  },
+
+  "validatorPasswordRequired": "Por favor ingresa una contraseña",
+  "@validatorPasswordRequired": {
+    "description": "Mensaje de error cuando la contraseña está vacía"
+  },
+
+  "validatorPasswordMinLength": "La contraseña debe tener al menos {minLength} caracteres",
+  "@validatorPasswordMinLength": {
+    "description": "Mensaje de error cuando la contraseña es demasiado corta",
+    "placeholders": { "minLength": { "type": "int" } }
+  },
+
+  "validatorPasswordStrong": "Debe incluir minúscula, mayúscula y número",
+  "@validatorPasswordStrong": {
+    "description": "Mensaje de error cuando la contraseña no cumple requisitos de seguridad"
+  },
+
+  "validatorConfirmPasswordRequired": "Por favor confirma tu contraseña",
+  "@validatorConfirmPasswordRequired": {
+    "description": "Mensaje de error cuando la confirmación de contraseña está vacía"
+  },
+
+  "validatorPasswordMismatch": "Las contraseñas no coinciden",
+  "@validatorPasswordMismatch": {
+    "description": "Mensaje de error cuando las contraseñas no coinciden"
+  },
+
+  "validatorMaxLength": "{fieldName} no puede superar {maxLength} caracteres",
+  "@validatorMaxLength": {
+    "description": "Mensaje de error cuando un campo supera la longitud máxima",
+    "placeholders": { 
+      "fieldName": { "type": "String" },
+      "maxLength": { "type": "int" }
+    }
+  },
+
+  "validatorMaxLengthDefault": "Este campo no puede superar {maxLength} caracteres",
+  "@validatorMaxLengthDefault": {
+    "description": "Mensaje de error cuando un campo supera la longitud máxima (sin nombre de campo)",
+    "placeholders": { "maxLength": { "type": "int" } }
+  },
+
+  "validatorNameRequired": "tu nombre",
+  "@validatorNameRequired": {
+    "description": "Texto para el campo nombre en mensaje de error requerido"
+  },
+
+  "validatorNameMaxLength": "El nombre no puede superar {maxLength} caracteres",
+  "@validatorNameMaxLength": {
+    "description": "Mensaje de error cuando el nombre supera la longitud máxima",
+    "placeholders": { "maxLength": { "type": "int" } }
+  },
+
+  "validatorLastnameRequired": "tus apellidos",
+  "@validatorLastnameRequired": {
+    "description": "Texto para el campo apellidos en mensaje de error requerido"
+  },
+
+  "validatorLastnameMaxLength": "Los apellidos no pueden superar {maxLength} caracteres",
+  "@validatorLastnameMaxLength": {
+    "description": "Mensaje de error cuando los apellidos superan la longitud máxima",
+    "placeholders": { "maxLength": { "type": "int" } }
   }
 }

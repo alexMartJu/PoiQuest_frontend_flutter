@@ -439,6 +439,372 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Parque Central'**
   String get sampleEventLocation;
+
+  /// Opción del menú para acceder a la demostración de campos de texto
+  ///
+  /// In es, this message translates to:
+  /// **'Campos de Texto'**
+  String get textFieldsDemo;
+
+  /// Subtítulo para la demo de campos de texto
+  ///
+  /// In es, this message translates to:
+  /// **'Variantes texto, email y password'**
+  String get textFieldsSubtitle;
+
+  /// Título para la sección de variante texto en demo de campos
+  ///
+  /// In es, this message translates to:
+  /// **'Variante texto (con y sin icono)'**
+  String get textFieldsTextVariantTitle;
+
+  /// Título para la sección de variante email en demo de campos
+  ///
+  /// In es, this message translates to:
+  /// **'Variante email (con y sin icono)'**
+  String get textFieldsEmailVariantTitle;
+
+  /// Título para la sección de variante password en demo de campos
+  ///
+  /// In es, this message translates to:
+  /// **'Variante password (con y sin icono)'**
+  String get textFieldsPasswordVariantTitle;
+
+  /// Título para la sección de estado deshabilitado en demo de campos
+  ///
+  /// In es, this message translates to:
+  /// **'Estado deshabilitado'**
+  String get textFieldsDisabledTitle;
+
+  /// Etiqueta para campo de texto de nombre
+  ///
+  /// In es, this message translates to:
+  /// **'Nombre'**
+  String get textFieldsNameLabel;
+
+  /// Hint para campo de texto de nombre
+  ///
+  /// In es, this message translates to:
+  /// **'Ingresa tu nombre'**
+  String get textFieldsNameHint;
+
+  /// Etiqueta para campo de texto de email
+  ///
+  /// In es, this message translates to:
+  /// **'Email'**
+  String get textFieldsEmailLabel;
+
+  /// Hint para campo de texto de email
+  ///
+  /// In es, this message translates to:
+  /// **'tu@email.com'**
+  String get textFieldsEmailHint;
+
+  /// Etiqueta para campo de texto de contraseña
+  ///
+  /// In es, this message translates to:
+  /// **'Contraseña'**
+  String get textFieldsPasswordLabel;
+
+  /// Texto del botón para ir a login/registro
+  ///
+  /// In es, this message translates to:
+  /// **'Iniciar sesión / Registrarse'**
+  String get signInRegister;
+
+  /// Mensaje informativo sobre uso sin autenticación
+  ///
+  /// In es, this message translates to:
+  /// **'Puedes explorar eventos y POIs sin iniciar sesión'**
+  String get exploreWithoutSignIn;
+
+  /// Título de la página de tickets sin autenticar
+  ///
+  /// In es, this message translates to:
+  /// **'Inicia sesión para ver tus entradas'**
+  String get signInToViewTickets;
+
+  /// Descripción de la página de tickets sin autenticar
+  ///
+  /// In es, this message translates to:
+  /// **'Crea una cuenta o inicia sesión para comprar entradas, gestionar reservas y acceder a tus códigos QR.'**
+  String get signInToViewTicketsDesc;
+
+  /// Título de la página de scan sin autenticar
+  ///
+  /// In es, this message translates to:
+  /// **'Inicia sesión para escanear códigos QR'**
+  String get signInToScanQR;
+
+  /// Descripción de la página de scan sin autenticar
+  ///
+  /// In es, this message translates to:
+  /// **'Crea una cuenta o inicia sesión para escanear códigos QR, validar entradas y acceder a contenido exclusivo.'**
+  String get signInToScanQRDesc;
+
+  /// Título de la página de perfil sin autenticar
+  ///
+  /// In es, this message translates to:
+  /// **'Inicia sesión en tu perfil'**
+  String get signInToYourProfile;
+
+  /// Descripción de la página de perfil sin autenticar
+  ///
+  /// In es, this message translates to:
+  /// **'Crea una cuenta para personalizar tu experiencia, gestionar ajustes y ver tu historial de actividad.'**
+  String get signInToYourProfileDesc;
+
+  /// Subtítulo en la página de autenticación
+  ///
+  /// In es, this message translates to:
+  /// **'Inicia sesión para continuar'**
+  String get signInToContinue;
+
+  /// Texto de la pestaña de login
+  ///
+  /// In es, this message translates to:
+  /// **'Iniciar sesión'**
+  String get login;
+
+  /// Texto de la pestaña de registro
+  ///
+  /// In es, this message translates to:
+  /// **'Registrarse'**
+  String get register;
+
+  /// Etiqueta para campo de email
+  ///
+  /// In es, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// Hint para campo de email
+  ///
+  /// In es, this message translates to:
+  /// **'tu@email.com'**
+  String get emailHint;
+
+  /// Etiqueta para campo de contraseña
+  ///
+  /// In es, this message translates to:
+  /// **'Contraseña'**
+  String get password;
+
+  /// Texto del enlace de contraseña olvidada
+  ///
+  /// In es, this message translates to:
+  /// **'¿Olvidaste tu contraseña?'**
+  String get forgotPassword;
+
+  /// Texto del botón de login
+  ///
+  /// In es, this message translates to:
+  /// **'Iniciar sesión'**
+  String get signIn;
+
+  /// Etiqueta para campo de nombre
+  ///
+  /// In es, this message translates to:
+  /// **'Nombre'**
+  String get name;
+
+  /// Etiqueta para campo de apellido
+  ///
+  /// In es, this message translates to:
+  /// **'Apellido'**
+  String get lastname;
+
+  /// Etiqueta para campo de confirmar contraseña
+  ///
+  /// In es, this message translates to:
+  /// **'Confirmar contraseña'**
+  String get confirmPassword;
+
+  /// Mensaje de bienvenida tras login exitoso
+  ///
+  /// In es, this message translates to:
+  /// **'¡Bienvenido a PoiQuest, {name}!'**
+  String welcomeMessage(String name);
+
+  /// Mensaje de error al iniciar sesión
+  ///
+  /// In es, this message translates to:
+  /// **'Error al iniciar sesión: {error}'**
+  String errorLogin(String error);
+
+  /// Mensaje de error al registrar
+  ///
+  /// In es, this message translates to:
+  /// **'Error al registrar: {error}'**
+  String errorRegister(String error);
+
+  /// Mensaje para funcionalidad no implementada
+  ///
+  /// In es, this message translates to:
+  /// **'Funcionalidad en desarrollo'**
+  String get featureInDevelopment;
+
+  /// Título para botones rellenos pequeños
+  ///
+  /// In es, this message translates to:
+  /// **'Botones rellenos - Pequeño'**
+  String get filledButtonsSmall;
+
+  /// Título para botones rellenos medianos
+  ///
+  /// In es, this message translates to:
+  /// **'Botones rellenos - Mediano (Por defecto)'**
+  String get filledButtonsMedium;
+
+  /// Título para botones rellenos grandes
+  ///
+  /// In es, this message translates to:
+  /// **'Botones rellenos - Grande'**
+  String get filledButtonsLarge;
+
+  /// Etiqueta para botón sin icono
+  ///
+  /// In es, this message translates to:
+  /// **'Sin icono'**
+  String get withoutIcon;
+
+  /// Etiqueta para botón con icono
+  ///
+  /// In es, this message translates to:
+  /// **'Con icono'**
+  String get withIcon;
+
+  /// Título para sección de estado de carga
+  ///
+  /// In es, this message translates to:
+  /// **'Estado de carga'**
+  String get loadingState;
+
+  /// Texto del botón para alternar estado de carga
+  ///
+  /// In es, this message translates to:
+  /// **'Alternar carga'**
+  String get toggleLoading;
+
+  /// Texto del botón en estado de carga
+  ///
+  /// In es, this message translates to:
+  /// **'Procesando...'**
+  String get processing;
+
+  /// Texto de botón pequeño de ejemplo
+  ///
+  /// In es, this message translates to:
+  /// **'Botón pequeño'**
+  String get smallButton;
+
+  /// Texto de botón mediano de ejemplo
+  ///
+  /// In es, this message translates to:
+  /// **'Botón mediano'**
+  String get mediumButton;
+
+  /// Texto de botón grande de ejemplo
+  ///
+  /// In es, this message translates to:
+  /// **'Botón grande'**
+  String get largeButton;
+
+  /// Mensaje de error cuando un campo requerido está vacío
+  ///
+  /// In es, this message translates to:
+  /// **'Por favor ingresa {fieldName}'**
+  String validatorRequired(String fieldName);
+
+  /// Mensaje de error cuando un campo requerido está vacío (sin nombre de campo)
+  ///
+  /// In es, this message translates to:
+  /// **'Por favor ingresa este campo'**
+  String get validatorRequiredDefault;
+
+  /// Mensaje de error cuando el email está vacío
+  ///
+  /// In es, this message translates to:
+  /// **'Por favor ingresa tu email'**
+  String get validatorEmailRequired;
+
+  /// Mensaje de error cuando el formato del email es inválido
+  ///
+  /// In es, this message translates to:
+  /// **'Ingresa un email válido'**
+  String get validatorEmailInvalid;
+
+  /// Mensaje de error cuando el email supera la longitud máxima
+  ///
+  /// In es, this message translates to:
+  /// **'El email no puede superar {maxLength} caracteres'**
+  String validatorEmailMaxLength(int maxLength);
+
+  /// Mensaje de error cuando la contraseña está vacía
+  ///
+  /// In es, this message translates to:
+  /// **'Por favor ingresa una contraseña'**
+  String get validatorPasswordRequired;
+
+  /// Mensaje de error cuando la contraseña es demasiado corta
+  ///
+  /// In es, this message translates to:
+  /// **'La contraseña debe tener al menos {minLength} caracteres'**
+  String validatorPasswordMinLength(int minLength);
+
+  /// Mensaje de error cuando la contraseña no cumple requisitos de seguridad
+  ///
+  /// In es, this message translates to:
+  /// **'Debe incluir minúscula, mayúscula y número'**
+  String get validatorPasswordStrong;
+
+  /// Mensaje de error cuando la confirmación de contraseña está vacía
+  ///
+  /// In es, this message translates to:
+  /// **'Por favor confirma tu contraseña'**
+  String get validatorConfirmPasswordRequired;
+
+  /// Mensaje de error cuando las contraseñas no coinciden
+  ///
+  /// In es, this message translates to:
+  /// **'Las contraseñas no coinciden'**
+  String get validatorPasswordMismatch;
+
+  /// Mensaje de error cuando un campo supera la longitud máxima
+  ///
+  /// In es, this message translates to:
+  /// **'{fieldName} no puede superar {maxLength} caracteres'**
+  String validatorMaxLength(String fieldName, int maxLength);
+
+  /// Mensaje de error cuando un campo supera la longitud máxima (sin nombre de campo)
+  ///
+  /// In es, this message translates to:
+  /// **'Este campo no puede superar {maxLength} caracteres'**
+  String validatorMaxLengthDefault(int maxLength);
+
+  /// Texto para el campo nombre en mensaje de error requerido
+  ///
+  /// In es, this message translates to:
+  /// **'tu nombre'**
+  String get validatorNameRequired;
+
+  /// Mensaje de error cuando el nombre supera la longitud máxima
+  ///
+  /// In es, this message translates to:
+  /// **'El nombre no puede superar {maxLength} caracteres'**
+  String validatorNameMaxLength(int maxLength);
+
+  /// Texto para el campo apellidos en mensaje de error requerido
+  ///
+  /// In es, this message translates to:
+  /// **'tus apellidos'**
+  String get validatorLastnameRequired;
+
+  /// Mensaje de error cuando los apellidos superan la longitud máxima
+  ///
+  /// In es, this message translates to:
+  /// **'Los apellidos no pueden superar {maxLength} caracteres'**
+  String validatorLastnameMaxLength(int maxLength);
 }
 
 class _AppLocalizationsDelegate

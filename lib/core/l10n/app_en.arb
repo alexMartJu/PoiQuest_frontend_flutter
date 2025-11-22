@@ -292,6 +292,324 @@
   "sampleEventLocation": "Central Park",
   "@sampleEventLocation": {
     "description": "Sample event location for demo card"
+  },
+
+  "textFieldsDemo": "Text Fields",
+  "@textFieldsDemo": {
+    "description": "Menu option to go to the text fields showcase"
+  },
+
+  "textFieldsSubtitle": "Text, email and password variants",
+  "@textFieldsSubtitle": {
+    "description": "Subtitle for the text fields demo"
+  },
+
+  "textFieldsTextVariantTitle": "Text variant (with and without icon)",
+  "@textFieldsTextVariantTitle": {
+    "description": "Title for text variant section in text fields demo"
+  },
+
+  "textFieldsEmailVariantTitle": "Email variant (with and without icon)",
+  "@textFieldsEmailVariantTitle": {
+    "description": "Title for email variant section in text fields demo"
+  },
+
+  "textFieldsPasswordVariantTitle": "Password variant (with and without icon)",
+  "@textFieldsPasswordVariantTitle": {
+    "description": "Title for password variant section in text fields demo"
+  },
+
+  "textFieldsDisabledTitle": "Disabled state",
+  "@textFieldsDisabledTitle": {
+    "description": "Title for disabled state section in text fields demo"
+  },
+
+  "textFieldsNameLabel": "Name",
+  "@textFieldsNameLabel": {
+    "description": "Label for name text field"
+  },
+
+  "textFieldsNameHint": "Enter your name",
+  "@textFieldsNameHint": {
+    "description": "Hint for name text field"
+  },
+
+  "textFieldsEmailLabel": "Email",
+  "@textFieldsEmailLabel": {
+    "description": "Label for email text field"
+  },
+
+  "textFieldsEmailHint": "your@email.com",
+  "@textFieldsEmailHint": {
+    "description": "Hint for email text field"
+  },
+
+  "textFieldsPasswordLabel": "Password",
+  "@textFieldsPasswordLabel": {
+    "description": "Label for password text field"
+  },
+
+  "signInRegister": "Sign In / Register",
+  "@signInRegister": {
+    "description": "Button text to go to login/register"
+  },
+
+  "exploreWithoutSignIn": "You can still explore events and POIs without signing in",
+  "@exploreWithoutSignIn": {
+    "description": "Informative message about using app without authentication"
+  },
+
+  "signInToViewTickets": "Sign in to View Tickets",
+  "@signInToViewTickets": {
+    "description": "Title for unauthenticated tickets page"
+  },
+
+  "signInToViewTicketsDesc": "Create an account or sign in to purchase tickets, manage bookings, and access your QR codes.",
+  "@signInToViewTicketsDesc": {
+    "description": "Description for unauthenticated tickets page"
+  },
+
+  "signInToScanQR": "Sign in to Scan QR Codes",
+  "@signInToScanQR": {
+    "description": "Title for unauthenticated scan page"
+  },
+
+  "signInToScanQRDesc": "Create an account or sign in to scan QR codes, validate tickets, and access exclusive content.",
+  "@signInToScanQRDesc": {
+    "description": "Description for unauthenticated scan page"
+  },
+
+  "signInToYourProfile": "Sign in to Your Profile",
+  "@signInToYourProfile": {
+    "description": "Title for unauthenticated profile page"
+  },
+
+  "signInToYourProfileDesc": "Create an account to personalize your experience, manage settings, and view your activity history.",
+  "@signInToYourProfileDesc": {
+    "description": "Description for unauthenticated profile page"
+  },
+
+  "signInToContinue": "Sign in to continue",
+  "@signInToContinue": {
+    "description": "Subtitle on auth page"
+  },
+
+  "login": "Login",
+  "@login": {
+    "description": "Login tab text"
+  },
+
+  "register": "Register",
+  "@register": {
+    "description": "Register tab text"
+  },
+
+  "email": "Email",
+  "@email": {
+    "description": "Label for email field"
+  },
+
+  "emailHint": "your@email.com",
+  "@emailHint": {
+    "description": "Hint for email field"
+  },
+
+  "password": "Password",
+  "@password": {
+    "description": "Label for password field"
+  },
+
+  "forgotPassword": "Forgot password?",
+  "@forgotPassword": {
+    "description": "Forgot password link text"
+  },
+
+  "signIn": "Sign In",
+  "@signIn": {
+    "description": "Sign in button text"
+  },
+
+  "name": "Name",
+  "@name": {
+    "description": "Label for name field"
+  },
+
+  "lastname": "Lastname",
+  "@lastname": {
+    "description": "Label for lastname field"
+  },
+
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "description": "Label for confirm password field"
+  },
+
+  "welcomeMessage": "Welcome to PoiQuest, {name}!",
+  "@welcomeMessage": {
+    "description": "Welcome message after successful login",
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "errorLogin": "Error signing in: {error}",
+  "@errorLogin": {
+    "description": "Error message when login fails",
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "errorRegister": "Error registering: {error}",
+  "@errorRegister": {
+    "description": "Error message when registration fails",
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "featureInDevelopment": "Feature in development",
+  "@featureInDevelopment": {
+    "description": "Message for unimplemented feature"
+  },
+
+  "filledButtonsSmall": "Filled Buttons - Small",
+  "@filledButtonsSmall": {
+    "description": "Title for small filled buttons"
+  },
+
+  "filledButtonsMedium": "Filled Buttons - Medium (Default)",
+  "@filledButtonsMedium": {
+    "description": "Title for medium filled buttons"
+  },
+
+  "filledButtonsLarge": "Filled Buttons - Large",
+  "@filledButtonsLarge": {
+    "description": "Title for large filled buttons"
+  },
+
+  "withoutIcon": "Without icon",
+  "@withoutIcon": {
+    "description": "Label for button without icon"
+  },
+
+  "withIcon": "With icon",
+  "@withIcon": {
+    "description": "Label for button with icon"
+  },
+
+  "loadingState": "Loading State",
+  "@loadingState": {
+    "description": "Title for loading state section"
+  },
+
+  "toggleLoading": "Toggle Loading",
+  "@toggleLoading": {
+    "description": "Button text to toggle loading state"
+  },
+
+  "processing": "Processing...",
+  "@processing": {
+    "description": "Button text in loading state"
+  },
+
+  "smallButton": "Small Button",
+  "@smallButton": {
+    "description": "Sample small button text"
+  },
+
+  "mediumButton": "Medium Button",
+  "@mediumButton": {
+    "description": "Sample medium button text"
+  },
+
+  "largeButton": "Large Button",
+  "@largeButton": {
+    "description": "Sample large button text"
+  },
+
+  "validatorRequired": "Please enter {fieldName}",
+  "@validatorRequired": {
+    "description": "Error message when a required field is empty",
+    "placeholders": { "fieldName": { "type": "String" } }
+  },
+
+  "validatorRequiredDefault": "Please enter this field",
+  "@validatorRequiredDefault": {
+    "description": "Error message when a required field is empty (without field name)"
+  },
+
+  "validatorEmailRequired": "Please enter your email",
+  "@validatorEmailRequired": {
+    "description": "Error message when email is empty"
+  },
+
+  "validatorEmailInvalid": "Enter a valid email",
+  "@validatorEmailInvalid": {
+    "description": "Error message when email format is invalid"
+  },
+
+  "validatorEmailMaxLength": "Email cannot exceed {maxLength} characters",
+  "@validatorEmailMaxLength": {
+    "description": "Error message when email exceeds maximum length",
+    "placeholders": { "maxLength": { "type": "int" } }
+  },
+
+  "validatorPasswordRequired": "Please enter a password",
+  "@validatorPasswordRequired": {
+    "description": "Error message when password is empty"
+  },
+
+  "validatorPasswordMinLength": "Password must be at least {minLength} characters",
+  "@validatorPasswordMinLength": {
+    "description": "Error message when password is too short",
+    "placeholders": { "minLength": { "type": "int" } }
+  },
+
+  "validatorPasswordStrong": "Must include lowercase, uppercase and number",
+  "@validatorPasswordStrong": {
+    "description": "Error message when password doesn't meet security requirements"
+  },
+
+  "validatorConfirmPasswordRequired": "Please confirm your password",
+  "@validatorConfirmPasswordRequired": {
+    "description": "Error message when password confirmation is empty"
+  },
+
+  "validatorPasswordMismatch": "Passwords do not match",
+  "@validatorPasswordMismatch": {
+    "description": "Error message when passwords don't match"
+  },
+
+  "validatorMaxLength": "{fieldName} cannot exceed {maxLength} characters",
+  "@validatorMaxLength": {
+    "description": "Error message when a field exceeds maximum length",
+    "placeholders": { 
+      "fieldName": { "type": "String" },
+      "maxLength": { "type": "int" }
+    }
+  },
+
+  "validatorMaxLengthDefault": "This field cannot exceed {maxLength} characters",
+  "@validatorMaxLengthDefault": {
+    "description": "Error message when a field exceeds maximum length (without field name)",
+    "placeholders": { "maxLength": { "type": "int" } }
+  },
+
+  "validatorNameRequired": "your name",
+  "@validatorNameRequired": {
+    "description": "Text for name field in required error message"
+  },
+
+  "validatorNameMaxLength": "Name cannot exceed {maxLength} characters",
+  "@validatorNameMaxLength": {
+    "description": "Error message when name exceeds maximum length",
+    "placeholders": { "maxLength": { "type": "int" } }
+  },
+
+  "validatorLastnameRequired": "your lastname",
+  "@validatorLastnameRequired": {
+    "description": "Text for lastname field in required error message"
+  },
+
+  "validatorLastnameMaxLength": "Lastname cannot exceed {maxLength} characters",
+  "@validatorLastnameMaxLength": {
+    "description": "Error message when lastname exceeds maximum length",
+    "placeholders": { "maxLength": { "type": "int" } }
   }
 
 }

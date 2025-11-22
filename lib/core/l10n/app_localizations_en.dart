@@ -191,4 +191,215 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sampleEventLocation => 'Central Park';
+
+  @override
+  String get textFieldsDemo => 'Text Fields';
+
+  @override
+  String get textFieldsSubtitle => 'Text, email and password variants';
+
+  @override
+  String get textFieldsTextVariantTitle =>
+      'Text variant (with and without icon)';
+
+  @override
+  String get textFieldsEmailVariantTitle =>
+      'Email variant (with and without icon)';
+
+  @override
+  String get textFieldsPasswordVariantTitle =>
+      'Password variant (with and without icon)';
+
+  @override
+  String get textFieldsDisabledTitle => 'Disabled state';
+
+  @override
+  String get textFieldsNameLabel => 'Name';
+
+  @override
+  String get textFieldsNameHint => 'Enter your name';
+
+  @override
+  String get textFieldsEmailLabel => 'Email';
+
+  @override
+  String get textFieldsEmailHint => 'your@email.com';
+
+  @override
+  String get textFieldsPasswordLabel => 'Password';
+
+  @override
+  String get signInRegister => 'Sign In / Register';
+
+  @override
+  String get exploreWithoutSignIn =>
+      'You can still explore events and POIs without signing in';
+
+  @override
+  String get signInToViewTickets => 'Sign in to View Tickets';
+
+  @override
+  String get signInToViewTicketsDesc =>
+      'Create an account or sign in to purchase tickets, manage bookings, and access your QR codes.';
+
+  @override
+  String get signInToScanQR => 'Sign in to Scan QR Codes';
+
+  @override
+  String get signInToScanQRDesc =>
+      'Create an account or sign in to scan QR codes, validate tickets, and access exclusive content.';
+
+  @override
+  String get signInToYourProfile => 'Sign in to Your Profile';
+
+  @override
+  String get signInToYourProfileDesc =>
+      'Create an account to personalize your experience, manage settings, and view your activity history.';
+
+  @override
+  String get signInToContinue => 'Sign in to continue';
+
+  @override
+  String get login => 'Login';
+
+  @override
+  String get register => 'Register';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get emailHint => 'your@email.com';
+
+  @override
+  String get password => 'Password';
+
+  @override
+  String get forgotPassword => 'Forgot password?';
+
+  @override
+  String get signIn => 'Sign In';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get lastname => 'Lastname';
+
+  @override
+  String get confirmPassword => 'Confirm Password';
+
+  @override
+  String welcomeMessage(String name) {
+    return 'Welcome to PoiQuest, $name!';
+  }
+
+  @override
+  String errorLogin(String error) {
+    return 'Error signing in: $error';
+  }
+
+  @override
+  String errorRegister(String error) {
+    return 'Error registering: $error';
+  }
+
+  @override
+  String get featureInDevelopment => 'Feature in development';
+
+  @override
+  String get filledButtonsSmall => 'Filled Buttons - Small';
+
+  @override
+  String get filledButtonsMedium => 'Filled Buttons - Medium (Default)';
+
+  @override
+  String get filledButtonsLarge => 'Filled Buttons - Large';
+
+  @override
+  String get withoutIcon => 'Without icon';
+
+  @override
+  String get withIcon => 'With icon';
+
+  @override
+  String get loadingState => 'Loading State';
+
+  @override
+  String get toggleLoading => 'Toggle Loading';
+
+  @override
+  String get processing => 'Processing...';
+
+  @override
+  String get smallButton => 'Small Button';
+
+  @override
+  String get mediumButton => 'Medium Button';
+
+  @override
+  String get largeButton => 'Large Button';
+
+  @override
+  String validatorRequired(String fieldName) {
+    return 'Please enter $fieldName';
+  }
+
+  @override
+  String get validatorRequiredDefault => 'Please enter this field';
+
+  @override
+  String get validatorEmailRequired => 'Please enter your email';
+
+  @override
+  String get validatorEmailInvalid => 'Enter a valid email';
+
+  @override
+  String validatorEmailMaxLength(int maxLength) {
+    return 'Email cannot exceed $maxLength characters';
+  }
+
+  @override
+  String get validatorPasswordRequired => 'Please enter a password';
+
+  @override
+  String validatorPasswordMinLength(int minLength) {
+    return 'Password must be at least $minLength characters';
+  }
+
+  @override
+  String get validatorPasswordStrong =>
+      'Must include lowercase, uppercase and number';
+
+  @override
+  String get validatorConfirmPasswordRequired => 'Please confirm your password';
+
+  @override
+  String get validatorPasswordMismatch => 'Passwords do not match';
+
+  @override
+  String validatorMaxLength(String fieldName, int maxLength) {
+    return '$fieldName cannot exceed $maxLength characters';
+  }
+
+  @override
+  String validatorMaxLengthDefault(int maxLength) {
+    return 'This field cannot exceed $maxLength characters';
+  }
+
+  @override
+  String get validatorNameRequired => 'your name';
+
+  @override
+  String validatorNameMaxLength(int maxLength) {
+    return 'Name cannot exceed $maxLength characters';
+  }
+
+  @override
+  String get validatorLastnameRequired => 'your lastname';
+
+  @override
+  String validatorLastnameMaxLength(int maxLength) {
+    return 'Lastname cannot exceed $maxLength characters';
+  }
 }
