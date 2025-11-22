@@ -30,12 +30,15 @@ class MainApp extends ConsumerWidget {
       orElse: () => 'es',
     );
 
+    // Observa el router provider para que reaccione a cambios de autenticación
+    final router = ref.watch(appRouterProvider);
+
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: darkMode ? ThemeMode.dark : ThemeMode.light,
-      routerConfig: appRouter,
+      routerConfig: router,
 
       // i18n config
       localizationsDelegates: const [
