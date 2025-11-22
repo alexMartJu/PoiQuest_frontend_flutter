@@ -43,6 +43,12 @@ class CatalogPage extends StatelessWidget {
             trailing: const Icon(Icons.chevron_right),
             onTap: () => context.push('/catalog/navigation'),
           ),
+          ListTile(
+            title: Text(t.textFieldsDemo),
+            subtitle: Text(t.textFieldsSubtitle),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => context.push('/catalog/textfields'),
+          ),
         ],
       ),
     );

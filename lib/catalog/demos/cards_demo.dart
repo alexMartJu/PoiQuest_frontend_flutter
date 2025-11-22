@@ -3,6 +3,7 @@ import 'package:poiquest_frontend_flutter/catalog/widgets/showcase_scaffold.dart
 import 'package:poiquest_frontend_flutter/core/l10n/app_localizations.dart';
 import 'package:poiquest_frontend_flutter/core/utils/date_utils.dart';
 import 'package:poiquest_frontend_flutter/core/widgets/app_event_card.dart';
+import 'package:poiquest_frontend_flutter/core/widgets/app_snackbar.dart';
 
 class CardsDemo extends StatelessWidget {
   const CardsDemo({super.key});
@@ -29,9 +30,7 @@ class CardsDemo extends StatelessWidget {
             endDate: formatDateLongFromIsoWithContext(context, '2024-07-17'),
             location: l10n.sampleEventLocation,
             onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(l10n.eventTapped)),
-              );
+              AppSnackBar.info(context, l10n.eventTapped);
             },
           ),
         ],
