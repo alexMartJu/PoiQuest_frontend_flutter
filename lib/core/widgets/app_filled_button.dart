@@ -23,6 +23,12 @@ class AppFilledButton extends StatelessWidget {
   /// Icono opcional que se muestra a la izquierda del texto.
   final IconData? icon;
   
+  /// Color de fondo opcional para el botón. Si se proporciona, se aplicará sobre el estilo por defecto.
+  final Color? backgroundColor;
+  
+  /// Color de primer plano opcional para el botón (texto/iconos). Si se proporciona, se aplicará sobre el estilo por defecto.
+  final Color? foregroundColor;
+  
   /// Si está en estado de carga (muestra CircularProgressIndicator).
   final bool loading;
 
@@ -33,6 +39,8 @@ class AppFilledButton extends StatelessWidget {
     this.size = AppFilledButtonSize.medium,
     this.icon,
     this.loading = false,
+    this.backgroundColor,
+    this.foregroundColor,
   });
 
   @override
@@ -46,7 +54,7 @@ class AppFilledButton extends StatelessWidget {
       AppFilledButtonSize.large => (16.0, 48.0, 14.0, 20.0),
     };
 
-    final buttonStyle = FilledButton.styleFrom(
+    final baseStyle = FilledButton.styleFrom(
       padding: EdgeInsets.symmetric(
         vertical: verticalPadding,
         horizontal: horizontalPadding,
@@ -57,7 +65,17 @@ class AppFilledButton extends StatelessWidget {
         fontWeight: FontWeight.w600,
       ),
     );
-
+    // Si se pasan colores explícitos, los aplicamos sobre el estilo base.
+    final ButtonStyle buttonStyle = (backgroundColor != null || foregroundColor != null)
+      ? baseStyle.copyWith(
+        backgroundColor: backgroundColor != null
+          ? WidgetStateProperty.all(backgroundColor)
+          : null,
+        foregroundColor: foregroundColor != null
+          ? WidgetStateProperty.all(foregroundColor)
+          : null,
+        )
+      : baseStyle;
     // Widget de contenido (texto o loading indicator)
     Widget content;
     if (loading) {

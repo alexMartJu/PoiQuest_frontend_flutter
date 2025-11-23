@@ -11,6 +11,10 @@ class AppTextField extends StatefulWidget {
   final String? Function(String?)? validator;
   final bool enabled;
   final TextCapitalization textCapitalization;
+  final TextInputType? keyboardType;
+  final void Function(String)? onChanged;
+  final int? maxLines;
+  final int? maxLength;
 
   const AppTextField({
     super.key,
@@ -22,6 +26,10 @@ class AppTextField extends StatefulWidget {
     this.validator,
     this.enabled = true,
     this.textCapitalization = TextCapitalization.none,
+    this.keyboardType,
+    this.onChanged,
+    this.maxLines,
+    this.maxLength,
   });
 
   @override
@@ -34,17 +42,21 @@ class _AppTextFieldState extends State<AppTextField> {
   @override
   Widget build(BuildContext context) {
     final isPassword = widget.variant == AppTextFieldVariant.password;
-    final keyboardType = widget.variant == AppTextFieldVariant.email
-        ? TextInputType.emailAddress
-        : TextInputType.text;
+    final effectiveKeyboard = widget.keyboardType ??
+        (widget.variant == AppTextFieldVariant.email
+            ? TextInputType.emailAddress
+            : TextInputType.text);
 
     return TextFormField(
       controller: widget.controller,
       obscureText: isPassword ? _obscurePassword : false,
-      keyboardType: keyboardType,
+      keyboardType: effectiveKeyboard,
       textCapitalization: widget.textCapitalization,
       enabled: widget.enabled,
       validator: widget.validator,
+      maxLines: widget.maxLines ?? (isPassword ? 1 : 1),
+      maxLength: widget.maxLength,
+      onChanged: widget.onChanged,
       decoration: InputDecoration(
         labelText: widget.labelText,
         hintText: widget.hintText,

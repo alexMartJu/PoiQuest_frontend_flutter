@@ -107,6 +107,27 @@ class Validators {
     };
   }
 
+  /// Valida que el campo sea una URL válida, no esté vacío y cumpla longitud máxima.
+  static String? Function(String?) url(BuildContext context, {int maxLength = 255}) {
+    return (String? value) {
+      final t = AppLocalizations.of(context)!;
+      if (value == null || value.trim().isEmpty) {
+        return t.validatorRequired('URL');
+      }
+
+      final uri = Uri.tryParse(value);
+      if (uri == null || !uri.hasAbsolutePath) {
+        return t.validatorEmailInvalid;
+      }
+
+      if (value.length > maxLength) {
+        return t.validatorMaxLength('URL', maxLength);
+      }
+
+      return null;
+    };
+  }
+
   /// Valida un nombre (requerido + longitud máxima).
   static String? Function(String?) name(BuildContext context, {int maxLength = 100}) {
     return (String? value) {
