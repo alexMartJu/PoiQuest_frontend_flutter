@@ -15,6 +15,11 @@ const String refreshTokenEndpoint = '/auth/refresh';
 const String logoutEndpoint = '/auth/logout';
 const String logoutAllEndpoint = '/auth/logout-all';
 const String meEndpoint = '/auth/me';
+const String changePasswordEndpoint = '/auth/change-password';
+
+/// Endpoints de perfil
+const String profileMeEndpoint = '/profile/me';
+const String profileMeAvatarEndpoint = '/profile/me/avatar';
 
 /// Keys para Secure Storage
 const String tokenKey = 'auth_token';

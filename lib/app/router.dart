@@ -19,6 +19,10 @@ import 'package:poiquest_frontend_flutter/features/auth/presentation/providers/a
 
 // Profile pages
 import 'package:poiquest_frontend_flutter/features/profile/presentation/pages/profile_page_noauth.dart';
+import 'package:poiquest_frontend_flutter/features/profile/presentation/pages/profile_page.dart';
+import 'package:poiquest_frontend_flutter/features/profile/presentation/pages/profile_edit_profile_page.dart';
+import 'package:poiquest_frontend_flutter/features/profile/presentation/pages/profile_change_avatar_page.dart';
+import 'package:poiquest_frontend_flutter/features/profile/presentation/pages/profile_change_password_page.dart';
 
 // Tickets pages
 import 'package:poiquest_frontend_flutter/features/tickets/presentation/pages/tickets_page_noauth.dart';
@@ -82,8 +86,8 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           GoRoute(
             path: '/profile',
             pageBuilder: (context, state) => const NoTransitionPage(
-              child: _AuthCheck(
-                logged: Center(child: Text('Página Profile Autenticada')),
+              child: _AuthGate(
+                logged: ProfilePage(),
                 anonymous: ProfilePageNoAuth(),
               ),
             ),
@@ -103,6 +107,23 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         parentNavigatorKey: _rootNavigatorKey,
         path: '/preferences',
         builder: (_, __) => const PreferencesPage(),
+      ),
+
+      // Rutas de perfil (fuera del shell)
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        path: '/profile/edit',
+        builder: (_, __) => const ProfileEditProfilePage(),
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        path: '/profile/change-avatar',
+        builder: (_, __) => const ProfileChangeAvatarPage(),
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        path: '/profile/change-password',
+        builder: (_, __) => const ProfileChangePasswordPage(),
       ),
 
       // Ruta de catálogo (fuera del shell)

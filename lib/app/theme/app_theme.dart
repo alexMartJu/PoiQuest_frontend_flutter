@@ -179,6 +179,34 @@ class AppTheme {
     );
   }
 
+  // ================== DIALOG THEME ==================
+  static DialogThemeData _dialogTheme(ColorScheme c) {
+    return DialogThemeData(
+      backgroundColor: c.surface,
+      surfaceTintColor: Colors.transparent,
+      elevation: 3,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(24),
+      ),
+      titleTextStyle: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+        color: c.onSurface,
+      ),
+      contentTextStyle: TextStyle(
+        fontSize: 14,
+        height: 1.5,
+        color: c.onSurfaceVariant,
+      ),
+      actionsPadding: const EdgeInsets.only(
+        left: 24,
+        right: 24,
+        bottom: 24,
+      ),
+      alignment: Alignment.center,
+    );
+  }
+
   // ================== FINAL THEMES ==================
   static ThemeData light = ThemeData(
     useMaterial3: true,
@@ -194,6 +222,7 @@ class AppTheme {
     inputDecorationTheme: _inputDecorationTheme(_scheme(appPaletteLight, Brightness.light)),
     filledButtonTheme: _filledButtonTheme(_scheme(appPaletteLight, Brightness.light)),
     snackBarTheme: _snackBarTheme(_scheme(appPaletteLight, Brightness.light)),
+    dialogTheme: _dialogTheme(_scheme(appPaletteLight, Brightness.light)),
   );
 
   static ThemeData dark = ThemeData(
@@ -210,6 +239,7 @@ class AppTheme {
     inputDecorationTheme: _inputDecorationTheme(_scheme(appPaletteDark, Brightness.dark)),
     filledButtonTheme: _filledButtonTheme(_scheme(appPaletteDark, Brightness.dark)),
     snackBarTheme: _snackBarTheme(_scheme(appPaletteDark, Brightness.dark)),
+    dialogTheme: _dialogTheme(_scheme(appPaletteDark, Brightness.dark)),
   );
 }
 

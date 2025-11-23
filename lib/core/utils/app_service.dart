@@ -69,7 +69,8 @@ class AppService {
           // Si es un 401 y no es el endpoint de refresh ni login
           if (error.response?.statusCode == 401 &&
               !error.requestOptions.path.contains('/auth/refresh') &&
-              !error.requestOptions.path.contains('/auth/login')) {
+              !error.requestOptions.path.contains('/auth/login') &&
+              !error.requestOptions.path.contains('/auth/change-password')) {
 
             // Si ya estamos refrescando, añadir a la cola
             if (_isRefreshing) {
