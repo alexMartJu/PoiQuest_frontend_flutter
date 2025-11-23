@@ -805,6 +805,300 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Los apellidos no pueden superar {maxLength} caracteres'**
   String validatorLastnameMaxLength(int maxLength);
+
+  /// Título para la página de perfil
+  ///
+  /// In es, this message translates to:
+  /// **'Perfil'**
+  String get profileTitle;
+
+  /// Título para la sección de cuenta
+  ///
+  /// In es, this message translates to:
+  /// **'Cuenta'**
+  String get accountTitle;
+
+  /// Título para la sección de sesión
+  ///
+  /// In es, this message translates to:
+  /// **'Sesión'**
+  String get sessionTitle;
+
+  /// Botón para editar perfil
+  ///
+  /// In es, this message translates to:
+  /// **'Editar Perfil'**
+  String get editProfile;
+
+  /// Subtítulo para la opción de editar perfil
+  ///
+  /// In es, this message translates to:
+  /// **'Actualiza tu información personal'**
+  String get editProfileSubtitle;
+
+  /// Botón para cambiar avatar
+  ///
+  /// In es, this message translates to:
+  /// **'Cambiar Avatar'**
+  String get changeAvatar;
+
+  /// Subtítulo para la opción de cambiar avatar
+  ///
+  /// In es, this message translates to:
+  /// **'Actualiza tu foto de perfil'**
+  String get changeAvatarSubtitle;
+
+  /// Botón para cambiar contraseña
+  ///
+  /// In es, this message translates to:
+  /// **'Cambiar Contraseña'**
+  String get changePassword;
+
+  /// Subtítulo para la opción de cambiar contraseña
+  ///
+  /// In es, this message translates to:
+  /// **'Actualiza tu contraseña'**
+  String get changePasswordSubtitle;
+
+  /// Botón para cerrar sesión en el dispositivo actual
+  ///
+  /// In es, this message translates to:
+  /// **'Cerrar Sesión'**
+  String get logout;
+
+  /// Subtítulo para la opción de cerrar sesión
+  ///
+  /// In es, this message translates to:
+  /// **'Cierra sesión en este dispositivo'**
+  String get logoutSubtitle;
+
+  /// Botón para cerrar sesión en todos los dispositivos
+  ///
+  /// In es, this message translates to:
+  /// **'Cerrar Sesión en Todos'**
+  String get logoutAllDevices;
+
+  /// Subtítulo para la opción de cerrar sesión en todos
+  ///
+  /// In es, this message translates to:
+  /// **'Cierra todas las sesiones en todos lados'**
+  String get logoutAllDevicesSubtitle;
+
+  /// Título para el diálogo de confirmación de cerrar sesión
+  ///
+  /// In es, this message translates to:
+  /// **'Cerrar Sesión'**
+  String get logoutDialogTitle;
+
+  /// Contenido para el diálogo de confirmación de cerrar sesión
+  ///
+  /// In es, this message translates to:
+  /// **'¿Deseas cerrar sesión en este dispositivo?'**
+  String get logoutDialogContent;
+
+  /// Título para el diálogo de confirmación de cerrar todas las sesiones
+  ///
+  /// In es, this message translates to:
+  /// **'Cerrar Todas las Sesiones'**
+  String get logoutAllDialogTitle;
+
+  /// Contenido para el diálogo de confirmación de cerrar todas las sesiones
+  ///
+  /// In es, this message translates to:
+  /// **'¿Deseas cerrar sesión en todos tus dispositivos? Tendrás que iniciar sesión nuevamente en todos ellos.'**
+  String get logoutAllDialogContent;
+
+  /// Etiqueta del botón confirmar
+  ///
+  /// In es, this message translates to:
+  /// **'Confirmar'**
+  String get confirm;
+
+  /// Etiqueta del botón cancelar
+  ///
+  /// In es, this message translates to:
+  /// **'Cancelar'**
+  String get cancel;
+
+  /// Mensaje de error cuando no se puede cargar el perfil
+  ///
+  /// In es, this message translates to:
+  /// **'No se pudo cargar el perfil'**
+  String get profileLoadError;
+
+  /// Título para error al cargar perfil
+  ///
+  /// In es, this message translates to:
+  /// **'Error al cargar el perfil'**
+  String get profileLoadErrorTitle;
+
+  /// Mensaje de error cuando falla cerrar sesión
+  ///
+  /// In es, this message translates to:
+  /// **'Error al cerrar sesión: {error}'**
+  String logoutError(String error);
+
+  /// Mensaje de error cuando falla cerrar todas las sesiones
+  ///
+  /// In es, this message translates to:
+  /// **'Error al cerrar sesiones: {error}'**
+  String logoutAllError(String error);
+
+  /// Etiqueta para el campo biografía
+  ///
+  /// In es, this message translates to:
+  /// **'Biografía'**
+  String get bio;
+
+  /// Pista para el campo biografía
+  ///
+  /// In es, this message translates to:
+  /// **'Cuéntanos sobre ti...'**
+  String get bioHint;
+
+  /// Botón para guardar cambios
+  ///
+  /// In es, this message translates to:
+  /// **'Guardar Cambios'**
+  String get saveChanges;
+
+  /// Mensaje de éxito cuando se actualiza el perfil
+  ///
+  /// In es, this message translates to:
+  /// **'Perfil actualizado con éxito'**
+  String get profileUpdatedSuccess;
+
+  /// Mensaje de error cuando falla la actualización del perfil
+  ///
+  /// In es, this message translates to:
+  /// **'Error al actualizar perfil: {error}'**
+  String profileUpdateError(String error);
+
+  /// Etiqueta para el campo URL del avatar
+  ///
+  /// In es, this message translates to:
+  /// **'URL del Avatar'**
+  String get avatarUrl;
+
+  /// Pista para el campo URL del avatar
+  ///
+  /// In es, this message translates to:
+  /// **'https://ejemplo.com/avatar.jpg'**
+  String get avatarUrlHint;
+
+  /// Texto de ayuda para el campo URL del avatar
+  ///
+  /// In es, this message translates to:
+  /// **'Introduce la URL de tu nueva imagen de perfil'**
+  String get avatarUrlHelp;
+
+  /// Botón para actualizar avatar
+  ///
+  /// In es, this message translates to:
+  /// **'Actualizar Avatar'**
+  String get updateAvatar;
+
+  /// Mensaje de éxito cuando se actualiza el avatar
+  ///
+  /// In es, this message translates to:
+  /// **'Avatar actualizado con éxito'**
+  String get avatarUpdatedSuccess;
+
+  /// Mensaje de error cuando falla la actualización del avatar
+  ///
+  /// In es, this message translates to:
+  /// **'Error al actualizar avatar: {error}'**
+  String avatarUpdateError(String error);
+
+  /// Etiqueta para el campo contraseña actual
+  ///
+  /// In es, this message translates to:
+  /// **'Contraseña Actual'**
+  String get oldPassword;
+
+  /// Etiqueta para el campo nueva contraseña
+  ///
+  /// In es, this message translates to:
+  /// **'Nueva Contraseña'**
+  String get newPassword;
+
+  /// Etiqueta para el campo confirmar nueva contraseña
+  ///
+  /// In es, this message translates to:
+  /// **'Confirmar Nueva Contraseña'**
+  String get confirmNewPassword;
+
+  /// Título para el diálogo de contraseña actualizada
+  ///
+  /// In es, this message translates to:
+  /// **'Contraseña Actualizada'**
+  String get passwordUpdatedTitle;
+
+  /// Contenido para el diálogo de contraseña actualizada
+  ///
+  /// In es, this message translates to:
+  /// **'Se han cerrado todas tus sesiones. Por favor, inicia sesión nuevamente.'**
+  String get passwordUpdatedContent;
+
+  /// Mensaje de error cuando falla el cambio de contraseña
+  ///
+  /// In es, this message translates to:
+  /// **'Error al cambiar contraseña'**
+  String get passwordChangeError;
+
+  /// Mensaje de error cuando la contraseña actual es incorrecta
+  ///
+  /// In es, this message translates to:
+  /// **'La contraseña actual es incorrecta'**
+  String get passwordIncorrect;
+
+  /// Etiqueta del botón Aceptar
+  ///
+  /// In es, this message translates to:
+  /// **'Aceptar'**
+  String get ok;
+
+  /// Etiqueta del botón para cerrar sesión en todos
+  ///
+  /// In es, this message translates to:
+  /// **'Cerrar en Todos'**
+  String get logoutAllButton;
+
+  /// Título de la sección de requisitos de contraseña
+  ///
+  /// In es, this message translates to:
+  /// **'Requisitos de la contraseña:'**
+  String get passwordRequirementsTitle;
+
+  /// Requisito de contraseña: longitud mínima
+  ///
+  /// In es, this message translates to:
+  /// **'• Mínimo 12 caracteres'**
+  String get passwordRequirementMinLength;
+
+  /// Requisito de contraseña: letra mayúscula
+  ///
+  /// In es, this message translates to:
+  /// **'• Al menos una letra mayúscula'**
+  String get passwordRequirementUppercase;
+
+  /// Requisito de contraseña: letra minúscula
+  ///
+  /// In es, this message translates to:
+  /// **'• Al menos una letra minúscula'**
+  String get passwordRequirementLowercase;
+
+  /// Requisito de contraseña: número
+  ///
+  /// In es, this message translates to:
+  /// **'• Al menos un número'**
+  String get passwordRequirementNumber;
+
+  /// Etiqueta del nivel de usuario
+  ///
+  /// In es, this message translates to:
+  /// **'Nivel {levelNumber}'**
+  String level(int levelNumber);
 }
 
 class _AppLocalizationsDelegate

@@ -402,4 +402,163 @@ class AppLocalizationsEn extends AppLocalizations {
   String validatorLastnameMaxLength(int maxLength) {
     return 'Lastname cannot exceed $maxLength characters';
   }
+
+  @override
+  String get profileTitle => 'Profile';
+
+  @override
+  String get accountTitle => 'Account';
+
+  @override
+  String get sessionTitle => 'Session';
+
+  @override
+  String get editProfile => 'Edit Profile';
+
+  @override
+  String get editProfileSubtitle => 'Update your personal information';
+
+  @override
+  String get changeAvatar => 'Change Avatar';
+
+  @override
+  String get changeAvatarSubtitle => 'Update your profile picture';
+
+  @override
+  String get changePassword => 'Change Password';
+
+  @override
+  String get changePasswordSubtitle => 'Update your password';
+
+  @override
+  String get logout => 'Logout';
+
+  @override
+  String get logoutSubtitle => 'Close session on this device';
+
+  @override
+  String get logoutAllDevices => 'Logout All Devices';
+
+  @override
+  String get logoutAllDevicesSubtitle => 'Close all sessions everywhere';
+
+  @override
+  String get logoutDialogTitle => 'Logout';
+
+  @override
+  String get logoutDialogContent => 'Do you want to logout from this device?';
+
+  @override
+  String get logoutAllDialogTitle => 'Logout All Sessions';
+
+  @override
+  String get logoutAllDialogContent =>
+      'Do you want to logout from all your devices? You will need to login again on all of them.';
+
+  @override
+  String get confirm => 'Confirm';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get profileLoadError => 'Could not load profile';
+
+  @override
+  String get profileLoadErrorTitle => 'Error loading profile';
+
+  @override
+  String logoutError(String error) {
+    return 'Error logging out: $error';
+  }
+
+  @override
+  String logoutAllError(String error) {
+    return 'Error logging out from all sessions: $error';
+  }
+
+  @override
+  String get bio => 'Bio';
+
+  @override
+  String get bioHint => 'Tell us about yourself...';
+
+  @override
+  String get saveChanges => 'Save Changes';
+
+  @override
+  String get profileUpdatedSuccess => 'Profile updated successfully';
+
+  @override
+  String profileUpdateError(String error) {
+    return 'Error updating profile: $error';
+  }
+
+  @override
+  String get avatarUrl => 'Avatar URL';
+
+  @override
+  String get avatarUrlHint => 'https://example.com/avatar.jpg';
+
+  @override
+  String get avatarUrlHelp => 'Enter the URL of your new profile image';
+
+  @override
+  String get updateAvatar => 'Update Avatar';
+
+  @override
+  String get avatarUpdatedSuccess => 'Avatar updated successfully';
+
+  @override
+  String avatarUpdateError(String error) {
+    return 'Error updating avatar: $error';
+  }
+
+  @override
+  String get oldPassword => 'Current Password';
+
+  @override
+  String get newPassword => 'New Password';
+
+  @override
+  String get confirmNewPassword => 'Confirm New Password';
+
+  @override
+  String get passwordUpdatedTitle => 'Password Updated';
+
+  @override
+  String get passwordUpdatedContent =>
+      'All your sessions have been closed. Please login again.';
+
+  @override
+  String get passwordChangeError => 'Error changing password';
+
+  @override
+  String get passwordIncorrect => 'The current password is incorrect';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get logoutAllButton => 'Logout All';
+
+  @override
+  String get passwordRequirementsTitle => 'Password requirements:';
+
+  @override
+  String get passwordRequirementMinLength => '• Minimum 12 characters';
+
+  @override
+  String get passwordRequirementUppercase => '• At least one uppercase letter';
+
+  @override
+  String get passwordRequirementLowercase => '• At least one lowercase letter';
+
+  @override
+  String get passwordRequirementNumber => '• At least one number';
+
+  @override
+  String level(int levelNumber) {
+    return 'Level $levelNumber';
+  }
 }

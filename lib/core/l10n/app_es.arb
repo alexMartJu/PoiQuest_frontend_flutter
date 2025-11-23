@@ -610,5 +610,256 @@
   "@validatorLastnameMaxLength": {
     "description": "Mensaje de error cuando los apellidos superan la longitud máxima",
     "placeholders": { "maxLength": { "type": "int" } }
+  },
+
+  "profileTitle": "Perfil",
+  "@profileTitle": {
+    "description": "Título para la página de perfil"
+  },
+
+  "accountTitle": "Cuenta",
+  "@accountTitle": {
+    "description": "Título para la sección de cuenta"
+  },
+
+  "sessionTitle": "Sesión",
+  "@sessionTitle": {
+    "description": "Título para la sección de sesión"
+  },
+
+  "editProfile": "Editar Perfil",
+  "@editProfile": {
+    "description": "Botón para editar perfil"
+  },
+
+  "editProfileSubtitle": "Actualiza tu información personal",
+  "@editProfileSubtitle": {
+    "description": "Subtítulo para la opción de editar perfil"
+  },
+
+  "changeAvatar": "Cambiar Avatar",
+  "@changeAvatar": {
+    "description": "Botón para cambiar avatar"
+  },
+
+  "changeAvatarSubtitle": "Actualiza tu foto de perfil",
+  "@changeAvatarSubtitle": {
+    "description": "Subtítulo para la opción de cambiar avatar"
+  },
+
+  "changePassword": "Cambiar Contraseña",
+  "@changePassword": {
+    "description": "Botón para cambiar contraseña"
+  },
+
+  "changePasswordSubtitle": "Actualiza tu contraseña",
+  "@changePasswordSubtitle": {
+    "description": "Subtítulo para la opción de cambiar contraseña"
+  },
+
+  "logout": "Cerrar Sesión",
+  "@logout": {
+    "description": "Botón para cerrar sesión en el dispositivo actual"
+  },
+
+  "logoutSubtitle": "Cierra sesión en este dispositivo",
+  "@logoutSubtitle": {
+    "description": "Subtítulo para la opción de cerrar sesión"
+  },
+
+  "logoutAllDevices": "Cerrar Sesión en Todos",
+  "@logoutAllDevices": {
+    "description": "Botón para cerrar sesión en todos los dispositivos"
+  },
+
+  "logoutAllDevicesSubtitle": "Cierra todas las sesiones en todos lados",
+  "@logoutAllDevicesSubtitle": {
+    "description": "Subtítulo para la opción de cerrar sesión en todos"
+  },
+
+  "logoutDialogTitle": "Cerrar Sesión",
+  "@logoutDialogTitle": {
+    "description": "Título para el diálogo de confirmación de cerrar sesión"
+  },
+
+  "logoutDialogContent": "¿Deseas cerrar sesión en este dispositivo?",
+  "@logoutDialogContent": {
+    "description": "Contenido para el diálogo de confirmación de cerrar sesión"
+  },
+
+  "logoutAllDialogTitle": "Cerrar Todas las Sesiones",
+  "@logoutAllDialogTitle": {
+    "description": "Título para el diálogo de confirmación de cerrar todas las sesiones"
+  },
+
+  "logoutAllDialogContent": "¿Deseas cerrar sesión en todos tus dispositivos? Tendrás que iniciar sesión nuevamente en todos ellos.",
+  "@logoutAllDialogContent": {
+    "description": "Contenido para el diálogo de confirmación de cerrar todas las sesiones"
+  },
+
+  "confirm": "Confirmar",
+  "@confirm": {
+    "description": "Etiqueta del botón confirmar"
+  },
+
+  "cancel": "Cancelar",
+  "@cancel": {
+    "description": "Etiqueta del botón cancelar"
+  },
+
+  "profileLoadError": "No se pudo cargar el perfil",
+  "@profileLoadError": {
+    "description": "Mensaje de error cuando no se puede cargar el perfil"
+  },
+
+  "profileLoadErrorTitle": "Error al cargar el perfil",
+  "@profileLoadErrorTitle": {
+    "description": "Título para error al cargar perfil"
+  },
+
+  "logoutError": "Error al cerrar sesión: {error}",
+  "@logoutError": {
+    "description": "Mensaje de error cuando falla cerrar sesión",
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "logoutAllError": "Error al cerrar sesiones: {error}",
+  "@logoutAllError": {
+    "description": "Mensaje de error cuando falla cerrar todas las sesiones",
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "bio": "Biografía",
+  "@bio": {
+    "description": "Etiqueta para el campo biografía"
+  },
+
+  "bioHint": "Cuéntanos sobre ti...",
+  "@bioHint": {
+    "description": "Pista para el campo biografía"
+  },
+
+  "saveChanges": "Guardar Cambios",
+  "@saveChanges": {
+    "description": "Botón para guardar cambios"
+  },
+
+  "profileUpdatedSuccess": "Perfil actualizado con éxito",
+  "@profileUpdatedSuccess": {
+    "description": "Mensaje de éxito cuando se actualiza el perfil"
+  },
+
+  "profileUpdateError": "Error al actualizar perfil: {error}",
+  "@profileUpdateError": {
+    "description": "Mensaje de error cuando falla la actualización del perfil",
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "avatarUrl": "URL del Avatar",
+  "@avatarUrl": {
+    "description": "Etiqueta para el campo URL del avatar"
+  },
+
+  "avatarUrlHint": "https://ejemplo.com/avatar.jpg",
+  "@avatarUrlHint": {
+    "description": "Pista para el campo URL del avatar"
+  },
+
+  "avatarUrlHelp": "Introduce la URL de tu nueva imagen de perfil",
+  "@avatarUrlHelp": {
+    "description": "Texto de ayuda para el campo URL del avatar"
+  },
+
+  "updateAvatar": "Actualizar Avatar",
+  "@updateAvatar": {
+    "description": "Botón para actualizar avatar"
+  },
+
+  "avatarUpdatedSuccess": "Avatar actualizado con éxito",
+  "@avatarUpdatedSuccess": {
+    "description": "Mensaje de éxito cuando se actualiza el avatar"
+  },
+
+  "avatarUpdateError": "Error al actualizar avatar: {error}",
+  "@avatarUpdateError": {
+    "description": "Mensaje de error cuando falla la actualización del avatar",
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "oldPassword": "Contraseña Actual",
+  "@oldPassword": {
+    "description": "Etiqueta para el campo contraseña actual"
+  },
+
+  "newPassword": "Nueva Contraseña",
+  "@newPassword": {
+    "description": "Etiqueta para el campo nueva contraseña"
+  },
+
+  "confirmNewPassword": "Confirmar Nueva Contraseña",
+  "@confirmNewPassword": {
+    "description": "Etiqueta para el campo confirmar nueva contraseña"
+  },
+
+  "passwordUpdatedTitle": "Contraseña Actualizada",
+  "@passwordUpdatedTitle": {
+    "description": "Título para el diálogo de contraseña actualizada"
+  },
+
+  "passwordUpdatedContent": "Se han cerrado todas tus sesiones. Por favor, inicia sesión nuevamente.",
+  "@passwordUpdatedContent": {
+    "description": "Contenido para el diálogo de contraseña actualizada"
+  },
+
+  "passwordChangeError": "Error al cambiar contraseña",
+  "@passwordChangeError": {
+    "description": "Mensaje de error cuando falla el cambio de contraseña"
+  },
+
+  "passwordIncorrect": "La contraseña actual es incorrecta",
+  "@passwordIncorrect": {
+    "description": "Mensaje de error cuando la contraseña actual es incorrecta"
+  },
+
+  "ok": "Aceptar",
+  "@ok": {
+    "description": "Etiqueta del botón Aceptar"
+  },
+
+  "logoutAllButton": "Cerrar en Todos",
+  "@logoutAllButton": {
+    "description": "Etiqueta del botón para cerrar sesión en todos"
+  },
+
+  "passwordRequirementsTitle": "Requisitos de la contraseña:",
+  "@passwordRequirementsTitle": {
+    "description": "Título de la sección de requisitos de contraseña"
+  },
+
+  "passwordRequirementMinLength": "• Mínimo 12 caracteres",
+  "@passwordRequirementMinLength": {
+    "description": "Requisito de contraseña: longitud mínima"
+  },
+
+  "passwordRequirementUppercase": "• Al menos una letra mayúscula",
+  "@passwordRequirementUppercase": {
+    "description": "Requisito de contraseña: letra mayúscula"
+  },
+
+  "passwordRequirementLowercase": "• Al menos una letra minúscula",
+  "@passwordRequirementLowercase": {
+    "description": "Requisito de contraseña: letra minúscula"
+  },
+
+  "passwordRequirementNumber": "• Al menos un número",
+  "@passwordRequirementNumber": {
+    "description": "Requisito de contraseña: número"
+  },
+
+  "level": "Nivel {levelNumber}",
+  "@level": {
+    "description": "Etiqueta del nivel de usuario",
+    "placeholders": { "levelNumber": { "type": "int" } }
   }
+
 }

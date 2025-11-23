@@ -610,6 +610,256 @@
   "@validatorLastnameMaxLength": {
     "description": "Error message when lastname exceeds maximum length",
     "placeholders": { "maxLength": { "type": "int" } }
+  },
+
+  "profileTitle": "Profile",
+  "@profileTitle": {
+    "description": "Title for profile page"
+  },
+
+  "accountTitle": "Account",
+  "@accountTitle": {
+    "description": "Title for account section"
+  },
+
+  "sessionTitle": "Session",
+  "@sessionTitle": {
+    "description": "Title for session section"
+  },
+
+  "editProfile": "Edit Profile",
+  "@editProfile": {
+    "description": "Button to edit profile"
+  },
+
+  "editProfileSubtitle": "Update your personal information",
+  "@editProfileSubtitle": {
+    "description": "Subtitle for edit profile option"
+  },
+
+  "changeAvatar": "Change Avatar",
+  "@changeAvatar": {
+    "description": "Button to change avatar"
+  },
+
+  "changeAvatarSubtitle": "Update your profile picture",
+  "@changeAvatarSubtitle": {
+    "description": "Subtitle for change avatar option"
+  },
+
+  "changePassword": "Change Password",
+  "@changePassword": {
+    "description": "Button to change password"
+  },
+
+  "changePasswordSubtitle": "Update your password",
+  "@changePasswordSubtitle": {
+    "description": "Subtitle for change password option"
+  },
+
+  "logout": "Logout",
+  "@logout": {
+    "description": "Button to logout from current device"
+  },
+
+  "logoutSubtitle": "Close session on this device",
+  "@logoutSubtitle": {
+    "description": "Subtitle for logout option"
+  },
+
+  "logoutAllDevices": "Logout All Devices",
+  "@logoutAllDevices": {
+    "description": "Button to logout from all devices"
+  },
+
+  "logoutAllDevicesSubtitle": "Close all sessions everywhere",
+  "@logoutAllDevicesSubtitle": {
+    "description": "Subtitle for logout all devices option"
+  },
+
+  "logoutDialogTitle": "Logout",
+  "@logoutDialogTitle": {
+    "description": "Title for logout confirmation dialog"
+  },
+
+  "logoutDialogContent": "Do you want to logout from this device?",
+  "@logoutDialogContent": {
+    "description": "Content for logout confirmation dialog"
+  },
+
+  "logoutAllDialogTitle": "Logout All Sessions",
+  "@logoutAllDialogTitle": {
+    "description": "Title for logout all confirmation dialog"
+  },
+
+  "logoutAllDialogContent": "Do you want to logout from all your devices? You will need to login again on all of them.",
+  "@logoutAllDialogContent": {
+    "description": "Content for logout all confirmation dialog"
+  },
+
+  "confirm": "Confirm",
+  "@confirm": {
+    "description": "Confirm button label"
+  },
+
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button label"
+  },
+
+  "profileLoadError": "Could not load profile",
+  "@profileLoadError": {
+    "description": "Error message when profile cannot be loaded"
+  },
+
+  "profileLoadErrorTitle": "Error loading profile",
+  "@profileLoadErrorTitle": {
+    "description": "Title for profile load error"
+  },
+
+  "logoutError": "Error logging out: {error}",
+  "@logoutError": {
+    "description": "Error message when logout fails",
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "logoutAllError": "Error logging out from all sessions: {error}",
+  "@logoutAllError": {
+    "description": "Error message when logout all fails",
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "bio": "Bio",
+  "@bio": {
+    "description": "Label for bio field"
+  },
+
+  "bioHint": "Tell us about yourself...",
+  "@bioHint": {
+    "description": "Hint for bio field"
+  },
+
+  "saveChanges": "Save Changes",
+  "@saveChanges": {
+    "description": "Button to save changes"
+  },
+
+  "profileUpdatedSuccess": "Profile updated successfully",
+  "@profileUpdatedSuccess": {
+    "description": "Success message when profile is updated"
+  },
+
+  "profileUpdateError": "Error updating profile: {error}",
+  "@profileUpdateError": {
+    "description": "Error message when profile update fails",
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "avatarUrl": "Avatar URL",
+  "@avatarUrl": {
+    "description": "Label for avatar URL field"
+  },
+
+  "avatarUrlHint": "https://example.com/avatar.jpg",
+  "@avatarUrlHint": {
+    "description": "Hint for avatar URL field"
+  },
+
+  "avatarUrlHelp": "Enter the URL of your new profile image",
+  "@avatarUrlHelp": {
+    "description": "Help text for avatar URL field"
+  },
+
+  "updateAvatar": "Update Avatar",
+  "@updateAvatar": {
+    "description": "Button to update avatar"
+  },
+
+  "avatarUpdatedSuccess": "Avatar updated successfully",
+  "@avatarUpdatedSuccess": {
+    "description": "Success message when avatar is updated"
+  },
+
+  "avatarUpdateError": "Error updating avatar: {error}",
+  "@avatarUpdateError": {
+    "description": "Error message when avatar update fails",
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "oldPassword": "Current Password",
+  "@oldPassword": {
+    "description": "Label for current password field"
+  },
+
+  "newPassword": "New Password",
+  "@newPassword": {
+    "description": "Label for new password field"
+  },
+
+  "confirmNewPassword": "Confirm New Password",
+  "@confirmNewPassword": {
+    "description": "Label for confirm new password field"
+  },
+
+  "passwordUpdatedTitle": "Password Updated",
+  "@passwordUpdatedTitle": {
+    "description": "Title for password updated dialog"
+  },
+
+  "passwordUpdatedContent": "All your sessions have been closed. Please login again.",
+  "@passwordUpdatedContent": {
+    "description": "Content for password updated dialog"
+  },
+
+  "passwordChangeError": "Error changing password",
+  "@passwordChangeError": {
+    "description": "Error message when password change fails"
+  },
+
+  "passwordIncorrect": "The current password is incorrect",
+  "@passwordIncorrect": {
+    "description": "Error message when current password is wrong"
+  },
+
+  "ok": "OK",
+  "@ok": {
+    "description": "OK button label"
+  },
+
+  "logoutAllButton": "Logout All",
+  "@logoutAllButton": {
+    "description": "Button label for logout all action"
+  },
+
+  "passwordRequirementsTitle": "Password requirements:",
+  "@passwordRequirementsTitle": {
+    "description": "Title for password requirements section"
+  },
+
+  "passwordRequirementMinLength": "• Minimum 12 characters",
+  "@passwordRequirementMinLength": {
+    "description": "Password requirement: minimum length"
+  },
+
+  "passwordRequirementUppercase": "• At least one uppercase letter",
+  "@passwordRequirementUppercase": {
+    "description": "Password requirement: uppercase letter"
+  },
+
+  "passwordRequirementLowercase": "• At least one lowercase letter",
+  "@passwordRequirementLowercase": {
+    "description": "Password requirement: lowercase letter"
+  },
+
+  "passwordRequirementNumber": "• At least one number",
+  "@passwordRequirementNumber": {
+    "description": "Password requirement: number"
+  },
+
+  "level": "Level {levelNumber}",
+  "@level": {
+    "description": "User level label",
+    "placeholders": { "levelNumber": { "type": "int" } }
   }
 
 }

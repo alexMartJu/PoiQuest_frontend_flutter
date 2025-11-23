@@ -401,4 +401,165 @@ class AppLocalizationsEs extends AppLocalizations {
   String validatorLastnameMaxLength(int maxLength) {
     return 'Los apellidos no pueden superar $maxLength caracteres';
   }
+
+  @override
+  String get profileTitle => 'Perfil';
+
+  @override
+  String get accountTitle => 'Cuenta';
+
+  @override
+  String get sessionTitle => 'Sesión';
+
+  @override
+  String get editProfile => 'Editar Perfil';
+
+  @override
+  String get editProfileSubtitle => 'Actualiza tu información personal';
+
+  @override
+  String get changeAvatar => 'Cambiar Avatar';
+
+  @override
+  String get changeAvatarSubtitle => 'Actualiza tu foto de perfil';
+
+  @override
+  String get changePassword => 'Cambiar Contraseña';
+
+  @override
+  String get changePasswordSubtitle => 'Actualiza tu contraseña';
+
+  @override
+  String get logout => 'Cerrar Sesión';
+
+  @override
+  String get logoutSubtitle => 'Cierra sesión en este dispositivo';
+
+  @override
+  String get logoutAllDevices => 'Cerrar Sesión en Todos';
+
+  @override
+  String get logoutAllDevicesSubtitle =>
+      'Cierra todas las sesiones en todos lados';
+
+  @override
+  String get logoutDialogTitle => 'Cerrar Sesión';
+
+  @override
+  String get logoutDialogContent =>
+      '¿Deseas cerrar sesión en este dispositivo?';
+
+  @override
+  String get logoutAllDialogTitle => 'Cerrar Todas las Sesiones';
+
+  @override
+  String get logoutAllDialogContent =>
+      '¿Deseas cerrar sesión en todos tus dispositivos? Tendrás que iniciar sesión nuevamente en todos ellos.';
+
+  @override
+  String get confirm => 'Confirmar';
+
+  @override
+  String get cancel => 'Cancelar';
+
+  @override
+  String get profileLoadError => 'No se pudo cargar el perfil';
+
+  @override
+  String get profileLoadErrorTitle => 'Error al cargar el perfil';
+
+  @override
+  String logoutError(String error) {
+    return 'Error al cerrar sesión: $error';
+  }
+
+  @override
+  String logoutAllError(String error) {
+    return 'Error al cerrar sesiones: $error';
+  }
+
+  @override
+  String get bio => 'Biografía';
+
+  @override
+  String get bioHint => 'Cuéntanos sobre ti...';
+
+  @override
+  String get saveChanges => 'Guardar Cambios';
+
+  @override
+  String get profileUpdatedSuccess => 'Perfil actualizado con éxito';
+
+  @override
+  String profileUpdateError(String error) {
+    return 'Error al actualizar perfil: $error';
+  }
+
+  @override
+  String get avatarUrl => 'URL del Avatar';
+
+  @override
+  String get avatarUrlHint => 'https://ejemplo.com/avatar.jpg';
+
+  @override
+  String get avatarUrlHelp => 'Introduce la URL de tu nueva imagen de perfil';
+
+  @override
+  String get updateAvatar => 'Actualizar Avatar';
+
+  @override
+  String get avatarUpdatedSuccess => 'Avatar actualizado con éxito';
+
+  @override
+  String avatarUpdateError(String error) {
+    return 'Error al actualizar avatar: $error';
+  }
+
+  @override
+  String get oldPassword => 'Contraseña Actual';
+
+  @override
+  String get newPassword => 'Nueva Contraseña';
+
+  @override
+  String get confirmNewPassword => 'Confirmar Nueva Contraseña';
+
+  @override
+  String get passwordUpdatedTitle => 'Contraseña Actualizada';
+
+  @override
+  String get passwordUpdatedContent =>
+      'Se han cerrado todas tus sesiones. Por favor, inicia sesión nuevamente.';
+
+  @override
+  String get passwordChangeError => 'Error al cambiar contraseña';
+
+  @override
+  String get passwordIncorrect => 'La contraseña actual es incorrecta';
+
+  @override
+  String get ok => 'Aceptar';
+
+  @override
+  String get logoutAllButton => 'Cerrar en Todos';
+
+  @override
+  String get passwordRequirementsTitle => 'Requisitos de la contraseña:';
+
+  @override
+  String get passwordRequirementMinLength => '• Mínimo 12 caracteres';
+
+  @override
+  String get passwordRequirementUppercase => '• Al menos una letra mayúscula';
+
+  @override
+  String get passwordRequirementLowercase => '• Al menos una letra minúscula';
+
+  @override
+  String get passwordRequirementNumber => '• Al menos un número';
+
+  @override
+  String level(int levelNumber) {
+    return 'Nivel $levelNumber';
+  }
 }
