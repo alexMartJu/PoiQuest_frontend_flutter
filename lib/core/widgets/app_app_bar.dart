@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:poiquest_frontend_flutter/core/l10n/app_localizations.dart';
 
 class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? onNotificationsTap;
   final VoidCallback? onSettingsTap;
+  final VoidCallback? onLogoutTap;
 
   const AppAppBar({
     super.key,
     this.onNotificationsTap,
     this.onSettingsTap,
+    this.onLogoutTap,
   });
 
   @override
@@ -16,6 +19,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final c = Theme.of(context).colorScheme;
+    final t = AppLocalizations.of(context)!;
 
     return AppBar(
       automaticallyImplyLeading: false,
@@ -56,12 +60,21 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
           IconButton(
             onPressed: onNotificationsTap,
             icon: Icon(Icons.notifications_none, color: c.primary),
+            tooltip: t.notifications,
           ),
 
           IconButton(
             onPressed: onSettingsTap,
             icon: Icon(Icons.settings_outlined, color: c.primary),
+            tooltip: t.preferences,
           ),
+
+          if (onLogoutTap != null)
+            IconButton(
+              onPressed: onLogoutTap,
+              icon: Icon(Icons.logout, color: c.primary),
+              tooltip: t.logout,
+            ),
 
           const SizedBox(width: 6),
         ],
