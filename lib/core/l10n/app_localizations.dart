@@ -134,6 +134,12 @@ abstract class AppLocalizations {
   /// **'Preferencias'**
   String get preferences;
 
+  /// Etiqueta para el menú Más / hoja inferior
+  ///
+  /// In es, this message translates to:
+  /// **'Más'**
+  String get more;
+
   /// Opción para activar el modo oscuro
   ///
   /// In es, this message translates to:

@@ -31,6 +31,12 @@
     "description": "Title for the app settings page"
   },
 
+  "more": "More",
+  "@more": {
+    "description": "Label for More menu / bottom sheet"
+  },
+
+
   "darkMode": "Dark mode",
   "@darkMode": {
     "description": "Option to enable dark mode"
@@ -201,6 +207,7 @@
   "@navProfile": { 
     "description": "Bottom navigation item: profile" 
   },
+ 
 
   "currentTab": "Current tab: {value}",
   "@currentTab": {

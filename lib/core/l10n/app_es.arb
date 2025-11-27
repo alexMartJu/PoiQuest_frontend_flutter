@@ -31,6 +31,10 @@
     "description": "Título para la página de configuración de la aplicación"
   },
 
+  "more": "Más",
+  "@more": {
+    "description": "Etiqueta para el menú Más / hoja inferior"
+  },
   "darkMode": "Modo oscuro",
   "@darkMode": {
     "description": "Opción para activar el modo oscuro"
@@ -201,6 +205,7 @@
   "@navProfile": { 
     "description": "Elemento de navegación inferior: perfil" 
   },
+ 
 
   "currentTab": "Pestaña actual: {value}",
   "@currentTab": {

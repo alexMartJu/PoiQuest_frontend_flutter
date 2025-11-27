@@ -27,6 +27,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get preferences => 'Preferencias';
 
   @override
+  String get more => 'Más';
+
+  @override
   String get darkMode => 'Modo oscuro';
 
   @override
