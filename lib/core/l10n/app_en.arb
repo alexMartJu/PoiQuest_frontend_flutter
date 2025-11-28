@@ -550,6 +550,12 @@
     "description": "Error message when email format is invalid"
   },
 
+  "validatorInvalid": "{fieldName} is invalid",
+  "@validatorInvalid": {
+    "description": "Generic invalid value message for a field",
+    "placeholders": { "fieldName": { "type": "String" } }
+  },
+
   "validatorEmailMaxLength": "Email cannot exceed {maxLength} characters",
   "@validatorEmailMaxLength": {
     "description": "Error message when email exceeds maximum length",
@@ -867,6 +873,127 @@
   "@level": {
     "description": "User level label",
     "placeholders": { "levelNumber": { "type": "int" } }
+  },
+
+  "createevent": "Create Event",
+  "@createevent": {
+    "description": "Button to create a new event"
+  },
+
+  "editevent": "Edit Event",
+  "@editevent": {
+    "description": "Title for editing an event"
+  },
+
+  "eventname": "Event Name",
+  "@eventname": {
+    "description": "Label for event name field"
+  },
+
+  "description": "Description",
+  "@description": {
+    "description": "Label for description field"
+  },
+
+  "category": "Category",
+  "@category": {
+    "description": "Label for category field"
+  },
+
+  "location": "Location",
+  "@location": {
+    "description": "Label for location field"
+  },
+
+  "startdate": "Start Date",
+  "@startdate": {
+    "description": "Label for start date field"
+  },
+
+  "enddate": "End Date",
+  "@enddate": {
+    "description": "Label for end date field"
+  },
+
+  "imageurl": "Image URL",
+  "@imageurl": {
+    "description": "Label for image URL field"
+  },
+
+  "pleaseselectacategory": "Please select a category",
+  "@pleaseselectacategory": {
+    "description": "Error message when no category selected"
+  },
+
+  "atleastoneimagerequired": "At least one image is required",
+  "@atleastoneimagerequired": {
+    "description": "Error message when no images provided"
+  },
+
+  "invalidurl": "Invalid URL",
+  "@invalidurl": {
+    "description": "Error message for invalid URL"
+  },
+
+  "fieldisrequired": "This field is required",
+  "@fieldisrequired": {
+    "description": "Error message for required empty field"
+  },
+
+  "eventcreatedsuccessfully": "Event created successfully",
+  "@eventcreatedsuccessfully": {
+    "description": "Success message for event creation"
+  },
+
+  "eventupdatedsuccessfully": "Event updated successfully",
+  "@eventupdatedsuccessfully": {
+    "description": "Success message for event update"
+  },
+
+  "eventdeletedsuccessfully": "Event deleted successfully",
+  "@eventdeletedsuccessfully": {
+    "description": "Success message for event deletion"
+  },
+
+  "create": "Create",
+  "@create": {
+    "description": "Create button"
+  },
+
+  "save": "Save",
+  "@save": {
+    "description": "Save button"
+  },
+
+  "deleteevent": "Delete Event",
+  "@deleteevent": {
+    "description": "Title for delete event confirmation"
+  },
+
+  "deleteeventconfirm": "Are you sure you want to delete this event? This action cannot be undone.",
+  "@deleteeventconfirm": {
+    "description": "Confirmation message for event deletion"
+  },
+
+  "delete": "Delete",
+  "@delete": {
+    "description": "Delete button"
+  },
+
+  "activeevents": "Active Events",
+  "@activeevents": {
+    "description": "Title for active events listing"
+  },
+
+  "manageevents": "Manage your events",
+  "@manageevents": {
+    "description": "Subtitle for event management"
+  }
+
+  ,
+  "adminCreateFirstEventHint": "Create your first event with the + button",
+  "@adminCreateFirstEventHint": {
+    "description": "Hint shown when admin has no events - instructs to use the FAB to create one"
   }
 
 }

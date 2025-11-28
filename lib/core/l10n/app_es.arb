@@ -548,6 +548,12 @@
     "description": "Mensaje de error cuando el formato del email es inválido"
   },
 
+  "validatorInvalid": "{fieldName} no es válido",
+  "@validatorInvalid": {
+    "description": "Mensaje genérico de valor inválido para un campo",
+    "placeholders": { "fieldName": { "type": "String" } }
+  },
+
   "validatorEmailMaxLength": "El email no puede superar {maxLength} caracteres",
   "@validatorEmailMaxLength": {
     "description": "Mensaje de error cuando el email supera la longitud máxima",
@@ -865,6 +871,127 @@
   "@level": {
     "description": "Etiqueta del nivel de usuario",
     "placeholders": { "levelNumber": { "type": "int" } }
+  },
+
+  "createevent": "Crear Evento",
+  "@createevent": {
+    "description": "Botón para crear un nuevo evento"
+  },
+
+  "editevent": "Editar Evento",
+  "@editevent": {
+    "description": "Título para editar evento"
+  },
+
+  "eventname": "Nombre del Evento",
+  "@eventname": {
+    "description": "Etiqueta para campo nombre del evento"
+  },
+
+  "description": "Descripción",
+  "@description": {
+    "description": "Etiqueta para campo descripción"
+  },
+
+  "category": "Categoría",
+  "@category": {
+    "description": "Etiqueta para campo categoría"
+  },
+
+  "location": "Ubicación",
+  "@location": {
+    "description": "Etiqueta para campo ubicación"
+  },
+
+  "startdate": "Fecha de Inicio",
+  "@startdate": {
+    "description": "Etiqueta para campo fecha de inicio"
+  },
+
+  "enddate": "Fecha de Fin",
+  "@enddate": {
+    "description": "Etiqueta para campo fecha de fin"
+  },
+
+  "imageurl": "URL de Imagen",
+  "@imageurl": {
+    "description": "Etiqueta para campo URL de imagen"
+  },
+
+  "pleaseselectacategory": "Por favor selecciona una categoría",
+  "@pleaseselectacategory": {
+    "description": "Mensaje de error cuando no se selecciona categoría"
+  },
+
+  "atleastoneimagerequired": "Se requiere al menos una imagen",
+  "@atleastoneimagerequired": {
+    "description": "Mensaje de error cuando no hay imágenes"
+  },
+
+  "invalidurl": "URL inválida",
+  "@invalidurl": {
+    "description": "Mensaje de error para URL inválida"
+  },
+
+  "fieldisrequired": "Este campo es obligatorio",
+  "@fieldisrequired": {
+    "description": "Mensaje de error para campo obligatorio vacío"
+  },
+
+  "eventcreatedsuccessfully": "Evento creado exitosamente",
+  "@eventcreatedsuccessfully": {
+    "description": "Mensaje de éxito al crear evento"
+  },
+
+  "eventupdatedsuccessfully": "Evento actualizado exitosamente",
+  "@eventupdatedsuccessfully": {
+    "description": "Mensaje de éxito al actualizar evento"
+  },
+
+  "eventdeletedsuccessfully": "Evento eliminado exitosamente",
+  "@eventdeletedsuccessfully": {
+    "description": "Mensaje de éxito al eliminar evento"
+  },
+
+  "create": "Crear",
+  "@create": {
+    "description": "Botón crear"
+  },
+
+  "save": "Guardar",
+  "@save": {
+    "description": "Botón guardar"
+  },
+
+  "deleteevent": "Eliminar Evento",
+  "@deleteevent": {
+    "description": "Título para confirmar eliminación de evento"
+  },
+
+  "deleteeventconfirm": "¿Estás seguro de que deseas eliminar este evento? Esta acción no se puede deshacer.",
+  "@deleteeventconfirm": {
+    "description": "Mensaje de confirmación para eliminar evento"
+  },
+
+  "delete": "Eliminar",
+  "@delete": {
+    "description": "Botón eliminar"
+  },
+
+  "activeevents": "Eventos Activos",
+  "@activeevents": {
+    "description": "Título para listado de eventos activos"
+  },
+
+  "manageevents": "Gestiona tus eventos",
+  "@manageevents": {
+    "description": "Subtítulo para gestión de eventos"
+  }
+
+  ,
+  "adminCreateFirstEventHint": "Crea tu primer evento con el botón +",
+  "@adminCreateFirstEventHint": {
+    "description": "Pista mostrada cuando el admin no tiene eventos - indica usar el FAB para crear uno"
   }
 
 }

@@ -358,6 +358,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get validatorEmailInvalid => 'Enter a valid email';
 
   @override
+  String validatorInvalid(String fieldName) {
+    return '$fieldName is invalid';
+  }
+
+  @override
   String validatorEmailMaxLength(int maxLength) {
     return 'Email cannot exceed $maxLength characters';
   }
@@ -564,4 +569,78 @@ class AppLocalizationsEn extends AppLocalizations {
   String level(int levelNumber) {
     return 'Level $levelNumber';
   }
+
+  @override
+  String get createevent => 'Create Event';
+
+  @override
+  String get editevent => 'Edit Event';
+
+  @override
+  String get eventname => 'Event Name';
+
+  @override
+  String get description => 'Description';
+
+  @override
+  String get category => 'Category';
+
+  @override
+  String get location => 'Location';
+
+  @override
+  String get startdate => 'Start Date';
+
+  @override
+  String get enddate => 'End Date';
+
+  @override
+  String get imageurl => 'Image URL';
+
+  @override
+  String get pleaseselectacategory => 'Please select a category';
+
+  @override
+  String get atleastoneimagerequired => 'At least one image is required';
+
+  @override
+  String get invalidurl => 'Invalid URL';
+
+  @override
+  String get fieldisrequired => 'This field is required';
+
+  @override
+  String get eventcreatedsuccessfully => 'Event created successfully';
+
+  @override
+  String get eventupdatedsuccessfully => 'Event updated successfully';
+
+  @override
+  String get eventdeletedsuccessfully => 'Event deleted successfully';
+
+  @override
+  String get create => 'Create';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get deleteevent => 'Delete Event';
+
+  @override
+  String get deleteeventconfirm =>
+      'Are you sure you want to delete this event? This action cannot be undone.';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get activeevents => 'Active Events';
+
+  @override
+  String get manageevents => 'Manage your events';
+
+  @override
+  String get adminCreateFirstEventHint =>
+      'Create your first event with the + button';
 }

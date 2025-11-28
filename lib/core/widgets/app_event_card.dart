@@ -13,6 +13,8 @@ class AppEventCard extends StatelessWidget {
   final String? endDate;
   final String location;
   final VoidCallback? onTap;
+  /// Widget opcional mostrado encima del contenido (p. ej., botones de acción).
+  final Widget? overlay;
 
   const AppEventCard({
     super.key,
@@ -22,6 +24,7 @@ class AppEventCard extends StatelessWidget {
     this.endDate,
     required this.location,
     this.onTap,
+    this.overlay,
   });
 
   @override
@@ -48,41 +51,52 @@ class AppEventCard extends StatelessWidget {
           onTap: onTap,
           height: cardHeight,
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Stack(
+            clipBehavior: Clip.hardEdge,
             children: [
-              // Título - permitir que reduzca si es necesario
-              Flexible(
-                child: Text(
-                  title,
-                  style: theme.textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: colorScheme.onSurface,
-                    height: 1.3,
-                  ),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-
-              // Info filas en bloque para mantener separación consistente
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _buildInfoRow(
-                    context,
-                    Icons.calendar_today_rounded,
-                    _buildDateRange(),
+                  // Título - permitir que reduzca si es necesario
+                  Flexible(
+                    child: Text(
+                      title,
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: colorScheme.onSurface,
+                        height: 1.3,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
-                  const SizedBox(height: 3),
-                  _buildInfoRow(
-                    context,
-                    Icons.location_on_rounded,
-                    location,
+
+                  // Info filas en bloque para mantener separación consistente
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _buildInfoRow(
+                        context,
+                        Icons.calendar_today_rounded,
+                        _buildDateRange(),
+                      ),
+                      const SizedBox(height: 3),
+                      _buildInfoRow(
+                        context,
+                        Icons.location_on_rounded,
+                        location,
+                      ),
+                    ],
                   ),
                 ],
               ),
+              if (overlay != null)
+                Positioned(
+                  bottom: 0,
+                  right: 0,
+                  child: overlay!,
+                ),
             ],
           ),
         );

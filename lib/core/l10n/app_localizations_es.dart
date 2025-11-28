@@ -356,6 +356,11 @@ class AppLocalizationsEs extends AppLocalizations {
   String get validatorEmailInvalid => 'Ingresa un email válido';
 
   @override
+  String validatorInvalid(String fieldName) {
+    return '$fieldName no es válido';
+  }
+
+  @override
   String validatorEmailMaxLength(int maxLength) {
     return 'El email no puede superar $maxLength caracteres';
   }
@@ -565,4 +570,78 @@ class AppLocalizationsEs extends AppLocalizations {
   String level(int levelNumber) {
     return 'Nivel $levelNumber';
   }
+
+  @override
+  String get createevent => 'Crear Evento';
+
+  @override
+  String get editevent => 'Editar Evento';
+
+  @override
+  String get eventname => 'Nombre del Evento';
+
+  @override
+  String get description => 'Descripción';
+
+  @override
+  String get category => 'Categoría';
+
+  @override
+  String get location => 'Ubicación';
+
+  @override
+  String get startdate => 'Fecha de Inicio';
+
+  @override
+  String get enddate => 'Fecha de Fin';
+
+  @override
+  String get imageurl => 'URL de Imagen';
+
+  @override
+  String get pleaseselectacategory => 'Por favor selecciona una categoría';
+
+  @override
+  String get atleastoneimagerequired => 'Se requiere al menos una imagen';
+
+  @override
+  String get invalidurl => 'URL inválida';
+
+  @override
+  String get fieldisrequired => 'Este campo es obligatorio';
+
+  @override
+  String get eventcreatedsuccessfully => 'Evento creado exitosamente';
+
+  @override
+  String get eventupdatedsuccessfully => 'Evento actualizado exitosamente';
+
+  @override
+  String get eventdeletedsuccessfully => 'Evento eliminado exitosamente';
+
+  @override
+  String get create => 'Crear';
+
+  @override
+  String get save => 'Guardar';
+
+  @override
+  String get deleteevent => 'Eliminar Evento';
+
+  @override
+  String get deleteeventconfirm =>
+      '¿Estás seguro de que deseas eliminar este evento? Esta acción no se puede deshacer.';
+
+  @override
+  String get delete => 'Eliminar';
+
+  @override
+  String get activeevents => 'Eventos Activos';
+
+  @override
+  String get manageevents => 'Gestiona tus eventos';
+
+  @override
+  String get adminCreateFirstEventHint =>
+      'Crea tu primer evento con el botón +';
 }

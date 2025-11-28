@@ -268,4 +268,16 @@ extension AppColorTokens on ColorScheme {
 
   Color get titles =>
       brightness == Brightness.dark ? appPaletteDark.primary : appPaletteLight.primary;
+
+  /// Token de fondo proveniente de la paleta de la app.
+  ///
+  /// Evitamos usar el miembro obsoleto `ColorScheme.background` y en su lugar
+  /// exponemos el fondo de la paleta mediante este getter personalizado para
+  /// que el resto del código pueda leer `theme.colorScheme.appBackground`.
+  Color get appBackground =>
+      brightness == Brightness.dark ? appPaletteDark.background : appPaletteLight.background;
+
+  /// Color de primer plano que contrasta con `appBackground`.
+  Color get onAppBackground =>
+      brightness == Brightness.dark ? appPaletteDark.textPrimary : appPaletteLight.textPrimary;
 }

@@ -8,6 +8,11 @@ const String eventCategoriesEndpoint = '/event-categories';
 String eventsByCategoryEndpoint(String categoryUuid) => '/events/category/$categoryUuid';
 const String eventsEndpoint = '/events';
 
+/// Endpoints de admin para eventos
+String adminEventDetailEndpoint(String uuid) => '/events/$uuid';
+String adminEventUpdateEndpoint(String uuid) => '/events/$uuid';
+String adminEventDeleteEndpoint(String uuid) => '/events/$uuid';
+
 /// Endpoints de autenticación
 const String loginEndpoint = '/auth/login';
 const String registerStandardUserEndpoint = '/auth/register-standard-user';

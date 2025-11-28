@@ -117,7 +117,26 @@ class Validators {
 
       final uri = Uri.tryParse(value);
       if (uri == null || !uri.hasAbsolutePath) {
-        return t.validatorEmailInvalid;
+        return t.validatorInvalid('URL');
+      }
+
+      if (value.length > maxLength) {
+        return t.validatorMaxLength('URL', maxLength);
+      }
+
+      return null;
+    };
+  }
+
+  /// Valida una URL opcional: acepta vacío, pero si no está vacío valida formato y longitud.
+  static String? Function(String?) urlOptional(BuildContext context, {int maxLength = 255}) {
+    return (String? value) {
+      final t = AppLocalizations.of(context)!;
+      if (value == null || value.trim().isEmpty) return null;
+
+      final uri = Uri.tryParse(value);
+      if (uri == null || !uri.hasAbsolutePath) {
+        return t.validatorInvalid('URL');
       }
 
       if (value.length > maxLength) {
