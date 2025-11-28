@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:poiquest_frontend_flutter/features/auth/data/datasources/auth_local_data_source.dart';
 import 'package:poiquest_frontend_flutter/features/auth/data/datasources/auth_remote_data_source.dart';
 import 'package:poiquest_frontend_flutter/features/auth/data/models/login_request.dart';
@@ -41,6 +42,10 @@ class AuthRepositoryImpl implements AuthRepository {
         refreshToken: response.refreshToken ?? '',
       );
     } catch (e) {
+      // Si la excepción original es DioException, relanzarla para que la UI
+      // pueda inspeccionar el `response?.statusCode` y mostrar mensajes
+      // adecuados (por ejemplo 401 -> credenciales inválidas).
+      if (e is DioException) rethrow;
       throw Exception('Error al iniciar sesión: $e');
     }
   }

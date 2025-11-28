@@ -306,6 +306,9 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
+  String get userRegistered => 'Usuario registrado correctamente';
+
+  @override
   String get featureInDevelopment => 'Funcionalidad en desarrollo';
 
   @override
@@ -644,4 +647,7 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get adminCreateFirstEventHint =>
       'Crea tu primer evento con el botón +';
+
+  @override
+  String get invalidCredentials => 'Email o contraseña incorrectos';
 }

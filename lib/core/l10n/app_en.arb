@@ -468,6 +468,10 @@
     "description": "Error message when registration fails",
     "placeholders": { "error": { "type": "String" } }
   },
+  "userRegistered": "User registered successfully",
+  "@userRegistered": {
+    "description": "Message shown after successful registration"
+  },
 
   "featureInDevelopment": "Feature in development",
   "@featureInDevelopment": {
@@ -994,6 +998,12 @@
   "adminCreateFirstEventHint": "Create your first event with the + button",
   "@adminCreateFirstEventHint": {
     "description": "Hint shown when admin has no events - instructs to use the FAB to create one"
+  }
+
+  ,
+  "invalidCredentials": "Email or password incorrect",
+  "@invalidCredentials": {
+    "description": "Message when credentials are invalid during sign in"
   }
 
 }

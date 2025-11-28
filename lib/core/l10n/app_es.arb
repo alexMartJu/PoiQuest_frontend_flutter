@@ -466,6 +466,10 @@
     "description": "Mensaje de error al registrar",
     "placeholders": { "error": { "type": "String" } }
   },
+  "userRegistered": "Usuario registrado correctamente",
+  "@userRegistered": {
+    "description": "Mensaje mostrado tras registro exitoso"
+  },
 
   "featureInDevelopment": "Funcionalidad en desarrollo",
   "@featureInDevelopment": {
@@ -986,10 +990,15 @@
   "manageevents": "Gestiona tus eventos",
   "@manageevents": {
     "description": "Subtítulo para gestión de eventos"
-  }
+  },
 
-  ,
   "adminCreateFirstEventHint": "Crea tu primer evento con el botón +",
+
+  "invalidCredentials": "Email o contraseña incorrectos",
+  "@invalidCredentials": {
+    "description": "Mensaje cuando las credenciales son inválidas al iniciar sesión"
+  },
+  
   "@adminCreateFirstEventHint": {
     "description": "Pista mostrada cuando el admin no tiene eventos - indica usar el FAB para crear uno"
   }

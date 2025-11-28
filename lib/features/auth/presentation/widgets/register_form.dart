@@ -45,7 +45,11 @@ class _RegisterFormState extends ConsumerState<RegisterForm> {
             email: _emailCtrl.text.trim(),
             password: _passwordCtrl.text,
           );
-      if (mounted) context.go('/events');
+      if (mounted) {
+        final t = AppLocalizations.of(context)!;
+        AppSnackBar.success(context, t.userRegistered);
+        context.go('/events');
+      }
     } catch (e) {
       if (mounted) {
         final t = AppLocalizations.of(context)!;
@@ -107,7 +111,8 @@ class _RegisterFormState extends ConsumerState<RegisterForm> {
               variant: AppTextFieldVariant.password,
               labelText: t.confirmPassword,
               prefixIcon: Icons.lock_outline,
-              validator: Validators.confirmPassword(context, _passwordCtrl.text),
+              // Evaluar la contraseña original al ejecutar el validador
+              validator: (value) => Validators.confirmPassword(context, _passwordCtrl.text)(value),
             ),
             const SizedBox(height: 20),
             AppFilledButton(

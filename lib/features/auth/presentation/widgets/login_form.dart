@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:dio/dio.dart';
 import 'package:poiquest_frontend_flutter/core/widgets/app_text_field.dart';
 import 'package:poiquest_frontend_flutter/core/widgets/app_filled_button.dart';
 import 'package:poiquest_frontend_flutter/core/widgets/app_snackbar.dart';
@@ -48,7 +49,29 @@ class _LoginFormState extends ConsumerState<LoginForm> {
     } catch (e) {
       if (mounted) {
         final t = AppLocalizations.of(context)!;
-        AppSnackBar.error(context, t.errorLogin(e.toString()));
+
+        String userMessage;
+
+        if (e is DioException) {
+          // Si el backend devuelve JSON con { message: '...' }, usar.
+          final data = e.response?.data;
+          if (e.response?.statusCode == 401) {
+            // Mensaje amigable y localizado para credenciales inválidas
+            userMessage = t.invalidCredentials;
+          } else if (data is Map && data['message'] != null) {
+            userMessage = data['message'].toString();
+          } else if (e.message != null && e.message!.isNotEmpty) {
+            userMessage = e.message!;
+          } else {
+            userMessage = e.toString();
+          }
+        } else {
+          // Fallback genérico
+          userMessage = e.toString();
+        }
+
+        // Mostrar mensaje breve (sin prefijo largo) para no crear un snackbar gigante
+        AppSnackBar.error(context, userMessage);
       }
     } finally {
       if (mounted) setState(() => _loading = false);

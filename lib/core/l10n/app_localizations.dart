@@ -644,6 +644,12 @@ abstract class AppLocalizations {
   /// **'Error al registrar: {error}'**
   String errorRegister(String error);
 
+  /// Mensaje mostrado tras registro exitoso
+  ///
+  /// In es, this message translates to:
+  /// **'Usuario registrado correctamente'**
+  String get userRegistered;
+
   /// Mensaje para funcionalidad no implementada
   ///
   /// In es, this message translates to:
@@ -1255,6 +1261,12 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Crea tu primer evento con el botón +'**
   String get adminCreateFirstEventHint;
+
+  /// Mensaje cuando las credenciales son inválidas al iniciar sesión
+  ///
+  /// In es, this message translates to:
+  /// **'Email o contraseña incorrectos'**
+  String get invalidCredentials;
 }
 
 class _AppLocalizationsDelegate

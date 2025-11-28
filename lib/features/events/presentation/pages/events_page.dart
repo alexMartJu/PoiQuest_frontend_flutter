@@ -35,7 +35,9 @@ class _EventsPageState extends ConsumerState<EventsPage> {
     
     // Cargar eventos al iniciar
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      ref.read(eventsNotifierProvider.notifier).loadEvents(null);
+      // Usar la categoría seleccionada actualmente (null = All)
+      final selected = ref.read(selectedCategoryProvider);
+      ref.read(eventsNotifierProvider.notifier).loadEvents(selected?.uuid);
     });
 
     // Detectar scroll para cargar más eventos
