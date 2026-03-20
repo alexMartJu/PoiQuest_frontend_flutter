@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:poiquest_frontend_flutter/core/l10n/app_localizations.dart';
 import 'package:poiquest_frontend_flutter/core/utils/date_utils.dart';
+import 'package:poiquest_frontend_flutter/core/widgets/app_badge.dart';
 import 'package:poiquest_frontend_flutter/core/widgets/app_event_card.dart';
 import 'package:poiquest_frontend_flutter/core/widgets/app_filter_chip.dart';
 import 'package:poiquest_frontend_flutter/features/events/domain/entities/event_category.dart';
 import 'package:poiquest_frontend_flutter/features/events/presentation/providers/events_providers.dart';
+import 'package:poiquest_frontend_flutter/features/events/presentation/widgets/events_filter_bottom_sheet.dart';
 
 /// Página principal de Events.
 ///
@@ -33,11 +35,13 @@ class _EventsPageState extends ConsumerState<EventsPage> {
   void initState() {
     super.initState();
     
-    // Cargar eventos al iniciar
+    // Cargar eventos solo si no hay datos previos (preserva estado al navegar)
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      // Usar la categoría seleccionada actualmente (null = All)
-      final selected = ref.read(selectedCategoryProvider);
-      ref.read(eventsNotifierProvider.notifier).loadEvents(selected?.uuid);
+      final state = ref.read(eventsNotifierProvider);
+      if (state.events.isEmpty && !state.isLoading) {
+        final selected = ref.read(selectedCategoryProvider);
+        ref.read(eventsNotifierProvider.notifier).loadEvents(selected?.uuid);
+      }
     });
 
     // Detectar scroll para cargar más eventos
@@ -68,6 +72,7 @@ class _EventsPageState extends ConsumerState<EventsPage> {
 
     return SafeArea(
       child: CustomScrollView(
+        key: const PageStorageKey<String>('events_scroll'),
         controller: _scrollController,
         slivers: [
 
@@ -147,6 +152,9 @@ class _EventsPageState extends ConsumerState<EventsPage> {
     List<EventCategory> categories,
     EventCategory? selectedCategory,
   ) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final filtersState = ref.watch(eventFiltersProvider);
+
     return Container(
       height: 48,
       padding: const EdgeInsets.symmetric(vertical: 4),
@@ -154,6 +162,16 @@ class _EventsPageState extends ConsumerState<EventsPage> {
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: 16),
         children: [
+          // Botón de filtros avanzados
+          Padding(
+            padding: const EdgeInsets.only(right: 8),
+            child: _FilterIconButton(
+              activeCount: filtersState.activeFilterCount,
+              colorScheme: colorScheme,
+              onTap: () => EventsFilterBottomSheet.show(context),
+            ),
+          ),
+
           // Chip "All"
           Padding(
             padding: const EdgeInsets.only(right: 8),
@@ -288,7 +306,7 @@ class _EventsPageState extends ConsumerState<EventsPage> {
               title: event.name,
               startDate: _formatDate(context, event.startDate),
               endDate: event.endDate != null ? _formatDate(context, event.endDate!) : null,
-              location: event.location ?? AppLocalizations.of(context)!.noLocation,
+              location: event.cityName ?? AppLocalizations.of(context)!.noLocation,
               onTap: () {
                 // TODO: Navegar a detalle del evento
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -338,5 +356,58 @@ class _EventsPageState extends ConsumerState<EventsPage> {
   String _formatDate(BuildContext context, String dateStr) {
     // Usa helper centralizado (mes completo) con la locale del contexto
     return formatDateLongFromIsoWithContext(context, dateStr);
+  }
+}
+
+/// Botón circular con icono de filtro e indicador visual de filtros activos.
+class _FilterIconButton extends StatelessWidget {
+  final int activeCount;
+  final ColorScheme colorScheme;
+  final VoidCallback onTap;
+
+  const _FilterIconButton({
+    required this.activeCount,
+    required this.colorScheme,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final isActive = activeCount > 0;
+
+    return Material(
+      color: isActive ? colorScheme.primaryContainer : colorScheme.surfaceContainerHighest,
+      borderRadius: BorderRadius.circular(12),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: SizedBox(
+          width: 40,
+          child: Center(
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Icon(
+                  Icons.tune_rounded,
+                  size: 20,
+                  color: isActive
+                      ? colorScheme.onPrimaryContainer
+                      : colorScheme.onSurfaceVariant,
+                ),
+                if (isActive)
+                  Positioned(
+                    top: -8,
+                    right: -10,
+                    child: AppBadge(
+                      label: '$activeCount',
+                      variant: AppBadgeVariant.filter,
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

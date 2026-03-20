@@ -63,6 +63,111 @@ class SelectedCategoryNotifier extends Notifier<EventCategory?> {
   }
 }
 
+/// Estado inmutable para los filtros de eventos.
+///
+/// Contiene los criterios opcionales de filtrado que se envían al backend
+/// como query params adicionales a la paginación por cursor.
+class EventFiltersState {
+  final String? cityUuid;
+  final String? cityName;
+  final double? minPrice;
+  final double? maxPrice;
+  final String? startDate;
+  final String? endDate;
+
+  const EventFiltersState({
+    this.cityUuid,
+    this.cityName,
+    this.minPrice,
+    this.maxPrice,
+    this.startDate,
+    this.endDate,
+  });
+
+  /// Devuelve `true` si al menos un filtro está activo
+  bool get hasActiveFilters =>
+      cityUuid != null ||
+      minPrice != null ||
+      maxPrice != null ||
+      startDate != null ||
+      endDate != null;
+
+  /// Número de filtros activos (para mostrar badge en el botón de filtro)
+  int get activeFilterCount {
+    int count = 0;
+    if (cityUuid != null) count++;
+    if (minPrice != null || maxPrice != null) count++;
+    if (startDate != null || endDate != null) count++;
+    return count;
+  }
+
+  EventFiltersState copyWith({
+    String? Function()? cityUuid,
+    String? Function()? cityName,
+    double? Function()? minPrice,
+    double? Function()? maxPrice,
+    String? Function()? startDate,
+    String? Function()? endDate,
+  }) {
+    return EventFiltersState(
+      cityUuid: cityUuid != null ? cityUuid() : this.cityUuid,
+      cityName: cityName != null ? cityName() : this.cityName,
+      minPrice: minPrice != null ? minPrice() : this.minPrice,
+      maxPrice: maxPrice != null ? maxPrice() : this.maxPrice,
+      startDate: startDate != null ? startDate() : this.startDate,
+      endDate: endDate != null ? endDate() : this.endDate,
+    );
+  }
+}
+
+// Provider para los filtros de eventos
+final eventFiltersProvider = NotifierProvider<EventFiltersNotifier, EventFiltersState>(
+  () => EventFiltersNotifier(),
+);
+
+/// Notifier que gestiona los filtros de eventos.
+class EventFiltersNotifier extends Notifier<EventFiltersState> {
+  @override
+  EventFiltersState build() => const EventFiltersState();
+
+  void setCity(String? uuid, String? name) {
+    state = state.copyWith(
+      cityUuid: () => uuid,
+      cityName: () => name,
+    );
+  }
+
+  void setPriceRange(double? min, double? max) {
+    state = state.copyWith(
+      minPrice: () => min,
+      maxPrice: () => max,
+    );
+  }
+
+  void setDateRange(String? start, String? end) {
+    state = state.copyWith(
+      startDate: () => start,
+      endDate: () => end,
+    );
+  }
+
+  void clearAll() {
+    state = const EventFiltersState();
+  }
+}
+
+/// Provider para obtener el rango de precios del backend
+final priceRangeProvider = FutureProvider<({double min, double max})>((ref) async {
+  final repo = ref.watch(eventsRepositoryProvider);
+  return repo.getPriceRange();
+});
+
+/// Provider para obtener las ciudades disponibles del backend
+final citiesProvider = FutureProvider<List<({String uuid, String name})>>((ref) async {
+  final repo = ref.watch(eventsRepositoryProvider);
+  return repo.getCities();
+});
+
 // Provider para el estado de eventos paginados
 /// Estado inmutable que contiene:
 /// - `events`: lista actual de eventos mostrados en la UI.
@@ -126,6 +231,9 @@ class EventsNotifier extends Notifier<EventsState> {
 
   GetEventsByCategory get _getEvents => ref.read(getEventsByCategoryUseCaseProvider);
 
+  /// Lee los filtros actuales del provider de filtros
+  EventFiltersState get _filters => ref.read(eventFiltersProvider);
+
   /// Carga eventos de una categoría (reemplaza la lista actual)
   Future<void> loadEvents(String? categoryUuid) async {
     if (_currentCategoryUuid != categoryUuid) {
@@ -138,9 +246,15 @@ class EventsNotifier extends Notifier<EventsState> {
     }
 
     try {
+      final filters = _filters;
       final result = await _getEvents.call(
         categoryUuid: categoryUuid,
         limit: 4,
+        cityUuid: filters.cityUuid,
+        minPrice: filters.minPrice,
+        maxPrice: filters.maxPrice,
+        startDate: filters.startDate,
+        endDate: filters.endDate,
       );
 
       state = EventsState(
@@ -165,10 +279,16 @@ class EventsNotifier extends Notifier<EventsState> {
     state = state.copyWith(isLoading: true, error: () => null);
 
     try {
+      final filters = _filters;
       final result = await _getEvents.call(
         categoryUuid: _currentCategoryUuid,
         cursor: state.nextCursor,
         limit: 4,
+        cityUuid: filters.cityUuid,
+        minPrice: filters.minPrice,
+        maxPrice: filters.maxPrice,
+        startDate: filters.startDate,
+        endDate: filters.endDate,
       );
 
       state = EventsState(
