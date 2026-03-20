@@ -877,130 +877,74 @@
     "placeholders": { "levelNumber": { "type": "int" } }
   },
 
-  "createevent": "Crear Evento",
-  "@createevent": {
-    "description": "Botón para crear un nuevo evento"
+  "filters": "Filtros",
+  "@filters": {
+    "description": "Título del bottom sheet de filtros de eventos"
   },
 
-  "editevent": "Editar Evento",
-  "@editevent": {
-    "description": "Título para editar evento"
+  "clearFilters": "Limpiar",
+  "@clearFilters": {
+    "description": "Botón para limpiar todos los filtros activos"
   },
 
-  "eventname": "Nombre del Evento",
-  "@eventname": {
-    "description": "Etiqueta para campo nombre del evento"
+  "applyFilters": "Aplicar Filtros",
+  "@applyFilters": {
+    "description": "Botón para aplicar los filtros seleccionados"
   },
 
-  "description": "Descripción",
-  "@description": {
-    "description": "Etiqueta para campo descripción"
+  "priceRange": "Rango de Precio",
+  "@priceRange": {
+    "description": "Título de sección para filtro de rango de precio"
   },
 
-  "category": "Categoría",
-  "@category": {
-    "description": "Etiqueta para campo categoría"
+  "dateRange": "Rango de Fechas",
+  "@dateRange": {
+    "description": "Título de sección para filtro de rango de fechas"
   },
 
-  "location": "Ubicación",
-  "@location": {
-    "description": "Etiqueta para campo ubicación"
+  "selectCity": "Ciudad",
+  "@selectCity": {
+    "description": "Título de sección para filtro de ciudad"
   },
 
-  "startdate": "Fecha de Inicio",
-  "@startdate": {
-    "description": "Etiqueta para campo fecha de inicio"
+  "fromDate": "Desde",
+  "@fromDate": {
+    "description": "Etiqueta para selector de fecha inicio"
   },
 
-  "enddate": "Fecha de Fin",
-  "@enddate": {
-    "description": "Etiqueta para campo fecha de fin"
+  "toDate": "Hasta",
+  "@toDate": {
+    "description": "Etiqueta para selector de fecha fin"
   },
 
-  "imageurl": "URL de Imagen",
-  "@imageurl": {
-    "description": "Etiqueta para campo URL de imagen"
+  "noPriceRange": "No hay rango de precios disponible",
+  "@noPriceRange": {
+    "description": "Mensaje cuando no hay rango de precios disponible"
   },
 
-  "pleaseselectacategory": "Por favor selecciona una categoría",
-  "@pleaseselectacategory": {
-    "description": "Mensaje de error cuando no se selecciona categoría"
+  "errorLoadingPriceRange": "No se pudo cargar el rango de precios",
+  "@errorLoadingPriceRange": {
+    "description": "Mensaje de error al cargar el rango de precios"
   },
 
-  "atleastoneimagerequired": "Se requiere al menos una imagen",
-  "@atleastoneimagerequired": {
-    "description": "Mensaje de error cuando no hay imágenes"
+  "noCitiesAvailable": "No hay ciudades disponibles",
+  "@noCitiesAvailable": {
+    "description": "Mensaje cuando no hay ciudades disponibles para filtrar"
   },
 
-  "invalidurl": "URL inválida",
-  "@invalidurl": {
-    "description": "Mensaje de error para URL inválida"
+  "ticketValidator": "Validador de Tickets",
+  "@ticketValidator": {
+    "description": "Título para la sección de validación de tickets"
   },
 
-  "fieldisrequired": "Este campo es obligatorio",
-  "@fieldisrequired": {
-    "description": "Mensaje de error para campo obligatorio vacío"
+  "ticketValidatorComingSoon": "Validación de tickets próximamente",
+  "@ticketValidatorComingSoon": {
+    "description": "Texto placeholder para la función de validación de tickets"
   },
-
-  "eventcreatedsuccessfully": "Evento creado exitosamente",
-  "@eventcreatedsuccessfully": {
-    "description": "Mensaje de éxito al crear evento"
-  },
-
-  "eventupdatedsuccessfully": "Evento actualizado exitosamente",
-  "@eventupdatedsuccessfully": {
-    "description": "Mensaje de éxito al actualizar evento"
-  },
-
-  "eventdeletedsuccessfully": "Evento eliminado exitosamente",
-  "@eventdeletedsuccessfully": {
-    "description": "Mensaje de éxito al eliminar evento"
-  },
-
-  "create": "Crear",
-  "@create": {
-    "description": "Botón crear"
-  },
-
-  "save": "Guardar",
-  "@save": {
-    "description": "Botón guardar"
-  },
-
-  "deleteevent": "Eliminar Evento",
-  "@deleteevent": {
-    "description": "Título para confirmar eliminación de evento"
-  },
-
-  "deleteeventconfirm": "¿Estás seguro de que deseas eliminar este evento? Esta acción no se puede deshacer.",
-  "@deleteeventconfirm": {
-    "description": "Mensaje de confirmación para eliminar evento"
-  },
-
-  "delete": "Eliminar",
-  "@delete": {
-    "description": "Botón eliminar"
-  },
-
-  "activeevents": "Eventos Activos",
-  "@activeevents": {
-    "description": "Título para listado de eventos activos"
-  },
-
-  "manageevents": "Gestiona tus eventos",
-  "@manageevents": {
-    "description": "Subtítulo para gestión de eventos"
-  },
-
-  "adminCreateFirstEventHint": "Crea tu primer evento con el botón +",
 
   "invalidCredentials": "Email o contraseña incorrectos",
   "@invalidCredentials": {
     "description": "Mensaje cuando las credenciales son inválidas al iniciar sesión"
-  },
-  
-  "@adminCreateFirstEventHint": {
-    "description": "Pista mostrada cuando el admin no tiene eventos - indica usar el FAB para crear uno"
   }
 
 }

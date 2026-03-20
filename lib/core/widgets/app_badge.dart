@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:poiquest_frontend_flutter/app/theme/app_theme.dart';
 
-enum AppBadgeVariant { status, reward, info, category }
+enum AppBadgeVariant { status, reward, info, category, filter }
 
 class AppBadge extends StatelessWidget {
   final String label;
@@ -17,15 +17,16 @@ class AppBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     final c = Theme.of(context).colorScheme;
 
-    final (bg, fg) = switch (variant) {
-      AppBadgeVariant.status => (c.success, c.onSuccess),
-      AppBadgeVariant.reward => (c.warning, c.onWarning),
-      AppBadgeVariant.info => (c.surfaceContainer.withValues(alpha: 0.6), c.textPrimary),
-      AppBadgeVariant.category => (c.surfaceContainer.withValues(alpha: 0.6), c.textPrimary),
+    final (bg, fg, pd, fs) = switch (variant) {
+      AppBadgeVariant.status => (c.success, c.onSuccess, const EdgeInsets.symmetric(horizontal: 12, vertical: 6), 13.0),
+      AppBadgeVariant.reward => (c.warning, c.onWarning, const EdgeInsets.symmetric(horizontal: 12, vertical: 6), 13.0),
+      AppBadgeVariant.info => (c.surfaceContainer.withValues(alpha: 0.6), c.textPrimary, const EdgeInsets.symmetric(horizontal: 12, vertical: 6), 13.0),
+      AppBadgeVariant.category => (c.surfaceContainer.withValues(alpha: 0.6), c.textPrimary, const EdgeInsets.symmetric(horizontal: 12, vertical: 6), 13.0),
+      AppBadgeVariant.filter => (c.secondary, c.primary, const EdgeInsets.symmetric(horizontal: 6, vertical: 2), 10.0),
     };
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      padding: pd,
       decoration: BoxDecoration(
         color: bg,
         borderRadius: BorderRadius.circular(14),
@@ -35,7 +36,7 @@ class AppBadge extends StatelessWidget {
         style: TextStyle(
           color: fg,
           fontWeight: FontWeight.w600,
-          fontSize: 13,
+          fontSize: fs,
         ),
       ),
     );

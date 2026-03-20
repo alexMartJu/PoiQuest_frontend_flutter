@@ -1118,149 +1118,83 @@ abstract class AppLocalizations {
   /// **'Nivel {levelNumber}'**
   String level(int levelNumber);
 
-  /// Botón para crear un nuevo evento
+  /// Título del bottom sheet de filtros de eventos
   ///
   /// In es, this message translates to:
-  /// **'Crear Evento'**
-  String get createevent;
+  /// **'Filtros'**
+  String get filters;
 
-  /// Título para editar evento
+  /// Botón para limpiar todos los filtros activos
   ///
   /// In es, this message translates to:
-  /// **'Editar Evento'**
-  String get editevent;
+  /// **'Limpiar'**
+  String get clearFilters;
 
-  /// Etiqueta para campo nombre del evento
+  /// Botón para aplicar los filtros seleccionados
   ///
   /// In es, this message translates to:
-  /// **'Nombre del Evento'**
-  String get eventname;
+  /// **'Aplicar Filtros'**
+  String get applyFilters;
 
-  /// Etiqueta para campo descripción
+  /// Título de sección para filtro de rango de precio
   ///
   /// In es, this message translates to:
-  /// **'Descripción'**
-  String get description;
+  /// **'Rango de Precio'**
+  String get priceRange;
 
-  /// Etiqueta para campo categoría
+  /// Título de sección para filtro de rango de fechas
   ///
   /// In es, this message translates to:
-  /// **'Categoría'**
-  String get category;
+  /// **'Rango de Fechas'**
+  String get dateRange;
 
-  /// Etiqueta para campo ubicación
+  /// Título de sección para filtro de ciudad
   ///
   /// In es, this message translates to:
-  /// **'Ubicación'**
-  String get location;
+  /// **'Ciudad'**
+  String get selectCity;
 
-  /// Etiqueta para campo fecha de inicio
+  /// Etiqueta para selector de fecha inicio
   ///
   /// In es, this message translates to:
-  /// **'Fecha de Inicio'**
-  String get startdate;
+  /// **'Desde'**
+  String get fromDate;
 
-  /// Etiqueta para campo fecha de fin
+  /// Etiqueta para selector de fecha fin
   ///
   /// In es, this message translates to:
-  /// **'Fecha de Fin'**
-  String get enddate;
+  /// **'Hasta'**
+  String get toDate;
 
-  /// Etiqueta para campo URL de imagen
+  /// Mensaje cuando no hay rango de precios disponible
   ///
   /// In es, this message translates to:
-  /// **'URL de Imagen'**
-  String get imageurl;
+  /// **'No hay rango de precios disponible'**
+  String get noPriceRange;
 
-  /// Mensaje de error cuando no se selecciona categoría
+  /// Mensaje de error al cargar el rango de precios
   ///
   /// In es, this message translates to:
-  /// **'Por favor selecciona una categoría'**
-  String get pleaseselectacategory;
+  /// **'No se pudo cargar el rango de precios'**
+  String get errorLoadingPriceRange;
 
-  /// Mensaje de error cuando no hay imágenes
+  /// Mensaje cuando no hay ciudades disponibles para filtrar
   ///
   /// In es, this message translates to:
-  /// **'Se requiere al menos una imagen'**
-  String get atleastoneimagerequired;
+  /// **'No hay ciudades disponibles'**
+  String get noCitiesAvailable;
 
-  /// Mensaje de error para URL inválida
+  /// Título para la sección de validación de tickets
   ///
   /// In es, this message translates to:
-  /// **'URL inválida'**
-  String get invalidurl;
+  /// **'Validador de Tickets'**
+  String get ticketValidator;
 
-  /// Mensaje de error para campo obligatorio vacío
+  /// Texto placeholder para la función de validación de tickets
   ///
   /// In es, this message translates to:
-  /// **'Este campo es obligatorio'**
-  String get fieldisrequired;
-
-  /// Mensaje de éxito al crear evento
-  ///
-  /// In es, this message translates to:
-  /// **'Evento creado exitosamente'**
-  String get eventcreatedsuccessfully;
-
-  /// Mensaje de éxito al actualizar evento
-  ///
-  /// In es, this message translates to:
-  /// **'Evento actualizado exitosamente'**
-  String get eventupdatedsuccessfully;
-
-  /// Mensaje de éxito al eliminar evento
-  ///
-  /// In es, this message translates to:
-  /// **'Evento eliminado exitosamente'**
-  String get eventdeletedsuccessfully;
-
-  /// Botón crear
-  ///
-  /// In es, this message translates to:
-  /// **'Crear'**
-  String get create;
-
-  /// Botón guardar
-  ///
-  /// In es, this message translates to:
-  /// **'Guardar'**
-  String get save;
-
-  /// Título para confirmar eliminación de evento
-  ///
-  /// In es, this message translates to:
-  /// **'Eliminar Evento'**
-  String get deleteevent;
-
-  /// Mensaje de confirmación para eliminar evento
-  ///
-  /// In es, this message translates to:
-  /// **'¿Estás seguro de que deseas eliminar este evento? Esta acción no se puede deshacer.'**
-  String get deleteeventconfirm;
-
-  /// Botón eliminar
-  ///
-  /// In es, this message translates to:
-  /// **'Eliminar'**
-  String get delete;
-
-  /// Título para listado de eventos activos
-  ///
-  /// In es, this message translates to:
-  /// **'Eventos Activos'**
-  String get activeevents;
-
-  /// Subtítulo para gestión de eventos
-  ///
-  /// In es, this message translates to:
-  /// **'Gestiona tus eventos'**
-  String get manageevents;
-
-  /// Pista mostrada cuando el admin no tiene eventos - indica usar el FAB para crear uno
-  ///
-  /// In es, this message translates to:
-  /// **'Crea tu primer evento con el botón +'**
-  String get adminCreateFirstEventHint;
+  /// **'Validación de tickets próximamente'**
+  String get ticketValidatorComingSoon;
 
   /// Mensaje cuando las credenciales son inválidas al iniciar sesión
   ///

@@ -574,78 +574,43 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get createevent => 'Create Event';
+  String get filters => 'Filters';
 
   @override
-  String get editevent => 'Edit Event';
+  String get clearFilters => 'Clear';
 
   @override
-  String get eventname => 'Event Name';
+  String get applyFilters => 'Apply Filters';
 
   @override
-  String get description => 'Description';
+  String get priceRange => 'Price Range';
 
   @override
-  String get category => 'Category';
+  String get dateRange => 'Date Range';
 
   @override
-  String get location => 'Location';
+  String get selectCity => 'City';
 
   @override
-  String get startdate => 'Start Date';
+  String get fromDate => 'From';
 
   @override
-  String get enddate => 'End Date';
+  String get toDate => 'To';
 
   @override
-  String get imageurl => 'Image URL';
+  String get noPriceRange => 'No price range available';
 
   @override
-  String get pleaseselectacategory => 'Please select a category';
+  String get errorLoadingPriceRange => 'Could not load price range';
 
   @override
-  String get atleastoneimagerequired => 'At least one image is required';
+  String get noCitiesAvailable => 'No cities available';
 
   @override
-  String get invalidurl => 'Invalid URL';
+  String get ticketValidator => 'Ticket Validator';
 
   @override
-  String get fieldisrequired => 'This field is required';
-
-  @override
-  String get eventcreatedsuccessfully => 'Event created successfully';
-
-  @override
-  String get eventupdatedsuccessfully => 'Event updated successfully';
-
-  @override
-  String get eventdeletedsuccessfully => 'Event deleted successfully';
-
-  @override
-  String get create => 'Create';
-
-  @override
-  String get save => 'Save';
-
-  @override
-  String get deleteevent => 'Delete Event';
-
-  @override
-  String get deleteeventconfirm =>
-      'Are you sure you want to delete this event? This action cannot be undone.';
-
-  @override
-  String get delete => 'Delete';
-
-  @override
-  String get activeevents => 'Active Events';
-
-  @override
-  String get manageevents => 'Manage your events';
-
-  @override
-  String get adminCreateFirstEventHint =>
-      'Create your first event with the + button';
+  String get ticketValidatorComingSoon => 'Ticket validation coming soon';
 
   @override
   String get invalidCredentials => 'Email or password incorrect';

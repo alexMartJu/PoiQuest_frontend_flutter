@@ -575,78 +575,43 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get createevent => 'Crear Evento';
+  String get filters => 'Filtros';
 
   @override
-  String get editevent => 'Editar Evento';
+  String get clearFilters => 'Limpiar';
 
   @override
-  String get eventname => 'Nombre del Evento';
+  String get applyFilters => 'Aplicar Filtros';
 
   @override
-  String get description => 'Descripción';
+  String get priceRange => 'Rango de Precio';
 
   @override
-  String get category => 'Categoría';
+  String get dateRange => 'Rango de Fechas';
 
   @override
-  String get location => 'Ubicación';
+  String get selectCity => 'Ciudad';
 
   @override
-  String get startdate => 'Fecha de Inicio';
+  String get fromDate => 'Desde';
 
   @override
-  String get enddate => 'Fecha de Fin';
+  String get toDate => 'Hasta';
 
   @override
-  String get imageurl => 'URL de Imagen';
+  String get noPriceRange => 'No hay rango de precios disponible';
 
   @override
-  String get pleaseselectacategory => 'Por favor selecciona una categoría';
+  String get errorLoadingPriceRange => 'No se pudo cargar el rango de precios';
 
   @override
-  String get atleastoneimagerequired => 'Se requiere al menos una imagen';
+  String get noCitiesAvailable => 'No hay ciudades disponibles';
 
   @override
-  String get invalidurl => 'URL inválida';
+  String get ticketValidator => 'Validador de Tickets';
 
   @override
-  String get fieldisrequired => 'Este campo es obligatorio';
-
-  @override
-  String get eventcreatedsuccessfully => 'Evento creado exitosamente';
-
-  @override
-  String get eventupdatedsuccessfully => 'Evento actualizado exitosamente';
-
-  @override
-  String get eventdeletedsuccessfully => 'Evento eliminado exitosamente';
-
-  @override
-  String get create => 'Crear';
-
-  @override
-  String get save => 'Guardar';
-
-  @override
-  String get deleteevent => 'Eliminar Evento';
-
-  @override
-  String get deleteeventconfirm =>
-      '¿Estás seguro de que deseas eliminar este evento? Esta acción no se puede deshacer.';
-
-  @override
-  String get delete => 'Eliminar';
-
-  @override
-  String get activeevents => 'Eventos Activos';
-
-  @override
-  String get manageevents => 'Gestiona tus eventos';
-
-  @override
-  String get adminCreateFirstEventHint =>
-      'Crea tu primer evento con el botón +';
+  String get ticketValidatorComingSoon => 'Validación de tickets próximamente';
 
   @override
   String get invalidCredentials => 'Email o contraseña incorrectos';
