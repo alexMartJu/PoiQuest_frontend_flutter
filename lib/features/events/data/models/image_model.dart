@@ -36,10 +36,10 @@ class ImageModel {
 
     return ImageModel(
       id: json['id'] as int,
-      imageUrl: (json['imageUrl'] ?? json['image_url']) as String,
-      sortOrder: json['sortOrder'] ?? json['sort_order'] as int,
+      imageUrl: (json['url'] ?? json['imageUrl'] ?? json['image_url']) as String,
+      sortOrder: (json['sortOrder'] ?? json['sort_order']) as int,
       isPrimary: parseIsPrimary(rawIsPrimary),
-      createdAt: DateTime.parse(json['createdAt'] ?? json['created_at'] as String),
+      createdAt: DateTime.parse((json['createdAt'] ?? json['created_at']) as String),
     );
   }
 

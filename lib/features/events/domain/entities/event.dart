@@ -1,7 +1,10 @@
 import 'package:poiquest_frontend_flutter/features/events/domain/entities/event_category.dart';
 import 'package:poiquest_frontend_flutter/features/events/domain/entities/event_status.dart';
 import 'package:poiquest_frontend_flutter/features/events/domain/entities/image.dart';
+import 'package:poiquest_frontend_flutter/features/events/domain/entities/organizer_summary.dart';
 import 'package:poiquest_frontend_flutter/features/events/domain/entities/point_of_interest.dart';
+import 'package:poiquest_frontend_flutter/features/events/domain/entities/route_summary.dart';
+import 'package:poiquest_frontend_flutter/features/events/domain/entities/sponsor_summary.dart';
 
 class Event {
   final String uuid;
@@ -9,10 +12,17 @@ class Event {
   final String? description;
   final EventCategory? category;
   final EventStatus status;
-  final String? location;
+  final String? cityUuid;
+  final String? cityName;
+  final OrganizerSummary? organizer;
+  final SponsorSummary? sponsor;
+  final bool isPremium;
+  final double? price;
+  final int? capacityPerDay;
   final String startDate;
   final String? endDate;
   final List<PointOfInterest>? pointsOfInterest;
+  final List<RouteSummary>? routes;
   final List<ImageEntity> images;
   final DateTime createdAt;
   final DateTime updatedAt;
@@ -23,10 +33,17 @@ class Event {
     this.description,
     this.category,
     required this.status,
-    this.location,
+    this.cityUuid,
+    this.cityName,
+    this.organizer,
+    this.sponsor,
+    this.isPremium = false,
+    this.price,
+    this.capacityPerDay,
     required this.startDate,
     this.endDate,
     this.pointsOfInterest,
+    this.routes,
     required this.images,
     required this.createdAt,
     required this.updatedAt,

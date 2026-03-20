@@ -56,6 +56,11 @@ class EventsRemoteDataSource {
   /// [categoryUuid] - UUID de la categoría
   /// [cursor] - Cursor para paginación (createdAt en ISO 8601)
   /// [limit] - Número de items por página (por defecto 4)
+  /// [cityUuid] - Filtro opcional por ciudad
+  /// [minPrice] - Filtro opcional por precio mínimo
+  /// [maxPrice] - Filtro opcional por precio máximo
+  /// [startDate] - Filtro opcional por fecha inicio (ISO 8601)
+  /// [endDate] - Filtro opcional por fecha fin (ISO 8601)
   ///
   /// Expected backend response (paginated):
   /// {
@@ -67,6 +72,11 @@ class EventsRemoteDataSource {
     String? categoryUuid,
     String? cursor,
     int limit = 4,
+    String? cityUuid,
+    double? minPrice,
+    double? maxPrice,
+    String? startDate,
+    String? endDate,
   }) async {
     // If no categoryUuid provided, query the general /events endpoint
     final String basePath = categoryUuid == null || categoryUuid.isEmpty
@@ -77,6 +87,11 @@ class EventsRemoteDataSource {
       queryParameters: {
         if (cursor != null) 'cursor': cursor,
         'limit': '$limit',
+        if (cityUuid != null) 'cityUuid': cityUuid,
+        if (minPrice != null) 'minPrice': '$minPrice',
+        if (maxPrice != null) 'maxPrice': '$maxPrice',
+        if (startDate != null) 'startDate': startDate,
+        if (endDate != null) 'endDate': endDate,
       },
     );
 
@@ -125,6 +140,74 @@ class EventsRemoteDataSource {
         error: e,
         type: DioExceptionType.unknown,
         message: 'Error inesperado al obtener eventos: $e',
+      );
+    }
+  }
+
+  /// Obtiene el rango de precios (min, max) de los eventos activos
+  Future<({double min, double max})> getPriceRange() async {
+    try {
+      final response = await AppService.dio.get(eventsPriceRangeEndpoint);
+
+      if (response.statusCode == 200) {
+        final body = response.data as Map<String, dynamic>;
+        final min = (body['min'] as num).toDouble();
+        final max = (body['max'] as num).toDouble();
+        return (min: min, max: max);
+      } else {
+        throw DioException(
+          requestOptions: response.requestOptions,
+          response: response,
+          type: DioExceptionType.badResponse,
+          message: 'Error al obtener rango de precios: ${response.statusCode}',
+        );
+      }
+    } on DioException {
+      rethrow;
+    } catch (e) {
+      throw DioException(
+        requestOptions: RequestOptions(path: eventsPriceRangeEndpoint),
+        error: e,
+        type: DioExceptionType.unknown,
+        message: 'Error inesperado al obtener rango de precios: $e',
+      );
+    }
+  }
+
+  /// Obtiene todas las ciudades activas del backend (paginadas, se recogen todas)
+  Future<List<({String uuid, String name})>> getCities() async {
+    try {
+      final response = await AppService.dio.get(
+        citiesEndpoint,
+        queryParameters: {'limit': '100'},
+      );
+
+      if (response.statusCode == 200) {
+        final body = response.data as Map<String, dynamic>;
+        final data = body['data'] as List<dynamic>;
+        return data.map((json) {
+          final map = json as Map<String, dynamic>;
+          return (
+            uuid: map['uuid'] as String,
+            name: map['name'] as String,
+          );
+        }).toList();
+      } else {
+        throw DioException(
+          requestOptions: response.requestOptions,
+          response: response,
+          type: DioExceptionType.badResponse,
+          message: 'Error al obtener ciudades: ${response.statusCode}',
+        );
+      }
+    } on DioException {
+      rethrow;
+    } catch (e) {
+      throw DioException(
+        requestOptions: RequestOptions(path: citiesEndpoint),
+        error: e,
+        type: DioExceptionType.unknown,
+        message: 'Error inesperado al obtener ciudades: $e',
       );
     }
   }

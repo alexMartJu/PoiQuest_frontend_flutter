@@ -10,9 +10,10 @@ class PointOfInterestModel {
   final String title;
   final String? author;
   final String? description;
-  final Map<String, dynamic>? multimedia;
+  final String? interestingData;
+  final String? modelFileName;
+  final String? modelUrl;
   final String qrCode;
-  final String? nfcTag;
   final double? coordX;
   final double? coordY;
   final List<ImageModel>? images;
@@ -24,9 +25,10 @@ class PointOfInterestModel {
     required this.title,
     this.author,
     this.description,
-    this.multimedia,
+    this.interestingData,
+    this.modelFileName,
+    this.modelUrl,
     required this.qrCode,
-    this.nfcTag,
     this.coordX,
     this.coordY,
     this.images,
@@ -40,9 +42,10 @@ class PointOfInterestModel {
       title: json['title'] as String,
       author: json['author'] as String?,
       description: json['description'] as String?,
-      multimedia: json['multimedia'] as Map<String, dynamic>?,
+      interestingData: json['interestingData'] as String?,
+      modelFileName: json['modelFileName'] as String?,
+      modelUrl: json['modelUrl'] as String?,
       qrCode: json['qrCode'] as String,
-      nfcTag: json['nfcTag'] as String?,
       coordX: json['coordX'] != null ? (json['coordX'] as num).toDouble() : null,
       coordY: json['coordY'] != null ? (json['coordY'] as num).toDouble() : null,
       images: json['images'] != null
@@ -59,9 +62,10 @@ class PointOfInterestModel {
       'title': title,
       'author': author,
       'description': description,
-      'multimedia': multimedia,
+      'interestingData': interestingData,
+      'modelFileName': modelFileName,
+      'modelUrl': modelUrl,
       'qrCode': qrCode,
-      'nfcTag': nfcTag,
       'coordX': coordX,
       'coordY': coordY,
       'images': images?.map((e) => e.toJson()).toList(),
@@ -76,9 +80,10 @@ class PointOfInterestModel {
       title: title,
       author: author,
       description: description,
-      multimedia: multimedia,
+      interestingData: interestingData,
+      modelFileName: modelFileName,
+      modelUrl: modelUrl,
       qrCode: qrCode,
-      nfcTag: nfcTag,
       coordX: coordX,
       coordY: coordY,
       images: images?.map((e) => e.toEntity()).toList(),

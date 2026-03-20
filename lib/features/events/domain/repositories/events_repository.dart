@@ -11,9 +11,25 @@ abstract class EventsRepository {
   /// [categoryUuid] - UUID de la categoría (null para todos)
   /// [cursor] - Cursor para paginación
   /// [limit] - Número de items por página
+  /// [cityUuid] - Filtro opcional por ciudad
+  /// [minPrice] - Filtro opcional por precio mínimo
+  /// [maxPrice] - Filtro opcional por precio máximo
+  /// [startDate] - Filtro opcional por fecha inicio (ISO 8601)
+  /// [endDate] - Filtro opcional por fecha fin (ISO 8601)
   Future<({List<Event> events, String? nextCursor, bool hasNextPage})> getEventsByCategory({
     String? categoryUuid,
     String? cursor,
     int limit = 4,
+    String? cityUuid,
+    double? minPrice,
+    double? maxPrice,
+    String? startDate,
+    String? endDate,
   });
+
+  /// Obtiene el rango de precios (min, max) de los eventos activos
+  Future<({double min, double max})> getPriceRange();
+
+  /// Obtiene todas las ciudades activas del backend
+  Future<List<({String uuid, String name})>> getCities();
 }

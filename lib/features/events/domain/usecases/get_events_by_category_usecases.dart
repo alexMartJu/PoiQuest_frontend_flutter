@@ -15,11 +15,21 @@ class GetEventsByCategory {
     String? categoryUuid,
     String? cursor,
     int limit = 4,
+    String? cityUuid,
+    double? minPrice,
+    double? maxPrice,
+    String? startDate,
+    String? endDate,
   }) {
     return repository.getEventsByCategory(
       categoryUuid: categoryUuid,
       cursor: cursor,
       limit: limit,
+      cityUuid: cityUuid,
+      minPrice: minPrice,
+      maxPrice: maxPrice,
+      startDate: startDate,
+      endDate: endDate,
     );
   }
 }

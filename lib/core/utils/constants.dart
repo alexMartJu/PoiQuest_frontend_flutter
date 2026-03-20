@@ -8,10 +8,11 @@ const String eventCategoriesEndpoint = '/event-categories';
 String eventsByCategoryEndpoint(String categoryUuid) => '/events/category/$categoryUuid';
 const String eventsEndpoint = '/events';
 
-/// Endpoints de admin para eventos
-String adminEventDetailEndpoint(String uuid) => '/events/$uuid';
-String adminEventUpdateEndpoint(String uuid) => '/events/$uuid';
-String adminEventDeleteEndpoint(String uuid) => '/events/$uuid';
+/// Endpoint para obtener el rango de precios de eventos activos
+const String eventsPriceRangeEndpoint = '/events/price-range';
+
+/// Endpoints de ciudades
+const String citiesEndpoint = '/cities';
 
 /// Endpoints de autenticación
 const String loginEndpoint = '/auth/login';

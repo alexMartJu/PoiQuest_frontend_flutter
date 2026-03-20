@@ -32,6 +32,11 @@ class EventsRepositoryImpl implements EventsRepository {
     String? categoryUuid,
     String? cursor,
     int limit = 4,
+    String? cityUuid,
+    double? minPrice,
+    double? maxPrice,
+    String? startDate,
+    String? endDate,
   }) async {
     // Lógica de obtención paginada: delega al data source y transforma el
     // resultado a una estructura simple que contiene la lista de eventos,
@@ -41,6 +46,11 @@ class EventsRepositoryImpl implements EventsRepository {
         categoryUuid: categoryUuid,
         cursor: cursor,
         limit: limit,
+        cityUuid: cityUuid,
+        minPrice: minPrice,
+        maxPrice: maxPrice,
+        startDate: startDate,
+        endDate: endDate,
       );
 
       return (
@@ -91,6 +101,28 @@ class EventsRepositoryImpl implements EventsRepository {
 
       case DioExceptionType.unknown:
         return Exception('Error inesperado: ${error.message}');
+    }
+  }
+
+  @override
+  Future<({double min, double max})> getPriceRange() async {
+    try {
+      return await _remoteDataSource.getPriceRange();
+    } on DioException catch (e) {
+      throw _handleError(e);
+    } catch (e) {
+      throw Exception('Error inesperado al obtener rango de precios: $e');
+    }
+  }
+
+  @override
+  Future<List<({String uuid, String name})>> getCities() async {
+    try {
+      return await _remoteDataSource.getCities();
+    } on DioException catch (e) {
+      throw _handleError(e);
+    } catch (e) {
+      throw Exception('Error inesperado al obtener ciudades: $e');
     }
   }
 }

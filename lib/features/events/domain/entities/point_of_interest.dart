@@ -5,9 +5,10 @@ class PointOfInterest {
   final String title;
   final String? author;
   final String? description;
-  final Map<String, dynamic>? multimedia;
+  final String? interestingData;
+  final String? modelFileName;
+  final String? modelUrl;
   final String qrCode;
-  final String? nfcTag;
   final double? coordX;
   final double? coordY;
   final List<ImageEntity>? images;
@@ -19,9 +20,10 @@ class PointOfInterest {
     required this.title,
     this.author,
     this.description,
-    this.multimedia,
+    this.interestingData,
+    this.modelFileName,
+    this.modelUrl,
     required this.qrCode,
-    this.nfcTag,
     this.coordX,
     this.coordY,
     this.images,
