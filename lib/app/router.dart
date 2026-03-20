@@ -31,12 +31,12 @@ import 'package:poiquest_frontend_flutter/features/tickets/presentation/pages/ti
 // Scan pages
 import 'package:poiquest_frontend_flutter/features/scan/presentation/pages/scan_page_noauth.dart';
 
-// Admin pages
-import 'package:poiquest_frontend_flutter/features/admin/presentation/pages/admin_events_page.dart';
+// Ticket Validator pages
+import 'package:poiquest_frontend_flutter/features/ticket_validator/presentation/pages/ticket_validator_page.dart';
 
 // Layout
 import 'package:poiquest_frontend_flutter/core/widgets/app_main_scaffold.dart';
-import 'package:poiquest_frontend_flutter/core/widgets/admin_main_scaffold.dart';
+import 'package:poiquest_frontend_flutter/core/widgets/ticket_validator_main_scaffold.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
@@ -74,7 +74,7 @@ class _GoRouterRefreshNotifier extends ChangeNotifier {
 
 /// Widget que resuelve el estado inicial y redirige según el rol del usuario.
 class _RootRedirector extends ConsumerWidget {
-  const _RootRedirector({Key? key}) : super(key: key);
+  const _RootRedirector();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -86,8 +86,8 @@ class _RootRedirector extends ConsumerWidget {
         WidgetsBinding.instance.addPostFrameCallback((_) {
           if (user != null) {
             final roles = user.roles.map((r) => r.toLowerCase()).toList();
-            if (roles.contains('admin')) {
-              context.go('/admin/events');
+            if (roles.contains('ticket_validator')) {
+              context.go('/ticket-validator');
               return;
             }
           }
@@ -122,11 +122,11 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       final isLoggedIn = user != null;
       // Normalizar roles para hacer la comprobación case-insensitive
       final roles = isLoggedIn ? user.roles.map((r) => r.toLowerCase()).toList() : <String>[];
-      final isAdmin = roles.contains('admin');
+      final isTicketValidator = roles.contains('ticket_validator');
       final isUser = roles.contains('user');
       
       final location = state.uri.path;
-      final isAdminRoute = location.startsWith('/admin');
+      final isTicketValidatorRoute = location.startsWith('/ticket-validator');
       final isUserRoute = ['/events', '/tickets', '/scan', '/explore', '/profile'].any((route) => location.startsWith(route));
       final isPublicRoute = location.startsWith('/auth') || location.startsWith('/catalog') || location.startsWith('/preferences') || location.startsWith('/profile/');
       
@@ -135,13 +135,13 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         return null;
       }
       
-      // Si es ADMIN intentando acceder a rutas USER, redirigir a admin
-      if (isAdmin && isUserRoute) {
-        return '/admin/events';
+      // Si es TICKET_VALIDATOR intentando acceder a rutas USER, redirigir a ticket-validator
+      if (isTicketValidator && isUserRoute) {
+        return '/ticket-validator';
       }
       
-      // Si es USER intentando acceder a rutas ADMIN, redirigir a events
-      if (isUser && isAdminRoute) {
+      // Si es USER intentando acceder a rutas TICKET_VALIDATOR, redirigir a events
+      if (isUser && isTicketValidatorRoute) {
         return '/events';
       }
       
@@ -210,15 +210,15 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         ],
       ),
 
-      // Shell ADMIN: rutas accesibles solo para administradores
+      // Shell TICKET_VALIDATOR: rutas accesibles solo para validadores de tickets
       ShellRoute(
-        builder: (context, state, child) => AdminMainScaffold(child: child),
+        builder: (context, state, child) => TicketValidatorMainScaffold(child: child),
         routes: [
-          // Ruta de gestión de eventos para admin
+          // Ruta principal del validador de tickets
           GoRoute(
-            path: '/admin/events',
+            path: '/ticket-validator',
             pageBuilder: (context, state) => const NoTransitionPage(
-              child: AdminEventsPage(),
+              child: TicketValidatorPage(),
             ),
           ),
         ],
