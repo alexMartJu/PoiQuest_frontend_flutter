@@ -945,6 +945,96 @@
   "invalidCredentials": "Email o contraseña incorrectos",
   "@invalidCredentials": {
     "description": "Mensaje cuando las credenciales son inválidas al iniciar sesión"
+  },
+
+  "eventDetailTitle": "Detalle del Evento",
+  "@eventDetailTitle": {
+    "description": "Título para la página de detalle del evento"
+  },
+
+  "poiDetailTitle": "Punto de Interés",
+  "@poiDetailTitle": {
+    "description": "Título para la página de detalle del POI"
+  },
+
+  "routeDetailTitle": "Detalle de Ruta",
+  "@routeDetailTitle": {
+    "description": "Título para la página de detalle de ruta"
+  },
+
+  "descriptionLabel": "Descripción",
+  "@descriptionLabel": {
+    "description": "Etiqueta para la sección de descripción"
+  },
+
+  "pointsOfInterestLabel": "Puntos de Interés",
+  "@pointsOfInterestLabel": {
+    "description": "Etiqueta para la sección de puntos de interés"
+  },
+
+  "routesLabel": "Rutas",
+  "@routesLabel": {
+    "description": "Etiqueta para la sección de rutas"
+  },
+
+  "organizerLabel": "Organizador",
+  "@organizerLabel": {
+    "description": "Etiqueta para el organizador del evento"
+  },
+
+  "sponsorLabel": "Patrocinador",
+  "@sponsorLabel": {
+    "description": "Etiqueta para el patrocinador del evento"
+  },
+
+  "authorLabel": "Autor",
+  "@authorLabel": {
+    "description": "Etiqueta para el autor del POI"
+  },
+
+  "interestingDataLabel": "Datos Interesantes",
+  "@interestingDataLabel": {
+    "description": "Etiqueta para la sección de datos interesantes del POI"
+  },
+
+  "locationLabel": "Ubicación",
+  "@locationLabel": {
+    "description": "Etiqueta para la sección de ubicación/mapa"
+  },
+
+  "freeEvent": "Gratis",
+  "@freeEvent": {
+    "description": "Etiqueta cuando el precio del evento es cero o nulo"
+  },
+
+  "premiumEvent": "Premium",
+  "@premiumEvent": {
+    "description": "Etiqueta de badge para eventos premium"
+  },
+
+  "errorLoadingDetail": "No se pudieron cargar los detalles",
+  "@errorLoadingDetail": {
+    "description": "Mensaje de error cuando falla la carga de la página de detalle"
+  },
+
+  "retryButton": "Reintentar",
+  "@retryButton": {
+    "description": "Etiqueta del botón para reintentar una acción fallida"
+  },
+
+  "noDescription": "Sin descripción disponible",
+  "@noDescription": {
+    "description": "Texto cuando no hay descripción disponible"
+  },
+
+  "stopsLabel": "Paradas",
+  "@stopsLabel": {
+    "description": "Etiqueta para el número de paradas en una ruta"
+  },
+
+  "imagesLabel": "Imágenes",
+  "@imagesLabel": {
+    "description": "Etiqueta para la sección de galería de imágenes"
   }
 
 }

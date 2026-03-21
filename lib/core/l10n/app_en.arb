@@ -947,6 +947,96 @@
   "invalidCredentials": "Email or password incorrect",
   "@invalidCredentials": {
     "description": "Message when credentials are invalid during sign in"
+  },
+
+  "eventDetailTitle": "Event Detail",
+  "@eventDetailTitle": {
+    "description": "Title for the event detail page"
+  },
+
+  "poiDetailTitle": "Point of Interest",
+  "@poiDetailTitle": {
+    "description": "Title for the POI detail page"
+  },
+
+  "routeDetailTitle": "Route Detail",
+  "@routeDetailTitle": {
+    "description": "Title for the route detail page"
+  },
+
+  "descriptionLabel": "Description",
+  "@descriptionLabel": {
+    "description": "Label for description section"
+  },
+
+  "pointsOfInterestLabel": "Points of Interest",
+  "@pointsOfInterestLabel": {
+    "description": "Label for points of interest section"
+  },
+
+  "routesLabel": "Routes",
+  "@routesLabel": {
+    "description": "Label for routes section"
+  },
+
+  "organizerLabel": "Organizer",
+  "@organizerLabel": {
+    "description": "Label for event organizer"
+  },
+
+  "sponsorLabel": "Sponsor",
+  "@sponsorLabel": {
+    "description": "Label for event sponsor"
+  },
+
+  "authorLabel": "Author",
+  "@authorLabel": {
+    "description": "Label for POI author"
+  },
+
+  "interestingDataLabel": "Interesting Data",
+  "@interestingDataLabel": {
+    "description": "Label for POI interesting data section"
+  },
+
+  "locationLabel": "Location",
+  "@locationLabel": {
+    "description": "Label for location/map section"
+  },
+
+  "freeEvent": "Free",
+  "@freeEvent": {
+    "description": "Label when event price is zero or null"
+  },
+
+  "premiumEvent": "Premium",
+  "@premiumEvent": {
+    "description": "Badge label for premium events"
+  },
+
+  "errorLoadingDetail": "Could not load details",
+  "@errorLoadingDetail": {
+    "description": "Error message when detail page fails to load"
+  },
+
+  "retryButton": "Retry",
+  "@retryButton": {
+    "description": "Button label to retry a failed action"
+  },
+
+  "noDescription": "No description available",
+  "@noDescription": {
+    "description": "Placeholder when no description is provided"
+  },
+
+  "stopsLabel": "Stops",
+  "@stopsLabel": {
+    "description": "Label for the number of stops in a route"
+  },
+
+  "imagesLabel": "Images",
+  "@imagesLabel": {
+    "description": "Label for image gallery section"
   }
 
 }

@@ -614,4 +614,58 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get invalidCredentials => 'Email or password incorrect';
+
+  @override
+  String get eventDetailTitle => 'Event Detail';
+
+  @override
+  String get poiDetailTitle => 'Point of Interest';
+
+  @override
+  String get routeDetailTitle => 'Route Detail';
+
+  @override
+  String get descriptionLabel => 'Description';
+
+  @override
+  String get pointsOfInterestLabel => 'Points of Interest';
+
+  @override
+  String get routesLabel => 'Routes';
+
+  @override
+  String get organizerLabel => 'Organizer';
+
+  @override
+  String get sponsorLabel => 'Sponsor';
+
+  @override
+  String get authorLabel => 'Author';
+
+  @override
+  String get interestingDataLabel => 'Interesting Data';
+
+  @override
+  String get locationLabel => 'Location';
+
+  @override
+  String get freeEvent => 'Free';
+
+  @override
+  String get premiumEvent => 'Premium';
+
+  @override
+  String get errorLoadingDetail => 'Could not load details';
+
+  @override
+  String get retryButton => 'Retry';
+
+  @override
+  String get noDescription => 'No description available';
+
+  @override
+  String get stopsLabel => 'Stops';
+
+  @override
+  String get imagesLabel => 'Images';
 }

@@ -1201,6 +1201,114 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Email o contraseña incorrectos'**
   String get invalidCredentials;
+
+  /// Título para la página de detalle del evento
+  ///
+  /// In es, this message translates to:
+  /// **'Detalle del Evento'**
+  String get eventDetailTitle;
+
+  /// Título para la página de detalle del POI
+  ///
+  /// In es, this message translates to:
+  /// **'Punto de Interés'**
+  String get poiDetailTitle;
+
+  /// Título para la página de detalle de ruta
+  ///
+  /// In es, this message translates to:
+  /// **'Detalle de Ruta'**
+  String get routeDetailTitle;
+
+  /// Etiqueta para la sección de descripción
+  ///
+  /// In es, this message translates to:
+  /// **'Descripción'**
+  String get descriptionLabel;
+
+  /// Etiqueta para la sección de puntos de interés
+  ///
+  /// In es, this message translates to:
+  /// **'Puntos de Interés'**
+  String get pointsOfInterestLabel;
+
+  /// Etiqueta para la sección de rutas
+  ///
+  /// In es, this message translates to:
+  /// **'Rutas'**
+  String get routesLabel;
+
+  /// Etiqueta para el organizador del evento
+  ///
+  /// In es, this message translates to:
+  /// **'Organizador'**
+  String get organizerLabel;
+
+  /// Etiqueta para el patrocinador del evento
+  ///
+  /// In es, this message translates to:
+  /// **'Patrocinador'**
+  String get sponsorLabel;
+
+  /// Etiqueta para el autor del POI
+  ///
+  /// In es, this message translates to:
+  /// **'Autor'**
+  String get authorLabel;
+
+  /// Etiqueta para la sección de datos interesantes del POI
+  ///
+  /// In es, this message translates to:
+  /// **'Datos Interesantes'**
+  String get interestingDataLabel;
+
+  /// Etiqueta para la sección de ubicación/mapa
+  ///
+  /// In es, this message translates to:
+  /// **'Ubicación'**
+  String get locationLabel;
+
+  /// Etiqueta cuando el precio del evento es cero o nulo
+  ///
+  /// In es, this message translates to:
+  /// **'Gratis'**
+  String get freeEvent;
+
+  /// Etiqueta de badge para eventos premium
+  ///
+  /// In es, this message translates to:
+  /// **'Premium'**
+  String get premiumEvent;
+
+  /// Mensaje de error cuando falla la carga de la página de detalle
+  ///
+  /// In es, this message translates to:
+  /// **'No se pudieron cargar los detalles'**
+  String get errorLoadingDetail;
+
+  /// Etiqueta del botón para reintentar una acción fallida
+  ///
+  /// In es, this message translates to:
+  /// **'Reintentar'**
+  String get retryButton;
+
+  /// Texto cuando no hay descripción disponible
+  ///
+  /// In es, this message translates to:
+  /// **'Sin descripción disponible'**
+  String get noDescription;
+
+  /// Etiqueta para el número de paradas en una ruta
+  ///
+  /// In es, this message translates to:
+  /// **'Paradas'**
+  String get stopsLabel;
+
+  /// Etiqueta para la sección de galería de imágenes
+  ///
+  /// In es, this message translates to:
+  /// **'Imágenes'**
+  String get imagesLabel;
 }
 
 class _AppLocalizationsDelegate
