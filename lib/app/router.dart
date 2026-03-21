@@ -34,6 +34,11 @@ import 'package:poiquest_frontend_flutter/features/scan/presentation/pages/scan_
 // Ticket Validator pages
 import 'package:poiquest_frontend_flutter/features/ticket_validator/presentation/pages/ticket_validator_page.dart';
 
+// Detail pages
+import 'package:poiquest_frontend_flutter/features/events/presentation/pages/event_detail_page.dart';
+import 'package:poiquest_frontend_flutter/features/events/presentation/pages/poi_detail_page.dart';
+import 'package:poiquest_frontend_flutter/features/events/presentation/pages/route_detail_page.dart';
+
 // Layout
 import 'package:poiquest_frontend_flutter/core/widgets/app_main_scaffold.dart';
 import 'package:poiquest_frontend_flutter/core/widgets/ticket_validator_main_scaffold.dart';
@@ -128,7 +133,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       final location = state.uri.path;
       final isTicketValidatorRoute = location.startsWith('/ticket-validator');
       final isUserRoute = ['/events', '/tickets', '/scan', '/explore', '/profile'].any((route) => location.startsWith(route));
-      final isPublicRoute = location.startsWith('/auth') || location.startsWith('/catalog') || location.startsWith('/preferences') || location.startsWith('/profile/');
+      final isPublicRoute = location.startsWith('/auth') || location.startsWith('/catalog') || location.startsWith('/preferences') || location.startsWith('/profile/') || location.startsWith('/events/') || location.startsWith('/points-of-interest/') || location.startsWith('/routes/');
       
       // Si es una ruta pública, permitir acceso
       if (isPublicRoute) {
@@ -253,6 +258,29 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         parentNavigatorKey: _rootNavigatorKey,
         path: '/profile/change-password',
         builder: (_, __) => const ProfileChangePasswordPage(),
+      ),
+
+      // Detail pages (fuera del shell, pantalla completa)
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        path: '/events/:uuid',
+        builder: (_, state) => EventDetailPage(
+          uuid: state.pathParameters['uuid']!,
+        ),
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        path: '/points-of-interest/:uuid',
+        builder: (_, state) => PoiDetailPage(
+          uuid: state.pathParameters['uuid']!,
+        ),
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        path: '/routes/:uuid',
+        builder: (_, state) => RouteDetailPage(
+          uuid: state.pathParameters['uuid']!,
+        ),
       ),
 
       // Ruta de catálogo (fuera del shell)

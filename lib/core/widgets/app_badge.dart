@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:poiquest_frontend_flutter/app/theme/app_theme.dart';
 
-enum AppBadgeVariant { status, reward, info, category, filter }
+enum AppBadgeVariant { status, reward, info, category, filter, primary }
 
 class AppBadge extends StatelessWidget {
   final String label;
@@ -23,6 +23,7 @@ class AppBadge extends StatelessWidget {
       AppBadgeVariant.info => (c.surfaceContainer.withValues(alpha: 0.6), c.textPrimary, const EdgeInsets.symmetric(horizontal: 12, vertical: 6), 13.0),
       AppBadgeVariant.category => (c.surfaceContainer.withValues(alpha: 0.6), c.textPrimary, const EdgeInsets.symmetric(horizontal: 12, vertical: 6), 13.0),
       AppBadgeVariant.filter => (c.secondary, c.primary, const EdgeInsets.symmetric(horizontal: 6, vertical: 2), 10.0),
+      AppBadgeVariant.primary => (c.primary, c.onPrimary, const EdgeInsets.symmetric(horizontal: 12, vertical: 6), 13.0),
     };
 
     return Container(

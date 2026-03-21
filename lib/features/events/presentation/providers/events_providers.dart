@@ -3,9 +3,14 @@ import 'package:poiquest_frontend_flutter/features/events/data/datasources/event
 import 'package:poiquest_frontend_flutter/features/events/data/repositories/events_repository_impl.dart';
 import 'package:poiquest_frontend_flutter/features/events/domain/entities/event.dart';
 import 'package:poiquest_frontend_flutter/features/events/domain/entities/event_category.dart';
+import 'package:poiquest_frontend_flutter/features/events/domain/entities/point_of_interest.dart';
+import 'package:poiquest_frontend_flutter/features/events/domain/entities/route_detail.dart';
 import 'package:poiquest_frontend_flutter/features/events/domain/repositories/events_repository.dart';
 import 'package:poiquest_frontend_flutter/features/events/domain/usecases/get_events_by_category_usecases.dart';
 import 'package:poiquest_frontend_flutter/features/events/domain/usecases/get_categories_usecases.dart';
+import 'package:poiquest_frontend_flutter/features/events/domain/usecases/get_event_detail_usecase.dart';
+import 'package:poiquest_frontend_flutter/features/events/domain/usecases/get_poi_detail_usecase.dart';
+import 'package:poiquest_frontend_flutter/features/events/domain/usecases/get_route_detail_usecase.dart';
 
 /// Providers y Notifiers de la feature `events`.
 ///
@@ -314,4 +319,38 @@ class EventsNotifier extends Notifier<EventsState> {
 // Provider del notifier de eventos
 final eventsNotifierProvider = NotifierProvider<EventsNotifier, EventsState>(() {
   return EventsNotifier();
+});
+
+// ----- Providers para las páginas de detalle -----
+
+// Usecase providers para detalle
+final getEventDetailUseCaseProvider = Provider<GetEventDetail>((ref) {
+  final repo = ref.watch(eventsRepositoryProvider);
+  return GetEventDetail(repo);
+});
+
+final getPoiDetailUseCaseProvider = Provider<GetPoiDetail>((ref) {
+  final repo = ref.watch(eventsRepositoryProvider);
+  return GetPoiDetail(repo);
+});
+
+final getRouteDetailUseCaseProvider = Provider<GetRouteDetail>((ref) {
+  final repo = ref.watch(eventsRepositoryProvider);
+  return GetRouteDetail(repo);
+});
+
+// FutureProvider.family para obtener datos individuales por UUID
+final eventDetailProvider = FutureProvider.family<Event, String>((ref, uuid) async {
+  final usecase = ref.watch(getEventDetailUseCaseProvider);
+  return usecase(uuid);
+});
+
+final poiDetailProvider = FutureProvider.family<PointOfInterest, String>((ref, uuid) async {
+  final usecase = ref.watch(getPoiDetailUseCaseProvider);
+  return usecase(uuid);
+});
+
+final routeDetailProvider = FutureProvider.family<RouteDetail, String>((ref, uuid) async {
+  final usecase = ref.watch(getRouteDetailUseCaseProvider);
+  return usecase(uuid);
 });

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:poiquest_frontend_flutter/core/l10n/app_localizations.dart';
 import 'package:poiquest_frontend_flutter/core/utils/date_utils.dart';
 import 'package:poiquest_frontend_flutter/core/widgets/app_badge.dart';
@@ -308,13 +309,7 @@ class _EventsPageState extends ConsumerState<EventsPage> {
               endDate: event.endDate != null ? _formatDate(context, event.endDate!) : null,
               location: event.cityName ?? AppLocalizations.of(context)!.noLocation,
               onTap: () {
-                // TODO: Navegar a detalle del evento
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('Event: ${event.name}'),
-                    duration: const Duration(seconds: 1),
-                  ),
-                );
+                context.push('/events/${event.uuid}');
               },
             );
           }
