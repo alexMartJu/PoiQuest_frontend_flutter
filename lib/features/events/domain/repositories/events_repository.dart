@@ -1,5 +1,7 @@
 import 'package:poiquest_frontend_flutter/features/events/domain/entities/event.dart';
 import 'package:poiquest_frontend_flutter/features/events/domain/entities/event_category.dart';
+import 'package:poiquest_frontend_flutter/features/events/domain/entities/point_of_interest.dart';
+import 'package:poiquest_frontend_flutter/features/events/domain/entities/route_detail.dart';
 
 /// Repositorio abstracto para operaciones con eventos
 abstract class EventsRepository {
@@ -32,4 +34,13 @@ abstract class EventsRepository {
 
   /// Obtiene todas las ciudades activas del backend
   Future<List<({String uuid, String name})>> getCities();
+
+  /// Obtiene el detalle de un evento activo por UUID
+  Future<Event> getEventDetail(String uuid);
+
+  /// Obtiene el detalle de un POI por UUID
+  Future<PointOfInterest> getPoiDetail(String uuid);
+
+  /// Obtiene el detalle de una ruta por UUID
+  Future<RouteDetail> getRouteDetail(String uuid);
 }

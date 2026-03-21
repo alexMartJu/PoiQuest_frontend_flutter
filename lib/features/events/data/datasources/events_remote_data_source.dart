@@ -3,7 +3,10 @@ import 'package:flutter/foundation.dart';
 import 'package:poiquest_frontend_flutter/core/utils/app_service.dart';
 import 'package:poiquest_frontend_flutter/core/utils/constants.dart';
 import 'package:poiquest_frontend_flutter/features/events/data/models/event_category_model.dart';
+import 'package:poiquest_frontend_flutter/features/events/data/models/event_model.dart';
 import 'package:poiquest_frontend_flutter/features/events/data/models/paginated_events_model.dart';
+import 'package:poiquest_frontend_flutter/features/events/data/models/point_of_interest_model.dart';
+import 'package:poiquest_frontend_flutter/features/events/data/models/route_detail_model.dart';
 
 /// Data source responsable de realizar las llamadas HTTP al backend
 /// relacionadas con la feature `events`.
@@ -208,6 +211,90 @@ class EventsRemoteDataSource {
         error: e,
         type: DioExceptionType.unknown,
         message: 'Error inesperado al obtener ciudades: $e',
+      );
+    }
+  }
+
+  /// Obtiene el detalle de un evento activo por UUID
+  Future<EventModel> getEventDetail(String uuid) async {
+    final path = eventDetailEndpoint(uuid);
+    try {
+      final response = await AppService.dio.get(path);
+
+      if (response.statusCode == 200) {
+        return EventModel.fromJson(response.data as Map<String, dynamic>);
+      } else {
+        throw DioException(
+          requestOptions: response.requestOptions,
+          response: response,
+          type: DioExceptionType.badResponse,
+          message: 'Error al obtener detalle del evento: ${response.statusCode}',
+        );
+      }
+    } on DioException {
+      rethrow;
+    } catch (e) {
+      throw DioException(
+        requestOptions: RequestOptions(path: path),
+        error: e,
+        type: DioExceptionType.unknown,
+        message: 'Error inesperado al obtener detalle del evento: $e',
+      );
+    }
+  }
+
+  /// Obtiene el detalle de un POI por UUID
+  Future<PointOfInterestModel> getPoiDetail(String uuid) async {
+    final path = poiDetailEndpoint(uuid);
+    try {
+      final response = await AppService.dio.get(path);
+
+      if (response.statusCode == 200) {
+        return PointOfInterestModel.fromJson(response.data as Map<String, dynamic>);
+      } else {
+        throw DioException(
+          requestOptions: response.requestOptions,
+          response: response,
+          type: DioExceptionType.badResponse,
+          message: 'Error al obtener detalle del POI: ${response.statusCode}',
+        );
+      }
+    } on DioException {
+      rethrow;
+    } catch (e) {
+      throw DioException(
+        requestOptions: RequestOptions(path: path),
+        error: e,
+        type: DioExceptionType.unknown,
+        message: 'Error inesperado al obtener detalle del POI: $e',
+      );
+    }
+  }
+
+  /// Obtiene el detalle de una ruta por UUID
+  Future<RouteDetailModel> getRouteDetail(String uuid) async {
+    final path = routeDetailEndpoint(uuid);
+    try {
+      final response = await AppService.dio.get(path);
+
+      if (response.statusCode == 200) {
+        return RouteDetailModel.fromJson(response.data as Map<String, dynamic>);
+      } else {
+        throw DioException(
+          requestOptions: response.requestOptions,
+          response: response,
+          type: DioExceptionType.badResponse,
+          message: 'Error al obtener detalle de la ruta: ${response.statusCode}',
+        );
+      }
+    } on DioException {
+      rethrow;
+    } catch (e) {
+      throw DioException(
+        requestOptions: RequestOptions(path: path),
+        error: e,
+        type: DioExceptionType.unknown,
+        message: 'Error inesperado al obtener detalle de la ruta: $e',
       );
     }
   }

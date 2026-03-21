@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:poiquest_frontend_flutter/features/events/domain/entities/event.dart';
 import 'package:poiquest_frontend_flutter/features/events/domain/entities/event_category.dart';
+import 'package:poiquest_frontend_flutter/features/events/domain/entities/point_of_interest.dart';
+import 'package:poiquest_frontend_flutter/features/events/domain/entities/route_detail.dart';
 import 'package:poiquest_frontend_flutter/features/events/domain/repositories/events_repository.dart';
 import 'package:poiquest_frontend_flutter/features/events/data/datasources/events_remote_data_source.dart';
 
@@ -123,6 +125,42 @@ class EventsRepositoryImpl implements EventsRepository {
       throw _handleError(e);
     } catch (e) {
       throw Exception('Error inesperado al obtener ciudades: $e');
+    }
+  }
+
+  @override
+  Future<Event> getEventDetail(String uuid) async {
+    try {
+      final model = await _remoteDataSource.getEventDetail(uuid);
+      return model.toEntity();
+    } on DioException catch (e) {
+      throw _handleError(e);
+    } catch (e) {
+      throw Exception('Error inesperado al obtener detalle del evento: $e');
+    }
+  }
+
+  @override
+  Future<PointOfInterest> getPoiDetail(String uuid) async {
+    try {
+      final model = await _remoteDataSource.getPoiDetail(uuid);
+      return model.toEntity();
+    } on DioException catch (e) {
+      throw _handleError(e);
+    } catch (e) {
+      throw Exception('Error inesperado al obtener detalle del POI: $e');
+    }
+  }
+
+  @override
+  Future<RouteDetail> getRouteDetail(String uuid) async {
+    try {
+      final model = await _remoteDataSource.getRouteDetail(uuid);
+      return model.toEntity();
+    } on DioException catch (e) {
+      throw _handleError(e);
+    } catch (e) {
+      throw Exception('Error inesperado al obtener detalle de la ruta: $e');
     }
   }
 }

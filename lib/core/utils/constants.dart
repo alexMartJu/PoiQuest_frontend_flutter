@@ -7,9 +7,16 @@ final baseUrl = Env.apiBaseUrl;
 const String eventCategoriesEndpoint = '/event-categories';
 String eventsByCategoryEndpoint(String categoryUuid) => '/events/category/$categoryUuid';
 const String eventsEndpoint = '/events';
+String eventDetailEndpoint(String uuid) => '/events/$uuid';
 
 /// Endpoint para obtener el rango de precios de eventos activos
 const String eventsPriceRangeEndpoint = '/events/price-range';
+
+/// Endpoints de puntos de interés
+String poiDetailEndpoint(String uuid) => '/points-of-interest/$uuid';
+
+/// Endpoints de rutas
+String routeDetailEndpoint(String uuid) => '/routes/$uuid';
 
 /// Endpoints de ciudades
 const String citiesEndpoint = '/cities';
