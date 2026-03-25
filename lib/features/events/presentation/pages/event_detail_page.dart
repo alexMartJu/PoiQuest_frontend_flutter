@@ -6,8 +6,11 @@ import 'package:poiquest_frontend_flutter/app/theme/app_theme.dart';
 import 'package:poiquest_frontend_flutter/core/l10n/app_localizations.dart';
 import 'package:poiquest_frontend_flutter/core/utils/date_utils.dart';
 import 'package:poiquest_frontend_flutter/core/widgets/app_badge.dart';
+import 'package:poiquest_frontend_flutter/core/widgets/app_snackbar.dart';
 import 'package:poiquest_frontend_flutter/features/events/domain/entities/event.dart';
+import 'package:poiquest_frontend_flutter/features/auth/presentation/providers/auth_provider.dart';
 import 'package:poiquest_frontend_flutter/features/events/presentation/providers/events_providers.dart';
+import 'package:poiquest_frontend_flutter/features/tickets/presentation/widgets/purchase_bottom_sheet.dart';
 
 /// Pantalla de detalle de un evento. Muestra imagen hero, badges, info,
 /// organizador, sponsor, lista de POIs/rutas y galería de imágenes.
@@ -71,13 +74,13 @@ class _ErrorBody extends StatelessWidget {
   }
 }
 
-class _EventDetailBody extends StatelessWidget {
+class _EventDetailBody extends ConsumerWidget {
   final Event event;
 
   const _EventDetailBody({required this.event});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final c = Theme.of(context).colorScheme;
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context)!;
@@ -222,6 +225,25 @@ class _EventDetailBody extends StatelessWidget {
                     ),
                   ),
                 ],
+
+                // Buy tickets button
+                const SizedBox(height: 24),
+                SizedBox(
+                  width: double.infinity,
+                  child: FilledButton.icon(
+                    onPressed: () {
+                      final auth = ref.read(authProvider);
+                      if (auth.value != null) {
+                        showPurchaseBottomSheet(context, event);
+                      } else {
+                        AppSnackBar.info(context, l10n.loginToBuy);
+                        context.push('/auth/login');
+                      }
+                    },
+                    icon: const Icon(Icons.confirmation_number_outlined),
+                    label: Text(l10n.buyButton),
+                  ),
+                ),
 
                 // Image gallery
                 if (event.images.length > 1) ...[

@@ -27,6 +27,7 @@ import 'package:poiquest_frontend_flutter/features/profile/presentation/pages/pr
 
 // Tickets pages
 import 'package:poiquest_frontend_flutter/features/tickets/presentation/pages/tickets_page_noauth.dart';
+import 'package:poiquest_frontend_flutter/features/tickets/presentation/pages/tickets_page.dart';
 
 // Scan pages
 import 'package:poiquest_frontend_flutter/features/scan/presentation/pages/scan_page_noauth.dart';
@@ -177,7 +178,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
             path: '/tickets',
             pageBuilder: (context, state) => const NoTransitionPage(
               child: _AuthCheck(
-                logged: Center(child: Text('Página Tickets Autenticada')),
+                logged: TicketsPage(),
                 anonymous: TicketsPageNoAuth(),
               ),
             ),

@@ -75,20 +75,20 @@ class TicketValidatorMainScaffold extends ConsumerWidget {
                 }
               },
             ),
-            bottomNavigationBar: NavigationBar(
-              selectedIndex: _getCurrentIndex(context),
-              onDestinationSelected: (index) {
-                if (index == 0) {
-                  context.go('/ticket-validator');
-                }
-              },
-              destinations: [
-                NavigationDestination(
-                  icon: const Icon(Icons.qr_code_scanner_rounded),
-                  label: l10n.ticketValidator,
-                ),
-              ],
-            ),
+            // bottomNavigationBar: NavigationBar(
+            //   selectedIndex: _getCurrentIndex(context),
+            //   onDestinationSelected: (index) {
+            //     if (index == 0) {
+            //       context.go('/ticket-validator');
+            //     }
+            //   },
+            //   destinations: [
+            //     NavigationDestination(
+            //       icon: const Icon(Icons.qr_code_scanner_rounded),
+            //       label: l10n.ticketValidator,
+            //     ),
+            //   ],
+            // ),
             body: child,
           );
         }
