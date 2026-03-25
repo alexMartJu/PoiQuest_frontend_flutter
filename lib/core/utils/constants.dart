@@ -41,3 +41,12 @@ const String refreshKey = 'refresh_token';
 /// Timeouts
 const Duration connectTimeout = Duration(seconds: 10);
 const Duration receiveTimeout = Duration(seconds: 10);
+
+/// Endpoints de pagos y tickets
+const String createPaymentIntentEndpoint = '/payments/create-payment-intent';
+const String confirmPaymentEndpoint = '/payments/confirm-payment';
+const String createFreeTicketsEndpoint = '/payments/free-tickets';
+const String activeTicketsEndpoint = '/payments/my-tickets/active';
+const String usedTicketsEndpoint = '/payments/my-tickets/used';
+String eventAvailabilityEndpoint(String eventUuid, String visitDate) =>
+    '/payments/availability?eventUuid=$eventUuid&visitDate=$visitDate';

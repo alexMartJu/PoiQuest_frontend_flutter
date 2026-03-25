@@ -1037,6 +1037,121 @@
   "imagesLabel": "Images",
   "@imagesLabel": {
     "description": "Label for image gallery section"
+  },
+
+  "activeTickets": "Active",
+  "@activeTickets": {
+    "description": "Label for active tickets segment"
+  },
+
+  "usedTickets": "Used",
+  "@usedTickets": {
+    "description": "Label for used tickets segment"
+  },
+
+  "noActiveTickets": "You have no active tickets",
+  "@noActiveTickets": {
+    "description": "Message when there are no active tickets"
+  },
+
+  "noUsedTickets": "You have no used tickets",
+  "@noUsedTickets": {
+    "description": "Message when there are no used tickets"
+  },
+
+  "freeEventLabel": "Free Event",
+  "@freeEventLabel": {
+    "description": "Label shown on free ticket cards"
+  },
+
+  "ticketStatusActive": "Active",
+  "@ticketStatusActive": {
+    "description": "Badge label for active ticket status"
+  },
+
+  "ticketStatusUsed": "Used",
+  "@ticketStatusUsed": {
+    "description": "Badge label for used ticket status"
+  },
+
+  "ticketStatusExpired": "Expired",
+  "@ticketStatusExpired": {
+    "description": "Badge label for expired ticket status"
+  },
+
+  "ticketStatusPending": "Pending",
+  "@ticketStatusPending": {
+    "description": "Badge label for pending payment ticket status"
+  },
+
+  "buyTickets": "Buy Tickets",
+  "@buyTickets": {
+    "description": "Title of the purchase bottom sheet"
+  },
+
+  "selectDate": "Visit Date",
+  "@selectDate": {
+    "description": "Label for date selector"
+  },
+
+  "chooseDate": "Choose date",
+  "@chooseDate": {
+    "description": "Placeholder for date button"
+  },
+
+  "checkingAvailability": "Checking availability…",
+  "@checkingAvailability": {
+    "description": "Message while loading availability"
+  },
+
+  "availableEntries": "tickets available",
+  "@availableEntries": {
+    "description": "Suffix for available tickets count"
+  },
+
+  "noAvailableEntries": "Sold out for this date",
+  "@noAvailableEntries": {
+    "description": "Message when no tickets are available"
+  },
+
+  "quantity": "Quantity",
+  "@quantity": {
+    "description": "Label for quantity selector"
+  },
+
+  "maxTicketsPerPurchase": "Maximum 4 tickets per purchase",
+  "@maxTicketsPerPurchase": {
+    "description": "Info message about ticket limit"
+  },
+
+  "nonRefundableWarning": "Tickets are non-refundable once purchased.",
+  "@nonRefundableWarning": {
+    "description": "Non-refund warning"
+  },
+
+  "getTickets": "Get Tickets",
+  "@getTickets": {
+    "description": "Button for free tickets"
+  },
+
+  "payNow": "Pay Now",
+  "@payNow": {
+    "description": "Button for Stripe payment"
+  },
+
+  "purchaseSuccess": "Tickets obtained successfully!",
+  "@purchaseSuccess": {
+    "description": "Success message after purchase"
+  },
+
+  "buyButton": "Buy Ticket",
+  "@buyButton": {
+    "description": "Buy button on event detail page"
+  },
+
+  "loginToBuy": "Sign in to buy tickets",
+  "@loginToBuy": {
+    "description": "Message when unauthenticated user tries to buy"
   }
 
 }

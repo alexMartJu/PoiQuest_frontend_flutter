@@ -1309,6 +1309,144 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Imágenes'**
   String get imagesLabel;
+
+  /// Etiqueta del segmento de tickets activos
+  ///
+  /// In es, this message translates to:
+  /// **'Activas'**
+  String get activeTickets;
+
+  /// Etiqueta del segmento de tickets usados
+  ///
+  /// In es, this message translates to:
+  /// **'Usadas'**
+  String get usedTickets;
+
+  /// Mensaje cuando no hay tickets activos
+  ///
+  /// In es, this message translates to:
+  /// **'No tienes entradas activas'**
+  String get noActiveTickets;
+
+  /// Mensaje cuando no hay tickets usados
+  ///
+  /// In es, this message translates to:
+  /// **'No tienes entradas usadas'**
+  String get noUsedTickets;
+
+  /// Etiqueta en tarjetas de tickets gratuitos
+  ///
+  /// In es, this message translates to:
+  /// **'Evento Gratuito'**
+  String get freeEventLabel;
+
+  /// Badge de estado de ticket activo
+  ///
+  /// In es, this message translates to:
+  /// **'Activo'**
+  String get ticketStatusActive;
+
+  /// Badge de estado de ticket usado
+  ///
+  /// In es, this message translates to:
+  /// **'Usado'**
+  String get ticketStatusUsed;
+
+  /// Badge de estado de ticket expirado
+  ///
+  /// In es, this message translates to:
+  /// **'Expirado'**
+  String get ticketStatusExpired;
+
+  /// Badge de estado de ticket pendiente de pago
+  ///
+  /// In es, this message translates to:
+  /// **'Pendiente'**
+  String get ticketStatusPending;
+
+  /// Título del bottom sheet de compra
+  ///
+  /// In es, this message translates to:
+  /// **'Comprar entradas'**
+  String get buyTickets;
+
+  /// Etiqueta para el selector de fecha
+  ///
+  /// In es, this message translates to:
+  /// **'Fecha de visita'**
+  String get selectDate;
+
+  /// Placeholder del botón de fecha
+  ///
+  /// In es, this message translates to:
+  /// **'Seleccionar fecha'**
+  String get chooseDate;
+
+  /// Mensaje mientras se carga la disponibilidad
+  ///
+  /// In es, this message translates to:
+  /// **'Comprobando disponibilidad…'**
+  String get checkingAvailability;
+
+  /// Sufijo del número de entradas disponibles
+  ///
+  /// In es, this message translates to:
+  /// **'entradas disponibles'**
+  String get availableEntries;
+
+  /// Mensaje cuando no hay entradas disponibles
+  ///
+  /// In es, this message translates to:
+  /// **'Agotado para esta fecha'**
+  String get noAvailableEntries;
+
+  /// Etiqueta para el selector de cantidad
+  ///
+  /// In es, this message translates to:
+  /// **'Cantidad'**
+  String get quantity;
+
+  /// Mensaje informativo del límite de tickets
+  ///
+  /// In es, this message translates to:
+  /// **'Máximo 4 entradas por compra'**
+  String get maxTicketsPerPurchase;
+
+  /// Aviso de no reembolso
+  ///
+  /// In es, this message translates to:
+  /// **'Las entradas no son reembolsables una vez compradas.'**
+  String get nonRefundableWarning;
+
+  /// Botón para tickets gratuitos
+  ///
+  /// In es, this message translates to:
+  /// **'Obtener entradas'**
+  String get getTickets;
+
+  /// Botón para pagar con Stripe
+  ///
+  /// In es, this message translates to:
+  /// **'Pagar ahora'**
+  String get payNow;
+
+  /// Mensaje de éxito después de la compra
+  ///
+  /// In es, this message translates to:
+  /// **'¡Entradas obtenidas correctamente!'**
+  String get purchaseSuccess;
+
+  /// Botón de compra en la página de detalle del evento
+  ///
+  /// In es, this message translates to:
+  /// **'Comprar entrada'**
+  String get buyButton;
+
+  /// Mensaje cuando el usuario no está autenticado e intenta comprar
+  ///
+  /// In es, this message translates to:
+  /// **'Inicia sesión para comprar entradas'**
+  String get loginToBuy;
 }
 
 class _AppLocalizationsDelegate

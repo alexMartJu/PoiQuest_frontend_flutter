@@ -668,4 +668,74 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get imagesLabel => 'Images';
+
+  @override
+  String get activeTickets => 'Active';
+
+  @override
+  String get usedTickets => 'Used';
+
+  @override
+  String get noActiveTickets => 'You have no active tickets';
+
+  @override
+  String get noUsedTickets => 'You have no used tickets';
+
+  @override
+  String get freeEventLabel => 'Free Event';
+
+  @override
+  String get ticketStatusActive => 'Active';
+
+  @override
+  String get ticketStatusUsed => 'Used';
+
+  @override
+  String get ticketStatusExpired => 'Expired';
+
+  @override
+  String get ticketStatusPending => 'Pending';
+
+  @override
+  String get buyTickets => 'Buy Tickets';
+
+  @override
+  String get selectDate => 'Visit Date';
+
+  @override
+  String get chooseDate => 'Choose date';
+
+  @override
+  String get checkingAvailability => 'Checking availability…';
+
+  @override
+  String get availableEntries => 'tickets available';
+
+  @override
+  String get noAvailableEntries => 'Sold out for this date';
+
+  @override
+  String get quantity => 'Quantity';
+
+  @override
+  String get maxTicketsPerPurchase => 'Maximum 4 tickets per purchase';
+
+  @override
+  String get nonRefundableWarning =>
+      'Tickets are non-refundable once purchased.';
+
+  @override
+  String get getTickets => 'Get Tickets';
+
+  @override
+  String get payNow => 'Pay Now';
+
+  @override
+  String get purchaseSuccess => 'Tickets obtained successfully!';
+
+  @override
+  String get buyButton => 'Buy Ticket';
+
+  @override
+  String get loginToBuy => 'Sign in to buy tickets';
 }

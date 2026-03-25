@@ -1035,6 +1035,121 @@
   "imagesLabel": "Imágenes",
   "@imagesLabel": {
     "description": "Etiqueta para la sección de galería de imágenes"
+  },
+
+  "activeTickets": "Activas",
+  "@activeTickets": {
+    "description": "Etiqueta del segmento de tickets activos"
+  },
+
+  "usedTickets": "Usadas",
+  "@usedTickets": {
+    "description": "Etiqueta del segmento de tickets usados"
+  },
+
+  "noActiveTickets": "No tienes entradas activas",
+  "@noActiveTickets": {
+    "description": "Mensaje cuando no hay tickets activos"
+  },
+
+  "noUsedTickets": "No tienes entradas usadas",
+  "@noUsedTickets": {
+    "description": "Mensaje cuando no hay tickets usados"
+  },
+
+  "freeEventLabel": "Evento Gratuito",
+  "@freeEventLabel": {
+    "description": "Etiqueta en tarjetas de tickets gratuitos"
+  },
+
+  "ticketStatusActive": "Activo",
+  "@ticketStatusActive": {
+    "description": "Badge de estado de ticket activo"
+  },
+
+  "ticketStatusUsed": "Usado",
+  "@ticketStatusUsed": {
+    "description": "Badge de estado de ticket usado"
+  },
+
+  "ticketStatusExpired": "Expirado",
+  "@ticketStatusExpired": {
+    "description": "Badge de estado de ticket expirado"
+  },
+
+  "ticketStatusPending": "Pendiente",
+  "@ticketStatusPending": {
+    "description": "Badge de estado de ticket pendiente de pago"
+  },
+
+  "buyTickets": "Comprar entradas",
+  "@buyTickets": {
+    "description": "Título del bottom sheet de compra"
+  },
+
+  "selectDate": "Fecha de visita",
+  "@selectDate": {
+    "description": "Etiqueta para el selector de fecha"
+  },
+
+  "chooseDate": "Seleccionar fecha",
+  "@chooseDate": {
+    "description": "Placeholder del botón de fecha"
+  },
+
+  "checkingAvailability": "Comprobando disponibilidad…",
+  "@checkingAvailability": {
+    "description": "Mensaje mientras se carga la disponibilidad"
+  },
+
+  "availableEntries": "entradas disponibles",
+  "@availableEntries": {
+    "description": "Sufijo del número de entradas disponibles"
+  },
+
+  "noAvailableEntries": "Agotado para esta fecha",
+  "@noAvailableEntries": {
+    "description": "Mensaje cuando no hay entradas disponibles"
+  },
+
+  "quantity": "Cantidad",
+  "@quantity": {
+    "description": "Etiqueta para el selector de cantidad"
+  },
+
+  "maxTicketsPerPurchase": "Máximo 4 entradas por compra",
+  "@maxTicketsPerPurchase": {
+    "description": "Mensaje informativo del límite de tickets"
+  },
+
+  "nonRefundableWarning": "Las entradas no son reembolsables una vez compradas.",
+  "@nonRefundableWarning": {
+    "description": "Aviso de no reembolso"
+  },
+
+  "getTickets": "Obtener entradas",
+  "@getTickets": {
+    "description": "Botón para tickets gratuitos"
+  },
+
+  "payNow": "Pagar ahora",
+  "@payNow": {
+    "description": "Botón para pagar con Stripe"
+  },
+
+  "purchaseSuccess": "¡Entradas obtenidas correctamente!",
+  "@purchaseSuccess": {
+    "description": "Mensaje de éxito después de la compra"
+  },
+
+  "buyButton": "Comprar entrada",
+  "@buyButton": {
+    "description": "Botón de compra en la página de detalle del evento"
+  },
+
+  "loginToBuy": "Inicia sesión para comprar entradas",
+  "@loginToBuy": {
+    "description": "Mensaje cuando el usuario no está autenticado e intenta comprar"
   }
 
 }

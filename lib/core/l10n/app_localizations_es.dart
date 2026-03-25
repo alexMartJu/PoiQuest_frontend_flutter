@@ -669,4 +669,74 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get imagesLabel => 'Imágenes';
+
+  @override
+  String get activeTickets => 'Activas';
+
+  @override
+  String get usedTickets => 'Usadas';
+
+  @override
+  String get noActiveTickets => 'No tienes entradas activas';
+
+  @override
+  String get noUsedTickets => 'No tienes entradas usadas';
+
+  @override
+  String get freeEventLabel => 'Evento Gratuito';
+
+  @override
+  String get ticketStatusActive => 'Activo';
+
+  @override
+  String get ticketStatusUsed => 'Usado';
+
+  @override
+  String get ticketStatusExpired => 'Expirado';
+
+  @override
+  String get ticketStatusPending => 'Pendiente';
+
+  @override
+  String get buyTickets => 'Comprar entradas';
+
+  @override
+  String get selectDate => 'Fecha de visita';
+
+  @override
+  String get chooseDate => 'Seleccionar fecha';
+
+  @override
+  String get checkingAvailability => 'Comprobando disponibilidad…';
+
+  @override
+  String get availableEntries => 'entradas disponibles';
+
+  @override
+  String get noAvailableEntries => 'Agotado para esta fecha';
+
+  @override
+  String get quantity => 'Cantidad';
+
+  @override
+  String get maxTicketsPerPurchase => 'Máximo 4 entradas por compra';
+
+  @override
+  String get nonRefundableWarning =>
+      'Las entradas no son reembolsables una vez compradas.';
+
+  @override
+  String get getTickets => 'Obtener entradas';
+
+  @override
+  String get payNow => 'Pagar ahora';
+
+  @override
+  String get purchaseSuccess => '¡Entradas obtenidas correctamente!';
+
+  @override
+  String get buyButton => 'Comprar entrada';
+
+  @override
+  String get loginToBuy => 'Inicia sesión para comprar entradas';
 }
