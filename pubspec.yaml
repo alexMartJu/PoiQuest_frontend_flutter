@@ -46,6 +46,9 @@ dependencies:
   flutter_secure_storage: ^9.2.2
   flutter_map: ^7.0.2
   latlong2: ^0.9.1
+  flutter_stripe: ^12.4.0
+  flutter_dotenv: ^6.0.0
+  qr_flutter: ^4.1.0
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +74,9 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   generate: true
+
+  assets:
+    - .env
 
   # To add assets to your application, add an assets section, like this:
   # assets:
