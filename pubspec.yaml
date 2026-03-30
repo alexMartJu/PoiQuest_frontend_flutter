@@ -49,6 +49,7 @@ dependencies:
   flutter_stripe: ^12.4.0
   flutter_dotenv: ^6.0.0
   qr_flutter: ^4.1.0
+  mobile_scanner: ^7.0.1
 
 dev_dependencies:
   flutter_test:
