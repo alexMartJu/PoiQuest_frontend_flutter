@@ -34,6 +34,7 @@ import 'package:poiquest_frontend_flutter/features/scan/presentation/pages/scan_
 
 // Ticket Validator pages
 import 'package:poiquest_frontend_flutter/features/ticket_validator/presentation/pages/ticket_validator_page.dart';
+import 'package:poiquest_frontend_flutter/features/ticket_validator/presentation/pages/validation_history_page.dart';
 
 // Detail pages
 import 'package:poiquest_frontend_flutter/features/events/presentation/pages/event_detail_page.dart';
@@ -225,6 +226,13 @@ final appRouterProvider = Provider<GoRouter>((ref) {
             path: '/ticket-validator',
             pageBuilder: (context, state) => const NoTransitionPage(
               child: TicketValidatorPage(),
+            ),
+          ),
+          // Historial de validaciones
+          GoRoute(
+            path: '/ticket-validator/history',
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: ValidationHistoryPage(),
             ),
           ),
         ],
