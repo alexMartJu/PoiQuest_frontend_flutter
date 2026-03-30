@@ -50,3 +50,7 @@ const String activeTicketsEndpoint = '/payments/my-tickets/active';
 const String usedTicketsEndpoint = '/payments/my-tickets/used';
 String eventAvailabilityEndpoint(String eventUuid, String visitDate) =>
     '/payments/availability?eventUuid=$eventUuid&visitDate=$visitDate';
+
+/// Endpoints de validación de tickets (ticket_validator)
+const String validateTicketEndpoint = '/ticket-validation/validate';
+const String validationHistoryEndpoint = '/ticket-validation/history';
