@@ -1447,6 +1447,120 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Inicia sesión para comprar entradas'**
   String get loginToBuy;
+
+  /// Elemento de navegación inferior: escanear tickets para validar
+  ///
+  /// In es, this message translates to:
+  /// **'Escanear'**
+  String get navValidatorScan;
+
+  /// Elemento de navegación inferior: historial de validaciones
+  ///
+  /// In es, this message translates to:
+  /// **'Historial'**
+  String get navValidatorHistory;
+
+  /// Título para la página del escáner QR
+  ///
+  /// In es, this message translates to:
+  /// **'Escanear Ticket'**
+  String get scannerTitle;
+
+  /// Instrucción subtítulo para el escáner
+  ///
+  /// In es, this message translates to:
+  /// **'Apunta la cámara al código QR del ticket'**
+  String get scannerSubtitle;
+
+  /// Mensaje mientras se valida un ticket escaneado
+  ///
+  /// In es, this message translates to:
+  /// **'Validando ticket...'**
+  String get scannerProcessing;
+
+  /// Mensaje de éxito tras la validación del ticket
+  ///
+  /// In es, this message translates to:
+  /// **'¡Ticket validado correctamente!'**
+  String get scannerSuccess;
+
+  /// Mensaje de error cuando el ticket no es válido
+  ///
+  /// In es, this message translates to:
+  /// **'Ticket no válido'**
+  String get scannerInvalid;
+
+  /// Mensaje de error cuando el UUID del ticket no se encuentra
+  ///
+  /// In es, this message translates to:
+  /// **'Ticket no encontrado'**
+  String get scannerNotFound;
+
+  /// Mensaje de error genérico durante la validación
+  ///
+  /// In es, this message translates to:
+  /// **'Error al validar ticket'**
+  String get scannerError;
+
+  /// Botón para escanear otro ticket tras la validación
+  ///
+  /// In es, this message translates to:
+  /// **'Escanear Otro'**
+  String get scanAnother;
+
+  /// Título para la página del historial de validaciones
+  ///
+  /// In es, this message translates to:
+  /// **'Historial de Validaciones'**
+  String get validationHistoryTitle;
+
+  /// Mensaje cuando el historial de validaciones está vacío
+  ///
+  /// In es, this message translates to:
+  /// **'Sin validaciones aún'**
+  String get noValidationHistory;
+
+  /// Descripción cuando el historial de validaciones está vacío
+  ///
+  /// In es, this message translates to:
+  /// **'Los tickets validados aparecerán aquí'**
+  String get noValidationHistoryDesc;
+
+  /// Etiqueta de badge para validación exitosa
+  ///
+  /// In es, this message translates to:
+  /// **'Válido'**
+  String get validLabel;
+
+  /// Etiqueta de badge para validación fallida
+  ///
+  /// In es, this message translates to:
+  /// **'Inválido'**
+  String get invalidLabel;
+
+  /// Mensaje cuando el permiso de cámara es denegado
+  ///
+  /// In es, this message translates to:
+  /// **'Se necesita permiso de cámara para escanear códigos QR'**
+  String get cameraPermissionDenied;
+
+  /// Etiqueta para el nombre del evento en resultado de validación
+  ///
+  /// In es, this message translates to:
+  /// **'Evento'**
+  String get eventLabel;
+
+  /// Etiqueta para la fecha en resultado de validación
+  ///
+  /// In es, this message translates to:
+  /// **'Fecha'**
+  String get dateLabel;
+
+  /// Etiqueta para la ciudad en resultado de validación
+  ///
+  /// In es, this message translates to:
+  /// **'Ciudad'**
+  String get cityLabel;
 }
 
 class _AppLocalizationsDelegate

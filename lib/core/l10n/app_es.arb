@@ -1150,6 +1150,101 @@
   "loginToBuy": "Inicia sesión para comprar entradas",
   "@loginToBuy": {
     "description": "Mensaje cuando el usuario no está autenticado e intenta comprar"
+  },
+
+  "navValidatorScan": "Escanear",
+  "@navValidatorScan": {
+    "description": "Elemento de navegación inferior: escanear tickets para validar"
+  },
+
+  "navValidatorHistory": "Historial",
+  "@navValidatorHistory": {
+    "description": "Elemento de navegación inferior: historial de validaciones"
+  },
+
+  "scannerTitle": "Escanear Ticket",
+  "@scannerTitle": {
+    "description": "Título para la página del escáner QR"
+  },
+
+  "scannerSubtitle": "Apunta la cámara al código QR del ticket",
+  "@scannerSubtitle": {
+    "description": "Instrucción subtítulo para el escáner"
+  },
+
+  "scannerProcessing": "Validando ticket...",
+  "@scannerProcessing": {
+    "description": "Mensaje mientras se valida un ticket escaneado"
+  },
+
+  "scannerSuccess": "¡Ticket validado correctamente!",
+  "@scannerSuccess": {
+    "description": "Mensaje de éxito tras la validación del ticket"
+  },
+
+  "scannerInvalid": "Ticket no válido",
+  "@scannerInvalid": {
+    "description": "Mensaje de error cuando el ticket no es válido"
+  },
+
+  "scannerNotFound": "Ticket no encontrado",
+  "@scannerNotFound": {
+    "description": "Mensaje de error cuando el UUID del ticket no se encuentra"
+  },
+
+  "scannerError": "Error al validar ticket",
+  "@scannerError": {
+    "description": "Mensaje de error genérico durante la validación"
+  },
+
+  "scanAnother": "Escanear Otro",
+  "@scanAnother": {
+    "description": "Botón para escanear otro ticket tras la validación"
+  },
+
+  "validationHistoryTitle": "Historial de Validaciones",
+  "@validationHistoryTitle": {
+    "description": "Título para la página del historial de validaciones"
+  },
+
+  "noValidationHistory": "Sin validaciones aún",
+  "@noValidationHistory": {
+    "description": "Mensaje cuando el historial de validaciones está vacío"
+  },
+
+  "noValidationHistoryDesc": "Los tickets validados aparecerán aquí",
+  "@noValidationHistoryDesc": {
+    "description": "Descripción cuando el historial de validaciones está vacío"
+  },
+
+  "validLabel": "Válido",
+  "@validLabel": {
+    "description": "Etiqueta de badge para validación exitosa"
+  },
+
+  "invalidLabel": "Inválido",
+  "@invalidLabel": {
+    "description": "Etiqueta de badge para validación fallida"
+  },
+
+  "cameraPermissionDenied": "Se necesita permiso de cámara para escanear códigos QR",
+  "@cameraPermissionDenied": {
+    "description": "Mensaje cuando el permiso de cámara es denegado"
+  },
+
+  "eventLabel": "Evento",
+  "@eventLabel": {
+    "description": "Etiqueta para el nombre del evento en resultado de validación"
+  },
+
+  "dateLabel": "Fecha",
+  "@dateLabel": {
+    "description": "Etiqueta para la fecha en resultado de validación"
+  },
+
+  "cityLabel": "Ciudad",
+  "@cityLabel": {
+    "description": "Etiqueta para la ciudad en resultado de validación"
   }
 
 }

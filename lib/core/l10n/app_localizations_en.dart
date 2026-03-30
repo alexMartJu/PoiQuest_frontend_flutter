@@ -738,4 +738,62 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get loginToBuy => 'Sign in to buy tickets';
+
+  @override
+  String get navValidatorScan => 'Scan';
+
+  @override
+  String get navValidatorHistory => 'History';
+
+  @override
+  String get scannerTitle => 'Scan Ticket';
+
+  @override
+  String get scannerSubtitle => 'Point the camera at the ticket QR code';
+
+  @override
+  String get scannerProcessing => 'Validating ticket...';
+
+  @override
+  String get scannerSuccess => 'Ticket validated successfully!';
+
+  @override
+  String get scannerInvalid => 'Invalid ticket';
+
+  @override
+  String get scannerNotFound => 'Ticket not found';
+
+  @override
+  String get scannerError => 'Error validating ticket';
+
+  @override
+  String get scanAnother => 'Scan Another';
+
+  @override
+  String get validationHistoryTitle => 'Validation History';
+
+  @override
+  String get noValidationHistory => 'No validations yet';
+
+  @override
+  String get noValidationHistoryDesc => 'Validated tickets will appear here';
+
+  @override
+  String get validLabel => 'Valid';
+
+  @override
+  String get invalidLabel => 'Invalid';
+
+  @override
+  String get cameraPermissionDenied =>
+      'Camera permission is required to scan QR codes';
+
+  @override
+  String get eventLabel => 'Event';
+
+  @override
+  String get dateLabel => 'Date';
+
+  @override
+  String get cityLabel => 'City';
 }

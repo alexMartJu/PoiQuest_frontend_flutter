@@ -1152,6 +1152,101 @@
   "loginToBuy": "Sign in to buy tickets",
   "@loginToBuy": {
     "description": "Message when unauthenticated user tries to buy"
+  },
+
+  "navValidatorScan": "Scan",
+  "@navValidatorScan": {
+    "description": "Bottom navigation item: scan tickets for validation"
+  },
+
+  "navValidatorHistory": "History",
+  "@navValidatorHistory": {
+    "description": "Bottom navigation item: validation history"
+  },
+
+  "scannerTitle": "Scan Ticket",
+  "@scannerTitle": {
+    "description": "Title for the QR scanner page"
+  },
+
+  "scannerSubtitle": "Point the camera at the ticket QR code",
+  "@scannerSubtitle": {
+    "description": "Subtitle instruction for the scanner"
+  },
+
+  "scannerProcessing": "Validating ticket...",
+  "@scannerProcessing": {
+    "description": "Message while validating a scanned ticket"
+  },
+
+  "scannerSuccess": "Ticket validated successfully!",
+  "@scannerSuccess": {
+    "description": "Success message after ticket validation"
+  },
+
+  "scannerInvalid": "Invalid ticket",
+  "@scannerInvalid": {
+    "description": "Error message when ticket is invalid"
+  },
+
+  "scannerNotFound": "Ticket not found",
+  "@scannerNotFound": {
+    "description": "Error message when ticket UUID is not found"
+  },
+
+  "scannerError": "Error validating ticket",
+  "@scannerError": {
+    "description": "Generic error message during validation"
+  },
+
+  "scanAnother": "Scan Another",
+  "@scanAnother": {
+    "description": "Button to scan another ticket after validation"
+  },
+
+  "validationHistoryTitle": "Validation History",
+  "@validationHistoryTitle": {
+    "description": "Title for the validation history page"
+  },
+
+  "noValidationHistory": "No validations yet",
+  "@noValidationHistory": {
+    "description": "Message when validation history is empty"
+  },
+
+  "noValidationHistoryDesc": "Validated tickets will appear here",
+  "@noValidationHistoryDesc": {
+    "description": "Description when validation history is empty"
+  },
+
+  "validLabel": "Valid",
+  "@validLabel": {
+    "description": "Badge label for valid validation"
+  },
+
+  "invalidLabel": "Invalid",
+  "@invalidLabel": {
+    "description": "Badge label for invalid validation"
+  },
+
+  "cameraPermissionDenied": "Camera permission is required to scan QR codes",
+  "@cameraPermissionDenied": {
+    "description": "Message when camera permission is denied"
+  },
+
+  "eventLabel": "Event",
+  "@eventLabel": {
+    "description": "Label for event name in validation result"
+  },
+
+  "dateLabel": "Date",
+  "@dateLabel": {
+    "description": "Label for date in validation result"
+  },
+
+  "cityLabel": "City",
+  "@cityLabel": {
+    "description": "Label for city in validation result"
   }
 
 }
