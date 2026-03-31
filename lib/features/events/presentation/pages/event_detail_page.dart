@@ -231,10 +231,17 @@ class _EventDetailBody extends ConsumerWidget {
                 SizedBox(
                   width: double.infinity,
                   child: FilledButton.icon(
-                    onPressed: () {
+                    onPressed: () async {
                       final auth = ref.read(authProvider);
                       if (auth.value != null) {
-                        showPurchaseBottomSheet(context, event);
+                        final result = await showPurchaseBottomSheet(context, event);
+                        if (result != null && context.mounted) {
+                          if (result.success) {
+                            AppSnackBar.success(context, l10n.purchaseSuccess);
+                          } else {
+                            AppSnackBar.error(context, result.errorMessage ?? '');
+                          }
+                        }
                       } else {
                         AppSnackBar.info(context, l10n.loginToBuy);
                         context.push('/auth/login');

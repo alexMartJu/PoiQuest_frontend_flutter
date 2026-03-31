@@ -5,14 +5,20 @@ import 'package:poiquest_frontend_flutter/app/theme/app_theme.dart';
 import 'package:poiquest_frontend_flutter/core/l10n/app_localizations.dart';
 import 'package:poiquest_frontend_flutter/core/utils/date_utils.dart';
 import 'package:poiquest_frontend_flutter/core/widgets/app_date_picker.dart';
-import 'package:poiquest_frontend_flutter/core/widgets/app_snackbar.dart';
 import 'package:poiquest_frontend_flutter/features/events/domain/entities/event.dart';
 import 'package:poiquest_frontend_flutter/features/tickets/presentation/providers/tickets_providers.dart';
 
+/// Resultado que devuelve el bottom sheet al cerrarse.
+/// Si [success] es `true`, la compra fue exitosa.
+/// Si [success] es `false`, [errorMessage] contiene el motivo.
+/// Si el usuario cerró sin comprar, devuelve `null`.
+typedef PurchaseResult = ({bool success, String? errorMessage});
+
 /// Bottom sheet para comprar entradas de un evento.
 /// Permite seleccionar fecha, cantidad y pagar con Stripe o obtener tickets gratis.
-Future<void> showPurchaseBottomSheet(BuildContext context, Event event) {
-  return showModalBottomSheet(
+/// Devuelve un [PurchaseResult] indicando el resultado de la operación.
+Future<PurchaseResult?> showPurchaseBottomSheet(BuildContext context, Event event) {
+  return showModalBottomSheet<PurchaseResult>(
     context: context,
     isScrollControlled: true,
     useSafeArea: true,
@@ -354,7 +360,6 @@ class _PurchaseSheetState extends ConsumerState<_PurchaseSheet> {
 
     setState(() => _isProcessing = true);
 
-    final l10n = AppLocalizations.of(context)!;
     final visitDate = _formatDate(_selectedDate!);
 
     try {
@@ -369,14 +374,14 @@ class _PurchaseSheetState extends ConsumerState<_PurchaseSheet> {
       ref.invalidate(usedTicketsProvider);
 
       if (mounted) {
-        Navigator.of(context).pop();
-        AppSnackBar.success(context, l10n.purchaseSuccess);
+        Navigator.of(context).pop<PurchaseResult>(
+          (success: true, errorMessage: null),
+        );
       }
     } catch (e) {
       if (mounted) {
-        AppSnackBar.error(
-          context,
-          e.toString().replaceFirst('Exception: ', ''),
+        Navigator.of(context).pop<PurchaseResult>(
+          (success: false, errorMessage: e.toString().replaceFirst('Exception: ', '')),
         );
       }
     } finally {
