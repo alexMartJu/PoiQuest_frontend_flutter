@@ -30,11 +30,6 @@ class AppNavigationBar extends StatelessWidget {
           label: t.navTickets,
         ),
         NavigationDestination(
-          icon: const Icon(Icons.qr_code_scanner),
-          selectedIcon: const Icon(Icons.qr_code_scanner),
-          label: t.navScan,
-        ),
-        NavigationDestination(
           icon: const Icon(Icons.travel_explore_outlined),
           selectedIcon: const Icon(Icons.travel_explore),
           label: t.navExplore,

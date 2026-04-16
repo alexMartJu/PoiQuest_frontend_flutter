@@ -29,8 +29,13 @@ import 'package:poiquest_frontend_flutter/features/profile/presentation/pages/pr
 import 'package:poiquest_frontend_flutter/features/tickets/presentation/pages/tickets_page_noauth.dart';
 import 'package:poiquest_frontend_flutter/features/tickets/presentation/pages/tickets_page.dart';
 
-// Scan pages
-import 'package:poiquest_frontend_flutter/features/scan/presentation/pages/scan_page_noauth.dart';
+// Explore pages
+import 'package:poiquest_frontend_flutter/features/explore/presentation/pages/explore_page_noauth.dart';
+import 'package:poiquest_frontend_flutter/features/explore/presentation/pages/explore_page.dart';
+import 'package:poiquest_frontend_flutter/features/explore/presentation/pages/explore_event_detail_page.dart';
+import 'package:poiquest_frontend_flutter/features/explore/presentation/pages/explore_route_navigation_page.dart';
+import 'package:poiquest_frontend_flutter/features/explore/presentation/pages/explore_poi_scan_page.dart';
+import 'package:poiquest_frontend_flutter/features/explore/presentation/pages/explore_poi_ar_page.dart';
 
 // Ticket Validator pages
 import 'package:poiquest_frontend_flutter/features/ticket_validator/presentation/pages/ticket_validator_page.dart';
@@ -134,8 +139,8 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       
       final location = state.uri.path;
       final isTicketValidatorRoute = location.startsWith('/ticket-validator');
-      final isUserRoute = ['/events', '/tickets', '/scan', '/explore', '/profile'].any((route) => location.startsWith(route));
-      final isPublicRoute = location.startsWith('/auth') || location.startsWith('/catalog') || location.startsWith('/preferences') || location.startsWith('/profile/') || location.startsWith('/events/') || location.startsWith('/points-of-interest/') || location.startsWith('/routes/');
+      final isUserRoute = ['/events', '/tickets', '/explore', '/profile'].any((route) => location.startsWith(route));
+      final isPublicRoute = location.startsWith('/auth') || location.startsWith('/catalog') || location.startsWith('/preferences') || location.startsWith('/profile/') || location.startsWith('/events/') || location.startsWith('/points-of-interest/') || location.startsWith('/routes/') || location.startsWith('/explore/');
       
       // Si es una ruta pública, permitir acceso
       if (isPublicRoute) {
@@ -185,22 +190,14 @@ final appRouterProvider = Provider<GoRouter>((ref) {
             ),
           ),
 
-          // Ruta de scan (requiere autenticación)
-          GoRoute(
-            path: '/scan',
-            pageBuilder: (context, state) => const NoTransitionPage(
-              child: _AuthCheck(
-                logged: Center(child: Text('Página Scan Autenticada')),
-                anonymous: ScanPageNoAuth(),
-              ),
-            ),
-          ),
-
-          // Ruta de explorar (pública)
+          // Ruta de explorar (requiere autenticación)
           GoRoute(
             path: '/explore',
             pageBuilder: (context, state) => const NoTransitionPage(
-              child: Center(child: Text('Página Explorar')),
+              child: _AuthCheck(
+                logged: ExplorePage(),
+                anonymous: ExplorePageNoAuth(),
+              ),
             ),
           ),
 
@@ -290,6 +287,55 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         builder: (_, state) => RouteDetailPage(
           uuid: state.pathParameters['uuid']!,
         ),
+      ),
+
+      // Explore detail routes (fuera del shell)
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        path: '/explore/events/:uuid/progress',
+        builder: (_, state) {
+          final extra = state.extra as Map<String, dynamic>? ?? {};
+          return ExploreEventDetailPage(
+            eventUuid: state.pathParameters['uuid']!,
+            visitDate: extra['visitDate'] as String? ?? '',
+            ticketUuid: extra['ticketUuid'] as String? ?? '',
+            ticketStatus: extra['ticketStatus'] as String? ?? '',
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        path: '/explore/routes/:uuid/navigation',
+        builder: (_, state) {
+          final extra = state.extra as Map<String, dynamic>? ?? {};
+          return ExploreRouteNavigationPage(
+            routeUuid: state.pathParameters['uuid']!,
+            ticketUuid: extra['ticketUuid'] as String? ?? '',
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        path: '/explore/scan-poi',
+        builder: (_, state) {
+          final extra = state.extra as Map<String, dynamic>? ?? {};
+          return ExplorePoiScanPage(
+            ticketUuid: extra['ticketUuid'] as String? ?? '',
+            expectedPoiUuid: extra['poiUuid'] as String?,
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        path: '/explore/poi-ar',
+        builder: (_, state) {
+          final extra = state.extra as Map<String, dynamic>? ?? {};
+          return ExplorePoiArPage(
+            modelUrl: extra['modelUrl'] as String?,
+            poiTitle: extra['poiTitle'] as String? ?? '',
+            interestingData: extra['interestingData'] as String?,
+          );
+        },
       ),
 
       // Ruta de catálogo (fuera del shell)

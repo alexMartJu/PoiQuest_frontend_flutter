@@ -13,9 +13,8 @@ class AppMainScaffold extends StatelessWidget {
 
     if (location.startsWith('/events')) return 0;
     if (location.startsWith('/tickets')) return 1;
-    if (location.startsWith('/scan')) return 2;
-    if (location.startsWith('/explore')) return 3;
-    if (location.startsWith('/profile')) return 4;
+    if (location.startsWith('/explore')) return 2;
+    if (location.startsWith('/profile')) return 3;
 
     return 0; // Default a eventos
   }
@@ -29,12 +28,9 @@ class AppMainScaffold extends StatelessWidget {
         context.go('/tickets');
         break;
       case 2:
-        context.go('/scan');
-        break;
-      case 3:
         context.go('/explore');
         break;
-      case 4:
+      case 3:
         context.go('/profile');
         break;
     }
