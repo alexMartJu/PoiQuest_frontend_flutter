@@ -560,6 +560,18 @@ abstract class AppLocalizations {
   /// **'Crea una cuenta para personalizar tu experiencia, gestionar ajustes y ver tu historial de actividad.'**
   String get signInToYourProfileDesc;
 
+  /// Título de la página de explorar sin autenticar
+  ///
+  /// In es, this message translates to:
+  /// **'Inicia sesión para explorar'**
+  String get signInToExplore;
+
+  /// Descripción de la página de explorar sin autenticar
+  ///
+  /// In es, this message translates to:
+  /// **'Crea una cuenta o inicia sesión para explorar eventos, escanear POIs y descubrir rutas.'**
+  String get signInToExploreDesc;
+
   /// Subtítulo en la página de autenticación
   ///
   /// In es, this message translates to:
@@ -1561,6 +1573,156 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Ciudad'**
   String get cityLabel;
+
+  /// Pestaña de eventos activos en explorar
+  ///
+  /// In es, this message translates to:
+  /// **'Activos'**
+  String get exploreActiveTab;
+
+  /// Pestaña de eventos usados en explorar
+  ///
+  /// In es, this message translates to:
+  /// **'Usados'**
+  String get exploreUsedTab;
+
+  /// Mensaje cuando no hay eventos activos
+  ///
+  /// In es, this message translates to:
+  /// **'No tienes eventos activos para explorar'**
+  String get noActiveExploreEvents;
+
+  /// Mensaje cuando no hay eventos usados
+  ///
+  /// In es, this message translates to:
+  /// **'No tienes eventos visitados para explorar'**
+  String get noUsedExploreEvents;
+
+  /// Título de la página de progreso
+  ///
+  /// In es, this message translates to:
+  /// **'Progreso del evento'**
+  String get exploreProgressTitle;
+
+  /// Botón para ver detalles del evento
+  ///
+  /// In es, this message translates to:
+  /// **'Ver detalles'**
+  String get exploreViewDetails;
+
+  /// Estado del ticket desbloqueado
+  ///
+  /// In es, this message translates to:
+  /// **'Desbloqueado'**
+  String get exploreUnlocked;
+
+  /// Estado del evento completado
+  ///
+  /// In es, this message translates to:
+  /// **'Completado'**
+  String get exploreCompleted;
+
+  /// Estado del ticket bloqueado
+  ///
+  /// In es, this message translates to:
+  /// **'Bloqueado'**
+  String get exploreLocked;
+
+  /// Etiqueta de progreso general
+  ///
+  /// In es, this message translates to:
+  /// **'Progreso general'**
+  String get exploreOverallProgress;
+
+  /// Etiqueta de POIs escaneados
+  ///
+  /// In es, this message translates to:
+  /// **'POIs escaneados'**
+  String get explorePoisScanned;
+
+  /// Botón para iniciar navegación de ruta
+  ///
+  /// In es, this message translates to:
+  /// **'Iniciar ruta'**
+  String get exploreStartRoute;
+
+  /// Notificación de proximidad a POI
+  ///
+  /// In es, this message translates to:
+  /// **'Estás cerca de un POI'**
+  String get exploreNearPoi;
+
+  /// Título de navegación de ruta
+  ///
+  /// In es, this message translates to:
+  /// **'Navegación de ruta'**
+  String get exploreRouteNavigation;
+
+  /// Error al obtener ubicación
+  ///
+  /// In es, this message translates to:
+  /// **'No se pudo obtener tu ubicación'**
+  String get exploreLocationError;
+
+  /// Título de la página de escaneo
+  ///
+  /// In es, this message translates to:
+  /// **'Escanear POI'**
+  String get exploreScanPoi;
+
+  /// Instrucción de escaneo QR
+  ///
+  /// In es, this message translates to:
+  /// **'Apunta tu cámara al código QR del POI'**
+  String get exploreScanInstruction;
+
+  /// Mensaje de procesamiento
+  ///
+  /// In es, this message translates to:
+  /// **'Procesando escaneo...'**
+  String get exploreScanProcessing;
+
+  /// Botón para reintentar escaneo
+  ///
+  /// In es, this message translates to:
+  /// **'Escanear de nuevo'**
+  String get exploreScanAgain;
+
+  /// Mensaje de éxito al escanear
+  ///
+  /// In es, this message translates to:
+  /// **'¡POI escaneado!'**
+  String get exploreScanSuccess;
+
+  /// Botón para ver modelo en AR
+  ///
+  /// In es, this message translates to:
+  /// **'Ver en AR'**
+  String get exploreViewAR;
+
+  /// Botón para volver a la ruta
+  ///
+  /// In es, this message translates to:
+  /// **'Continuar ruta'**
+  String get exploreContinueRoute;
+
+  /// Título de la página AR
+  ///
+  /// In es, this message translates to:
+  /// **'Vista AR'**
+  String get exploreArTitle;
+
+  /// Mensaje cuando no hay modelo 3D
+  ///
+  /// In es, this message translates to:
+  /// **'Modelo 3D no disponible'**
+  String get exploreNoModel;
+
+  /// Mensaje de carga del modelo AR
+  ///
+  /// In es, this message translates to:
+  /// **'Cargando modelo 3D...'**
+  String get exploreArLoading;
 }
 
 class _AppLocalizationsDelegate

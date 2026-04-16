@@ -258,6 +258,13 @@ class AppLocalizationsEs extends AppLocalizations {
       'Crea una cuenta para personalizar tu experiencia, gestionar ajustes y ver tu historial de actividad.';
 
   @override
+  String get signInToExplore => 'Inicia sesión para explorar';
+
+  @override
+  String get signInToExploreDesc =>
+      'Crea una cuenta o inicia sesión para explorar eventos, escanear POIs y descubrir rutas.';
+
+  @override
   String get signInToContinue => 'Inicia sesión para continuar';
 
   @override
@@ -797,4 +804,79 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get cityLabel => 'Ciudad';
+
+  @override
+  String get exploreActiveTab => 'Activos';
+
+  @override
+  String get exploreUsedTab => 'Usados';
+
+  @override
+  String get noActiveExploreEvents => 'No tienes eventos activos para explorar';
+
+  @override
+  String get noUsedExploreEvents => 'No tienes eventos visitados para explorar';
+
+  @override
+  String get exploreProgressTitle => 'Progreso del evento';
+
+  @override
+  String get exploreViewDetails => 'Ver detalles';
+
+  @override
+  String get exploreUnlocked => 'Desbloqueado';
+
+  @override
+  String get exploreCompleted => 'Completado';
+
+  @override
+  String get exploreLocked => 'Bloqueado';
+
+  @override
+  String get exploreOverallProgress => 'Progreso general';
+
+  @override
+  String get explorePoisScanned => 'POIs escaneados';
+
+  @override
+  String get exploreStartRoute => 'Iniciar ruta';
+
+  @override
+  String get exploreNearPoi => 'Estás cerca de un POI';
+
+  @override
+  String get exploreRouteNavigation => 'Navegación de ruta';
+
+  @override
+  String get exploreLocationError => 'No se pudo obtener tu ubicación';
+
+  @override
+  String get exploreScanPoi => 'Escanear POI';
+
+  @override
+  String get exploreScanInstruction => 'Apunta tu cámara al código QR del POI';
+
+  @override
+  String get exploreScanProcessing => 'Procesando escaneo...';
+
+  @override
+  String get exploreScanAgain => 'Escanear de nuevo';
+
+  @override
+  String get exploreScanSuccess => '¡POI escaneado!';
+
+  @override
+  String get exploreViewAR => 'Ver en AR';
+
+  @override
+  String get exploreContinueRoute => 'Continuar ruta';
+
+  @override
+  String get exploreArTitle => 'Vista AR';
+
+  @override
+  String get exploreNoModel => 'Modelo 3D no disponible';
+
+  @override
+  String get exploreArLoading => 'Cargando modelo 3D...';
 }

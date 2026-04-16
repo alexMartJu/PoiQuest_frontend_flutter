@@ -396,6 +396,16 @@
     "description": "Description for unauthenticated profile page"
   },
 
+  "signInToExplore": "Sign in to Explore",
+  "@signInToExplore": {
+    "description": "Title for the explore page when not authenticated"
+  },
+
+  "signInToExploreDesc": "Create an account or sign in to explore events, scan POIs, and discover routes.",
+  "@signInToExploreDesc": {
+    "description": "Description for the explore page when not authenticated"
+  },
+
   "signInToContinue": "Sign in to continue",
   "@signInToContinue": {
     "description": "Subtitle on auth page"
@@ -1247,6 +1257,57 @@
   "cityLabel": "City",
   "@cityLabel": {
     "description": "Label for city in validation result"
-  }
+  },
+
+  "exploreActiveTab": "Active",
+  "@exploreActiveTab": { "description": "Active events tab in explore" },
+  "exploreUsedTab": "Used",
+  "@exploreUsedTab": { "description": "Used events tab in explore" },
+  "noActiveExploreEvents": "No active events to explore",
+  "@noActiveExploreEvents": { "description": "Message when no active events" },
+  "noUsedExploreEvents": "No visited events to explore",
+  "@noUsedExploreEvents": { "description": "Message when no used events" },
+  "exploreProgressTitle": "Event Progress",
+  "@exploreProgressTitle": { "description": "Progress page title" },
+  "exploreViewDetails": "View details",
+  "@exploreViewDetails": { "description": "Button to view event details" },
+  "exploreUnlocked": "Unlocked",
+  "@exploreUnlocked": { "description": "Unlocked ticket status" },
+  "exploreCompleted": "Completed",
+  "@exploreCompleted": { "description": "Completed event status" },
+  "exploreLocked": "Locked",
+  "@exploreLocked": { "description": "Locked ticket status" },
+  "exploreOverallProgress": "Overall Progress",
+  "@exploreOverallProgress": { "description": "Overall progress label" },
+  "explorePoisScanned": "POIs Scanned",
+  "@explorePoisScanned": { "description": "Scanned POIs label" },
+  "exploreStartRoute": "Start Route",
+  "@exploreStartRoute": { "description": "Button to start route navigation" },
+  "exploreNearPoi": "You're near a POI",
+  "@exploreNearPoi": { "description": "Proximity notification for POI" },
+  "exploreRouteNavigation": "Route Navigation",
+  "@exploreRouteNavigation": { "description": "Route navigation title" },
+  "exploreLocationError": "Could not get your location",
+  "@exploreLocationError": { "description": "Location error message" },
+  "exploreScanPoi": "Scan POI",
+  "@exploreScanPoi": { "description": "Scan page title" },
+  "exploreScanInstruction": "Point your camera at the POI's QR code",
+  "@exploreScanInstruction": { "description": "QR scan instruction" },
+  "exploreScanProcessing": "Processing scan...",
+  "@exploreScanProcessing": { "description": "Processing message" },
+  "exploreScanAgain": "Scan again",
+  "@exploreScanAgain": { "description": "Retry scan button" },
+  "exploreScanSuccess": "POI Scanned!",
+  "@exploreScanSuccess": { "description": "Scan success message" },
+  "exploreViewAR": "View in AR",
+  "@exploreViewAR": { "description": "Button to view model in AR" },
+  "exploreContinueRoute": "Continue Route",
+  "@exploreContinueRoute": { "description": "Button to return to route" },
+  "exploreArTitle": "AR View",
+  "@exploreArTitle": { "description": "AR page title" },
+  "exploreNoModel": "No 3D model available",
+  "@exploreNoModel": { "description": "Message when no 3D model" },
+  "exploreArLoading": "Loading 3D model...",
+  "@exploreArLoading": { "description": "Loading message for AR model download" }
 
 }

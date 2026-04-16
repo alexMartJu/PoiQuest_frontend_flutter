@@ -394,6 +394,16 @@
     "description": "Descripción de la página de perfil sin autenticar"
   },
 
+  "signInToExplore": "Inicia sesión para explorar",
+  "@signInToExplore": {
+    "description": "Título de la página de explorar sin autenticar"
+  },
+
+  "signInToExploreDesc": "Crea una cuenta o inicia sesión para explorar eventos, escanear POIs y descubrir rutas.",
+  "@signInToExploreDesc": {
+    "description": "Descripción de la página de explorar sin autenticar"
+  },
+
   "signInToContinue": "Inicia sesión para continuar",
   "@signInToContinue": {
     "description": "Subtítulo en la página de autenticación"
@@ -1245,6 +1255,57 @@
   "cityLabel": "Ciudad",
   "@cityLabel": {
     "description": "Etiqueta para la ciudad en resultado de validación"
-  }
+  },
+
+  "exploreActiveTab": "Activos",
+  "@exploreActiveTab": { "description": "Pestaña de eventos activos en explorar" },
+  "exploreUsedTab": "Usados",
+  "@exploreUsedTab": { "description": "Pestaña de eventos usados en explorar" },
+  "noActiveExploreEvents": "No tienes eventos activos para explorar",
+  "@noActiveExploreEvents": { "description": "Mensaje cuando no hay eventos activos" },
+  "noUsedExploreEvents": "No tienes eventos visitados para explorar",
+  "@noUsedExploreEvents": { "description": "Mensaje cuando no hay eventos usados" },
+  "exploreProgressTitle": "Progreso del evento",
+  "@exploreProgressTitle": { "description": "Título de la página de progreso" },
+  "exploreViewDetails": "Ver detalles",
+  "@exploreViewDetails": { "description": "Botón para ver detalles del evento" },
+  "exploreUnlocked": "Desbloqueado",
+  "@exploreUnlocked": { "description": "Estado del ticket desbloqueado" },
+  "exploreCompleted": "Completado",
+  "@exploreCompleted": { "description": "Estado del evento completado" },
+  "exploreLocked": "Bloqueado",
+  "@exploreLocked": { "description": "Estado del ticket bloqueado" },
+  "exploreOverallProgress": "Progreso general",
+  "@exploreOverallProgress": { "description": "Etiqueta de progreso general" },
+  "explorePoisScanned": "POIs escaneados",
+  "@explorePoisScanned": { "description": "Etiqueta de POIs escaneados" },
+  "exploreStartRoute": "Iniciar ruta",
+  "@exploreStartRoute": { "description": "Botón para iniciar navegación de ruta" },
+  "exploreNearPoi": "Estás cerca de un POI",
+  "@exploreNearPoi": { "description": "Notificación de proximidad a POI" },
+  "exploreRouteNavigation": "Navegación de ruta",
+  "@exploreRouteNavigation": { "description": "Título de navegación de ruta" },
+  "exploreLocationError": "No se pudo obtener tu ubicación",
+  "@exploreLocationError": { "description": "Error al obtener ubicación" },
+  "exploreScanPoi": "Escanear POI",
+  "@exploreScanPoi": { "description": "Título de la página de escaneo" },
+  "exploreScanInstruction": "Apunta tu cámara al código QR del POI",
+  "@exploreScanInstruction": { "description": "Instrucción de escaneo QR" },
+  "exploreScanProcessing": "Procesando escaneo...",
+  "@exploreScanProcessing": { "description": "Mensaje de procesamiento" },
+  "exploreScanAgain": "Escanear de nuevo",
+  "@exploreScanAgain": { "description": "Botón para reintentar escaneo" },
+  "exploreScanSuccess": "¡POI escaneado!",
+  "@exploreScanSuccess": { "description": "Mensaje de éxito al escanear" },
+  "exploreViewAR": "Ver en AR",
+  "@exploreViewAR": { "description": "Botón para ver modelo en AR" },
+  "exploreContinueRoute": "Continuar ruta",
+  "@exploreContinueRoute": { "description": "Botón para volver a la ruta" },
+  "exploreArTitle": "Vista AR",
+  "@exploreArTitle": { "description": "Título de la página AR" },
+  "exploreNoModel": "Modelo 3D no disponible",
+  "@exploreNoModel": { "description": "Mensaje cuando no hay modelo 3D" },
+  "exploreArLoading": "Cargando modelo 3D...",
+  "@exploreArLoading": { "description": "Mensaje de carga del modelo AR" }
 
 }
