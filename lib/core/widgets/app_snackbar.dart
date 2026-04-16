@@ -48,6 +48,15 @@ class AppSnackBar {
         ),
     };
 
+    // Envolver action para aplicar el color correcto del texto.
+    final styledAction = action != null
+        ? SnackBarAction(
+            label: action.label,
+            onPressed: action.onPressed,
+            textColor: textColor,
+          )
+        : null;
+
     final snackBar = SnackBar(
       content: Row(
         children: [
@@ -64,7 +73,7 @@ class AppSnackBar {
       backgroundColor: backgroundColor,
       duration: duration,
       behavior: SnackBarBehavior.floating,
-      action: action,
+      action: styledAction,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),

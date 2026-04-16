@@ -54,3 +54,11 @@ String eventAvailabilityEndpoint(String eventUuid, String visitDate) =>
 /// Endpoints de validación de tickets (ticket_validator)
 const String validateTicketEndpoint = '/ticket-validation/validate';
 const String validationHistoryEndpoint = '/ticket-validation/history';
+
+/// Endpoints de exploración
+const String exploreMyEventsEndpoint = '/explore/my-events';
+String exploreEventProgressEndpoint(String eventUuid) =>
+    '/explore/events/$eventUuid/progress';
+const String exploreScanPoiEndpoint = '/explore/scan-poi';
+String exploreRouteNavigationEndpoint(String routeUuid) =>
+    '/explore/routes/$routeUuid/navigation';
