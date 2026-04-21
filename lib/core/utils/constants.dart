@@ -62,3 +62,6 @@ String exploreEventProgressEndpoint(String eventUuid) =>
 const String exploreScanPoiEndpoint = '/explore/scan-poi';
 String exploreRouteNavigationEndpoint(String routeUuid) =>
     '/explore/routes/$routeUuid/navigation';
+
+/// Endpoints de gamificación
+const String gamificationProgressEndpoint = '/gamification/my-progress';
