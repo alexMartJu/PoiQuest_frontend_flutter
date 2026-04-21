@@ -1306,6 +1306,32 @@
   "exploreNoModel": "Modelo 3D no disponible",
   "@exploreNoModel": { "description": "Mensaje cuando no hay modelo 3D" },
   "exploreArLoading": "Cargando modelo 3D...",
-  "@exploreArLoading": { "description": "Mensaje de carga del modelo AR" }
+  "@exploreArLoading": { "description": "Mensaje de carga del modelo AR" },
+
+  "gamificationAchievements": "Logros",
+  "@gamificationAchievements": { "description": "Título de la card de logros" },
+  "gamificationCategoryExploration": "Exploración",
+  "@gamificationCategoryExploration": { "description": "Categoría de logros: exploración" },
+  "gamificationCategoryRoutes": "Rutas",
+  "@gamificationCategoryRoutes": { "description": "Categoría de logros: rutas" },
+  "gamificationCategoryPremiumEvents": "Eventos Premium",
+  "@gamificationCategoryPremiumEvents": { "description": "Categoría de logros: eventos premium" },
+  "gamificationStatsPois": "POIs",
+  "@gamificationStatsPois": { "description": "Etiqueta de estadísticas: POIs escaneados" },
+  "gamificationStatsRoutes": "Rutas",
+  "@gamificationStatsRoutes": { "description": "Etiqueta de estadísticas: rutas completadas" },
+  "gamificationStatsEvents": "Eventos",
+  "@gamificationStatsEvents": { "description": "Etiqueta de estadísticas: eventos" },
+  "gamificationStatsPoints": "Puntos",
+  "@gamificationStatsPoints": { "description": "Etiqueta de estadísticas: puntos totales" },
+  "gamificationLevelsAndRewards": "Niveles y Recompensas",
+  "@gamificationLevelsAndRewards": { "description": "Título de la card de niveles y recompensas" },
+  "gamificationLevelPrefix": "Nv.",
+  "@gamificationLevelPrefix": { "description": "Prefijo abreviado para el número de nivel" },
+  "gamificationDiscount": "{value}% descuento",
+  "@gamificationDiscount": {
+    "description": "Texto de descuento por nivel",
+    "placeholders": { "value": { "type": "int" } }
+  }
 
 }

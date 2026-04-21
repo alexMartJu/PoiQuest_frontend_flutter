@@ -1723,6 +1723,72 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Cargando modelo 3D...'**
   String get exploreArLoading;
+
+  /// Título de la card de logros
+  ///
+  /// In es, this message translates to:
+  /// **'Logros'**
+  String get gamificationAchievements;
+
+  /// Categoría de logros: exploración
+  ///
+  /// In es, this message translates to:
+  /// **'Exploración'**
+  String get gamificationCategoryExploration;
+
+  /// Categoría de logros: rutas
+  ///
+  /// In es, this message translates to:
+  /// **'Rutas'**
+  String get gamificationCategoryRoutes;
+
+  /// Categoría de logros: eventos premium
+  ///
+  /// In es, this message translates to:
+  /// **'Eventos Premium'**
+  String get gamificationCategoryPremiumEvents;
+
+  /// Etiqueta de estadísticas: POIs escaneados
+  ///
+  /// In es, this message translates to:
+  /// **'POIs'**
+  String get gamificationStatsPois;
+
+  /// Etiqueta de estadísticas: rutas completadas
+  ///
+  /// In es, this message translates to:
+  /// **'Rutas'**
+  String get gamificationStatsRoutes;
+
+  /// Etiqueta de estadísticas: eventos
+  ///
+  /// In es, this message translates to:
+  /// **'Eventos'**
+  String get gamificationStatsEvents;
+
+  /// Etiqueta de estadísticas: puntos totales
+  ///
+  /// In es, this message translates to:
+  /// **'Puntos'**
+  String get gamificationStatsPoints;
+
+  /// Título de la card de niveles y recompensas
+  ///
+  /// In es, this message translates to:
+  /// **'Niveles y Recompensas'**
+  String get gamificationLevelsAndRewards;
+
+  /// Prefijo abreviado para el número de nivel
+  ///
+  /// In es, this message translates to:
+  /// **'Nv.'**
+  String get gamificationLevelPrefix;
+
+  /// Texto de descuento por nivel
+  ///
+  /// In es, this message translates to:
+  /// **'{value}% descuento'**
+  String gamificationDiscount(int value);
 }
 
 class _AppLocalizationsDelegate

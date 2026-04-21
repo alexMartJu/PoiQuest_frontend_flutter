@@ -1308,6 +1308,32 @@
   "exploreNoModel": "No 3D model available",
   "@exploreNoModel": { "description": "Message when no 3D model" },
   "exploreArLoading": "Loading 3D model...",
-  "@exploreArLoading": { "description": "Loading message for AR model download" }
+  "@exploreArLoading": { "description": "Loading message for AR model download" },
+
+  "gamificationAchievements": "Achievements",
+  "@gamificationAchievements": { "description": "Achievements card title" },
+  "gamificationCategoryExploration": "Exploration",
+  "@gamificationCategoryExploration": { "description": "Achievement category: exploration" },
+  "gamificationCategoryRoutes": "Routes",
+  "@gamificationCategoryRoutes": { "description": "Achievement category: routes" },
+  "gamificationCategoryPremiumEvents": "Premium Events",
+  "@gamificationCategoryPremiumEvents": { "description": "Achievement category: premium events" },
+  "gamificationStatsPois": "POIs",
+  "@gamificationStatsPois": { "description": "Stats label: scanned POIs" },
+  "gamificationStatsRoutes": "Routes",
+  "@gamificationStatsRoutes": { "description": "Stats label: completed routes" },
+  "gamificationStatsEvents": "Events",
+  "@gamificationStatsEvents": { "description": "Stats label: events" },
+  "gamificationStatsPoints": "Points",
+  "@gamificationStatsPoints": { "description": "Stats label: total points" },
+  "gamificationLevelsAndRewards": "Levels and Rewards",
+  "@gamificationLevelsAndRewards": { "description": "Levels and rewards card title" },
+  "gamificationLevelPrefix": "Lv.",
+  "@gamificationLevelPrefix": { "description": "Short prefix for level number" },
+  "gamificationDiscount": "{value}% discount",
+  "@gamificationDiscount": {
+    "description": "Level discount text",
+    "placeholders": { "value": { "type": "int" } }
+  }
 
 }

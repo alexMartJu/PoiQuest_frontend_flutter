@@ -879,4 +879,39 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get exploreArLoading => 'Loading 3D model...';
+
+  @override
+  String get gamificationAchievements => 'Achievements';
+
+  @override
+  String get gamificationCategoryExploration => 'Exploration';
+
+  @override
+  String get gamificationCategoryRoutes => 'Routes';
+
+  @override
+  String get gamificationCategoryPremiumEvents => 'Premium Events';
+
+  @override
+  String get gamificationStatsPois => 'POIs';
+
+  @override
+  String get gamificationStatsRoutes => 'Routes';
+
+  @override
+  String get gamificationStatsEvents => 'Events';
+
+  @override
+  String get gamificationStatsPoints => 'Points';
+
+  @override
+  String get gamificationLevelsAndRewards => 'Levels and Rewards';
+
+  @override
+  String get gamificationLevelPrefix => 'Lv.';
+
+  @override
+  String gamificationDiscount(int value) {
+    return '$value% discount';
+  }
 }
