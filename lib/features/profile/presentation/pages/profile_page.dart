@@ -10,6 +10,10 @@ import 'package:poiquest_frontend_flutter/features/auth/presentation/providers/a
 import 'package:poiquest_frontend_flutter/core/widgets/app_snackbar.dart';
 import 'package:poiquest_frontend_flutter/core/widgets/app_dialog.dart';
 import 'package:poiquest_frontend_flutter/core/widgets/app_filled_button.dart';
+import 'package:poiquest_frontend_flutter/features/gamification/presentation/providers/gamification_provider.dart';
+import 'package:poiquest_frontend_flutter/features/gamification/presentation/widgets/gamification_stats_card.dart';
+import 'package:poiquest_frontend_flutter/features/gamification/presentation/widgets/achievements_card.dart';
+import 'package:poiquest_frontend_flutter/features/gamification/presentation/widgets/level_info_card.dart';
 
 /// Página principal del perfil del usuario autenticado.
 ///
@@ -29,6 +33,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
     // Cargar el perfil al iniciar
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(profileProvider.notifier).loadProfile();
+      ref.read(gamificationProgressProvider.notifier).loadProgress();
     });
   }
 
@@ -46,6 +51,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
       try {
         await ref.read(authProvider.notifier).signOut();
         ref.read(profileProvider.notifier).clear();
+        ref.read(gamificationProgressProvider.notifier).clear();
         if (context.mounted) {
           context.go('/events');
         }
@@ -73,6 +79,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
       try {
         await ref.read(authProvider.notifier).signOutAll();
         ref.read(profileProvider.notifier).clear();
+        ref.read(gamificationProgressProvider.notifier).clear();
         if (context.mounted) {
           context.go('/events');
         }
@@ -88,6 +95,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     final profileState = ref.watch(profileProvider);
+    final gamificationState = ref.watch(gamificationProgressProvider);
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
     final t = AppLocalizations.of(context)!;
@@ -100,10 +108,13 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
               child: Text(t.profileLoadError),
             );
           }
+
+          final gamification = gamificationState.value;
+
           return ListView(
               padding: const EdgeInsets.all(16.0),
               children: [
-                // Page title (same style as Account)
+                // Page title
                 Text(
                   t.profileTitle,
                   style: theme.textTheme.headlineSmall?.copyWith(
@@ -112,31 +123,29 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
                   ),
                 ),
                 const SizedBox(height: 8),
-                // Profile Card
-                ProfileCard(profile: profile),
-                const SizedBox(height: 24),
+                // Profile Card con nivel y progreso
+                ProfileCard(profile: profile, gamification: gamification),
+                const SizedBox(height: 12),
 
-                // Account Section
-                Text(
-                  t.accountTitle,
-                  style: theme.textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: colorScheme.onSurface,
-                  ),
-                ),
-                const SizedBox(height: 8),
+                // Stats Card
+                if (gamification != null) ...[
+                  GamificationStatsCard(progress: gamification),
+                  const SizedBox(height: 12),
+
+                  // Achievements Card
+                  AchievementsCard(progress: gamification),
+                  const SizedBox(height: 12),
+
+                  // Level Info Card
+                  LevelInfoCard(currentLevel: gamification.level, levels: gamification.levels),
+                  const SizedBox(height: 24),
+                ],
+
+                // Account Card
                 const ProfileAccountCard(),
-                const SizedBox(height: 24),
+                const SizedBox(height: 12),
 
-                // Session Section
-                Text(
-                  t.sessionTitle,
-                  style: theme.textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: colorScheme.onSurface,
-                  ),
-                ),
-                const SizedBox(height: 8),
+                // Session Card
                 ProfileSessionCard(
                   onLogout: () => _handleLogout(context),
                   onLogoutAll: () => _handleLogoutAll(context),
