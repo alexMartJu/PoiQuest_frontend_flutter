@@ -29,17 +29,15 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
         children: [
           const SizedBox(width: 16),
 
-          // Logo pill
-          Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: c.primary,
-              borderRadius: BorderRadius.circular(14),
-            ),
-            child: Icon(
-              Icons.location_on_outlined,
-              color: c.onPrimary,
-              size: 26,
+          // Logo
+          SizedBox(
+            width: 46,
+            height: 46,
+            child: Image.asset(
+              Theme.of(context).brightness == Brightness.dark
+                  ? 'assets/images/app_logo_dark.png'
+                  : 'assets/images/app_logo_light.png',
+              fit: BoxFit.contain,
             ),
           ),
 

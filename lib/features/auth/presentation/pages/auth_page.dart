@@ -59,23 +59,15 @@ class _AuthPageState extends ConsumerState<AuthPage>
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          Container(
-                            width: 64,
-                            height: 64,
-                            decoration: BoxDecoration(
-                              color: theme.colorScheme.primary,
-                              borderRadius: BorderRadius.circular(14),
-                            ),
-                          ),
-                          Icon(
-                            Icons.location_on_outlined,
-                            color: theme.colorScheme.onPrimary,
-                            size: 48,
-                          ),
-                        ],
+                      SizedBox(
+                        width: 64,
+                        height: 64,
+                        child: Image.asset(
+                          theme.brightness == Brightness.dark
+                              ? 'assets/images/app_logo_dark.png'
+                              : 'assets/images/app_logo_light.png',
+                          fit: BoxFit.contain,
+                        ),
                       ),
                       const SizedBox(height: 8),
                       RichText(
