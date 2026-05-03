@@ -1332,6 +1332,54 @@
   "@gamificationDiscount": {
     "description": "Texto de descuento por nivel",
     "placeholders": { "value": { "type": "int" } }
+  },
+
+  "notificationsPageTitle": "Notificaciones",
+  "@notificationsPageTitle": { "description": "Título de la página de notificaciones" },
+
+  "notificationsMarkAllRead": "Marcar todo como leído",
+  "@notificationsMarkAllRead": { "description": "Botón para marcar todas las notificaciones como leídas" },
+
+  "notificationsErrorLoading": "Error al cargar notificaciones",
+  "@notificationsErrorLoading": { "description": "Mensaje de error al cargar la lista de notificaciones" },
+
+  "notificationsEmpty": "Sin notificaciones",
+  "@notificationsEmpty": { "description": "Título cuando no hay notificaciones" },
+
+  "notificationsEmptySubtitle": "Aquí aparecerán tus notificaciones.",
+  "@notificationsEmptySubtitle": { "description": "Subtítulo cuando no hay notificaciones" },
+
+  "notificationTimeJustNow": "Ahora mismo",
+  "@notificationTimeJustNow": { "description": "Etiqueta de tiempo: hace menos de un minuto" },
+
+  "notificationTimeMinutesAgo": "Hace {minutes} min",
+  "@notificationTimeMinutesAgo": {
+    "description": "Etiqueta de tiempo: hace N minutos",
+    "placeholders": { "minutes": { "type": "int" } }
+  },
+
+  "notificationTimeHoursAgo": "Hace {hours} h",
+  "@notificationTimeHoursAgo": {
+    "description": "Etiqueta de tiempo: hace N horas",
+    "placeholders": { "hours": { "type": "int" } }
+  },
+
+  "notificationTimeYesterday": "Ayer",
+  "@notificationTimeYesterday": { "description": "Etiqueta de tiempo: ayer" },
+
+  "notificationTimeDaysAgo": "Hace {days} días",
+  "@notificationTimeDaysAgo": {
+    "description": "Etiqueta de tiempo: hace N días",
+    "placeholders": { "days": { "type": "int" } }
+  },
+
+  "notificationEventReminderTitle": "¡Tu evento es hoy! 🎉",
+  "@notificationEventReminderTitle": { "description": "Título de la notificación OS del recordatorio de evento" },
+
+  "notificationEventReminderBody": "Tu evento \"{eventTitle}\" comienza hoy. ¡Disfrútalo!",
+  "@notificationEventReminderBody": {
+    "description": "Cuerpo de la notificación OS del recordatorio de evento",
+    "placeholders": { "eventTitle": { "type": "String" } }
   }
 
 }

@@ -1789,6 +1789,78 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'{value}% descuento'**
   String gamificationDiscount(int value);
+
+  /// Título de la página de notificaciones
+  ///
+  /// In es, this message translates to:
+  /// **'Notificaciones'**
+  String get notificationsPageTitle;
+
+  /// Botón para marcar todas las notificaciones como leídas
+  ///
+  /// In es, this message translates to:
+  /// **'Marcar todo como leído'**
+  String get notificationsMarkAllRead;
+
+  /// Mensaje de error al cargar la lista de notificaciones
+  ///
+  /// In es, this message translates to:
+  /// **'Error al cargar notificaciones'**
+  String get notificationsErrorLoading;
+
+  /// Título cuando no hay notificaciones
+  ///
+  /// In es, this message translates to:
+  /// **'Sin notificaciones'**
+  String get notificationsEmpty;
+
+  /// Subtítulo cuando no hay notificaciones
+  ///
+  /// In es, this message translates to:
+  /// **'Aquí aparecerán tus notificaciones.'**
+  String get notificationsEmptySubtitle;
+
+  /// Etiqueta de tiempo: hace menos de un minuto
+  ///
+  /// In es, this message translates to:
+  /// **'Ahora mismo'**
+  String get notificationTimeJustNow;
+
+  /// Etiqueta de tiempo: hace N minutos
+  ///
+  /// In es, this message translates to:
+  /// **'Hace {minutes} min'**
+  String notificationTimeMinutesAgo(int minutes);
+
+  /// Etiqueta de tiempo: hace N horas
+  ///
+  /// In es, this message translates to:
+  /// **'Hace {hours} h'**
+  String notificationTimeHoursAgo(int hours);
+
+  /// Etiqueta de tiempo: ayer
+  ///
+  /// In es, this message translates to:
+  /// **'Ayer'**
+  String get notificationTimeYesterday;
+
+  /// Etiqueta de tiempo: hace N días
+  ///
+  /// In es, this message translates to:
+  /// **'Hace {days} días'**
+  String notificationTimeDaysAgo(int days);
+
+  /// Título de la notificación OS del recordatorio de evento
+  ///
+  /// In es, this message translates to:
+  /// **'¡Tu evento es hoy! 🎉'**
+  String get notificationEventReminderTitle;
+
+  /// Cuerpo de la notificación OS del recordatorio de evento
+  ///
+  /// In es, this message translates to:
+  /// **'Tu evento \"{eventTitle}\" comienza hoy. ¡Disfrútalo!'**
+  String notificationEventReminderBody(String eventTitle);
 }
 
 class _AppLocalizationsDelegate

@@ -914,4 +914,49 @@ class AppLocalizationsEs extends AppLocalizations {
   String gamificationDiscount(int value) {
     return '$value% descuento';
   }
+
+  @override
+  String get notificationsPageTitle => 'Notificaciones';
+
+  @override
+  String get notificationsMarkAllRead => 'Marcar todo como leído';
+
+  @override
+  String get notificationsErrorLoading => 'Error al cargar notificaciones';
+
+  @override
+  String get notificationsEmpty => 'Sin notificaciones';
+
+  @override
+  String get notificationsEmptySubtitle =>
+      'Aquí aparecerán tus notificaciones.';
+
+  @override
+  String get notificationTimeJustNow => 'Ahora mismo';
+
+  @override
+  String notificationTimeMinutesAgo(int minutes) {
+    return 'Hace $minutes min';
+  }
+
+  @override
+  String notificationTimeHoursAgo(int hours) {
+    return 'Hace $hours h';
+  }
+
+  @override
+  String get notificationTimeYesterday => 'Ayer';
+
+  @override
+  String notificationTimeDaysAgo(int days) {
+    return 'Hace $days días';
+  }
+
+  @override
+  String get notificationEventReminderTitle => '¡Tu evento es hoy! 🎉';
+
+  @override
+  String notificationEventReminderBody(String eventTitle) {
+    return 'Tu evento \"$eventTitle\" comienza hoy. ¡Disfrútalo!';
+  }
 }

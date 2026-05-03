@@ -1334,6 +1334,54 @@
   "@gamificationDiscount": {
     "description": "Level discount text",
     "placeholders": { "value": { "type": "int" } }
+  },
+
+  "notificationsPageTitle": "Notifications",
+  "@notificationsPageTitle": { "description": "Notifications page title" },
+
+  "notificationsMarkAllRead": "Mark all as read",
+  "@notificationsMarkAllRead": { "description": "Button to mark all notifications as read" },
+
+  "notificationsErrorLoading": "Error loading notifications",
+  "@notificationsErrorLoading": { "description": "Error message when notifications list fails to load" },
+
+  "notificationsEmpty": "No notifications",
+  "@notificationsEmpty": { "description": "Title when there are no notifications" },
+
+  "notificationsEmptySubtitle": "Your notifications will appear here.",
+  "@notificationsEmptySubtitle": { "description": "Subtitle when there are no notifications" },
+
+  "notificationTimeJustNow": "Just now",
+  "@notificationTimeJustNow": { "description": "Time label: less than a minute ago" },
+
+  "notificationTimeMinutesAgo": "{minutes} min ago",
+  "@notificationTimeMinutesAgo": {
+    "description": "Time label: N minutes ago",
+    "placeholders": { "minutes": { "type": "int" } }
+  },
+
+  "notificationTimeHoursAgo": "{hours} h ago",
+  "@notificationTimeHoursAgo": {
+    "description": "Time label: N hours ago",
+    "placeholders": { "hours": { "type": "int" } }
+  },
+
+  "notificationTimeYesterday": "Yesterday",
+  "@notificationTimeYesterday": { "description": "Time label: yesterday" },
+
+  "notificationTimeDaysAgo": "{days} days ago",
+  "@notificationTimeDaysAgo": {
+    "description": "Time label: N days ago",
+    "placeholders": { "days": { "type": "int" } }
+  },
+
+  "notificationEventReminderTitle": "Your event is today! 🎉",
+  "@notificationEventReminderTitle": { "description": "OS notification title for event reminder" },
+
+  "notificationEventReminderBody": "Your event \"{eventTitle}\" starts today. Enjoy!",
+  "@notificationEventReminderBody": {
+    "description": "OS notification body for event reminder",
+    "placeholders": { "eventTitle": { "type": "String" } }
   }
 
 }
