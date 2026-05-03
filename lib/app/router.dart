@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:poiquest_frontend_flutter/features/preferences/presentation/pages/preferences_page.dart';
 import 'package:poiquest_frontend_flutter/features/events/presentation/pages/events_page.dart';
 import 'package:poiquest_frontend_flutter/catalog/catalog_page.dart';
+import 'package:poiquest_frontend_flutter/features/notifications/presentation/pages/notifications_page.dart';
 
 import 'package:poiquest_frontend_flutter/catalog/demos/buttons_demo.dart';
 import 'package:poiquest_frontend_flutter/catalog/demos/badges_demo.dart';
@@ -140,7 +141,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       final location = state.uri.path;
       final isTicketValidatorRoute = location.startsWith('/ticket-validator');
       final isUserRoute = ['/events', '/tickets', '/explore', '/profile'].any((route) => location.startsWith(route));
-      final isPublicRoute = location.startsWith('/auth') || location.startsWith('/catalog') || location.startsWith('/preferences') || location.startsWith('/profile/') || location.startsWith('/events/') || location.startsWith('/points-of-interest/') || location.startsWith('/routes/') || location.startsWith('/explore/');
+      final isPublicRoute = location.startsWith('/auth') || location.startsWith('/catalog') || location.startsWith('/preferences') || location.startsWith('/profile/') || location.startsWith('/events/') || location.startsWith('/points-of-interest/') || location.startsWith('/routes/') || location.startsWith('/explore/') || location.startsWith('/notifications');
       
       // Si es una ruta pública, permitir acceso
       if (isPublicRoute) {
@@ -247,6 +248,13 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         parentNavigatorKey: _rootNavigatorKey,
         path: '/preferences',
         builder: (_, __) => const PreferencesPage(),
+      ),
+
+      // Ruta de notificaciones (fuera del shell, solo usuarios autenticados)
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        path: '/notifications',
+        builder: (_, __) => const NotificationsPage(),
       ),
 
       // Rutas de perfil (fuera del shell)

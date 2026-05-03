@@ -3,11 +3,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:poiquest_frontend_flutter/app/theme/app_theme.dart';
 import 'package:poiquest_frontend_flutter/core/l10n/app_localizations.dart';
+import 'package:poiquest_frontend_flutter/core/services/notification_scheduler_service.dart';
 import 'package:poiquest_frontend_flutter/core/utils/date_utils.dart';
 import 'package:poiquest_frontend_flutter/core/widgets/app_date_picker.dart';
 import 'package:poiquest_frontend_flutter/features/events/domain/entities/event.dart';
+import 'package:poiquest_frontend_flutter/features/preferences/presentation/providers/preferences_providers.dart';
 import 'package:poiquest_frontend_flutter/features/tickets/presentation/providers/tickets_providers.dart';
-
 /// Resultado que devuelve el bottom sheet al cerrarse.
 /// Si [success] es `true`, la compra fue exitosa.
 /// Si [success] es `false`, [errorMessage] contiene el motivo.
@@ -369,6 +370,9 @@ class _PurchaseSheetState extends ConsumerState<_PurchaseSheet> {
         await _purchasePaidTickets(visitDate);
       }
 
+      // Programar notificación local y crear notificación in-app
+      await _scheduleEventNotification();
+
       // Invalidate ticket lists to refresh
       ref.invalidate(activeTicketsProvider);
       ref.invalidate(usedTicketsProvider);
@@ -386,6 +390,33 @@ class _PurchaseSheetState extends ConsumerState<_PurchaseSheet> {
       }
     } finally {
       if (mounted) setState(() => _isProcessing = false);
+    }
+  }
+
+  /// Programa una notificación del sistema si el usuario tiene las notificaciones activadas.
+  /// La notificación in-app la genera el backend a las 8 AM del día de la visita.
+  Future<void> _scheduleEventNotification() async {
+    if (_selectedDate == null) return;
+
+    try {
+      final prefsAsync = ref.read(preferencesProvider);
+      final notificationsEnabled =
+          prefsAsync.asData?.value.notifications ?? false;
+
+      if (notificationsEnabled) {
+        final t = AppLocalizations.of(context)!;
+        final notificationId =
+            widget.event.uuid.hashCode.abs() % 100000 + _selectedDate!.millisecondsSinceEpoch % 1000;
+        await NotificationSchedulerService.instance.scheduleEventReminder(
+          notificationId: notificationId,
+          eventTitle: widget.event.name,
+          eventDate: _selectedDate!,
+          title: t.notificationEventReminderTitle,
+          body: t.notificationEventReminderBody(widget.event.name),
+        );
+      }
+    } catch (_) {
+      // No bloquear la compra si falla la programación local
     }
   }
 

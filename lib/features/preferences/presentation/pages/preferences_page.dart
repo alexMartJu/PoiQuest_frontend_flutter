@@ -17,52 +17,61 @@ class PreferencesPage extends ConsumerWidget {
       data: (prefs) => Scaffold(
         appBar: AppBar(title: Text(AppLocalizations.of(context)!.preferences)),
         body: ListView(
+          padding: const EdgeInsets.all(16),
           children: [
-            SwitchListTile(
-              title: Text(AppLocalizations.of(context)!.darkMode),
-              value: prefs.darkmode,
-              onChanged: (val) =>
-                ref.read(preferencesProvider.notifier).updatePreferences(
-                      prefs.copyWith(darkmode: val),
-                    ),
-            ),
-            const Divider(),
-            ListTile(
-              title: Text(AppLocalizations.of(context)!.language),
-              trailing: DropdownButton<String>(
-                value: prefs.language,
-                items: [
-                  DropdownMenuItem(
-                    value: 'es',
-                    child: Text(AppLocalizations.of(context)!.spanish),
+            Card(
+              elevation: 2,
+              child: Column(
+                children: [
+                  SwitchListTile(
+                    title: Text(AppLocalizations.of(context)!.darkMode),
+                    value: prefs.darkmode,
+                    onChanged: (val) =>
+                      ref.read(preferencesProvider.notifier).updatePreferences(
+                            prefs.copyWith(darkmode: val),
+                          ),
                   ),
-                  DropdownMenuItem(
-                    value: 'en',
-                    child: Text(AppLocalizations.of(context)!.english),
+                  const Divider(height: 1),
+                  ListTile(
+                    title: Text(AppLocalizations.of(context)!.language),
+                    trailing: DropdownButton<String>(
+                      value: prefs.language,
+                      items: [
+                        DropdownMenuItem(
+                          value: 'es',
+                          child: Text(AppLocalizations.of(context)!.spanish),
+                        ),
+                        DropdownMenuItem(
+                          value: 'en',
+                          child: Text(AppLocalizations.of(context)!.english),
+                        ),
+                      ],
+                      onChanged: (val) {
+                        if (val != null) {
+                          ref.read(preferencesProvider.notifier).updatePreferences(
+                                prefs.copyWith(language: val),
+                              );
+                        }
+                      },
+                    ),
+                  ),
+                  const Divider(height: 1),
+                  SwitchListTile(
+                    title: Text(AppLocalizations.of(context)!.notifications),
+                    value: prefs.notifications,
+                    onChanged: (val) =>
+                        ref.read(preferencesProvider.notifier).updatePreferences(
+                              prefs.copyWith(notifications: val),
+                            ),
+                  ),
+                  const Divider(height: 1),
+                  ListTile(
+                    title: const Text('Ver catálogo de componentes'),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () => context.push('/catalog'),
                   ),
                 ],
-                onChanged: (val) {
-                  if (val != null) {
-                    ref.read(preferencesProvider.notifier).updatePreferences(
-                          prefs.copyWith(language: val),
-                        );
-                  }
-                },
               ),
-            ),
-            const Divider(),
-            SwitchListTile(
-              title: Text(AppLocalizations.of(context)!.notifications),
-              value: prefs.notifications,
-              onChanged: (val) =>
-                  ref.read(preferencesProvider.notifier).updatePreferences(
-                        prefs.copyWith(notifications: val),
-                      ),
-            ),
-            ListTile(
-              title: const Text('Ver catálogo de componentes'),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () => context.push('/catalog'),
             ),
           ],
         ),

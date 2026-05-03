@@ -5,12 +5,14 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? onNotificationsTap;
   final VoidCallback? onSettingsTap;
   final VoidCallback? onLogoutTap;
+  final int unreadCount;
 
   const AppAppBar({
     super.key,
     this.onNotificationsTap,
     this.onSettingsTap,
     this.onLogoutTap,
+    this.unreadCount = 0,
   });
 
   @override
@@ -55,10 +57,44 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
 
           const Spacer(),
 
-          IconButton(
-            onPressed: onNotificationsTap,
-            icon: Icon(Icons.notifications_none, color: c.primary),
-            tooltip: t.notifications,
+          // Bell icon with badge
+          Stack(
+            clipBehavior: Clip.none,
+            children: [
+              IconButton(
+                onPressed: onNotificationsTap,
+                icon: Icon(Icons.notifications_none, color: c.primary),
+                tooltip: t.notifications,
+              ),
+              if (unreadCount > 0)
+                Positioned(
+                  top: 6,
+                  right: 6,
+                  child: IgnorePointer(
+                    child: Container(
+                      padding: const EdgeInsets.all(2),
+                      constraints: const BoxConstraints(
+                        minWidth: 16,
+                        minHeight: 16,
+                      ),
+                      decoration: BoxDecoration(
+                        color: c.secondary,
+                        shape: BoxShape.circle,
+                      ),
+                      child: Text(
+                        unreadCount > 99 ? '99+' : '$unreadCount',
+                        style: TextStyle(
+                          color: c.onSecondary,
+                          fontSize: 9,
+                          fontWeight: FontWeight.bold,
+                          height: 1,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                ),
+            ],
           ),
 
           IconButton(

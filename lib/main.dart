@@ -4,6 +4,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:poiquest_frontend_flutter/app/router.dart';
 import 'package:poiquest_frontend_flutter/app/theme/app_theme.dart';
+import 'package:poiquest_frontend_flutter/core/services/notification_scheduler_service.dart';
 import 'package:poiquest_frontend_flutter/features/preferences/presentation/providers/preferences_providers.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:poiquest_frontend_flutter/core/l10n/app_localizations.dart';
@@ -12,6 +13,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: '.env');
   Stripe.publishableKey = dotenv.env['STRIPE_PUBLISHABLE_KEY'] ?? '';
+  await NotificationSchedulerService.instance.init();
+  await NotificationSchedulerService.instance.requestPermissions();
   runApp(const ProviderScope(child: MainApp()));
 }
 
