@@ -65,3 +65,9 @@ String exploreRouteNavigationEndpoint(String routeUuid) =>
 
 /// Endpoints de gamificación
 const String gamificationProgressEndpoint = '/gamification/my-progress';
+
+/// Endpoints de notificaciones
+const String notificationsEndpoint = '/notifications';
+const String notificationsUnreadCountEndpoint = '/notifications/unread-count';
+const String notificationsMarkAllReadEndpoint = '/notifications/read-all';
+String notificationMarkReadEndpoint(int id) => '/notifications/$id/read';
