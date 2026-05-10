@@ -253,7 +253,7 @@ class _PurchaseSheetState extends ConsumerState<_PurchaseSheet> {
                 ),
                 _QuantityButton(
                   icon: Icons.add,
-                  onPressed: _quantity < 4 ? () => setState(() => _quantity++) : null,
+                  onPressed: (!_isFreeEvent && _quantity < 4) ? () => setState(() => _quantity++) : null,
                 ),
                 const Spacer(),
                 if (!_isFreeEvent)
