@@ -51,11 +51,12 @@ class ExploreRemoteDataSource {
   Future<EventProgressModel> getEventProgress({
     required String eventUuid,
     required String visitDate,
+    required String ticketUuid,
   }) async {
     try {
       final response = await AppService.dio.get(
         exploreEventProgressEndpoint(eventUuid),
-        queryParameters: {'visitDate': visitDate},
+        queryParameters: {'visitDate': visitDate, 'ticketUuid': ticketUuid},
       );
       return EventProgressModel.fromJson(
         response.data as Map<String, dynamic>,

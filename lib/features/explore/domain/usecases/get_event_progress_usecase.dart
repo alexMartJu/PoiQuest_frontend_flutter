@@ -9,6 +9,11 @@ class GetEventProgress {
   Future<EventProgress> call({
     required String eventUuid,
     required String visitDate,
+    required String ticketUuid,
   }) =>
-      repository.getEventProgress(eventUuid: eventUuid, visitDate: visitDate);
+      repository.getEventProgress(
+        eventUuid: eventUuid,
+        visitDate: visitDate,
+        ticketUuid: ticketUuid,
+      );
 }

@@ -44,7 +44,7 @@ class ExploreEventDetailPage extends ConsumerWidget {
     // de la pantalla de escaneo gracias a ref.invalidate() en ExplorePoiScanPage.
     final asyncProgress = ref.watch(
       eventProgressProvider(
-        (eventUuid: eventUuid, visitDate: visitDate),
+        (eventUuid: eventUuid, visitDate: visitDate, ticketUuid: ticketUuid),
       ),
     );
 
@@ -85,7 +85,7 @@ class ExploreEventDetailPage extends ConsumerWidget {
               icon: Icons.refresh,
               onPressed: () => ref.invalidate(
                 eventProgressProvider(
-                  (eventUuid: eventUuid, visitDate: visitDate),
+                  (eventUuid: eventUuid, visitDate: visitDate, ticketUuid: ticketUuid),
                 ),
               ),
             ),

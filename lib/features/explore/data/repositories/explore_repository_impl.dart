@@ -40,11 +40,13 @@ class ExploreRepositoryImpl implements ExploreRepository {
   Future<EventProgress> getEventProgress({
     required String eventUuid,
     required String visitDate,
+    required String ticketUuid,
   }) async {
     try {
       final model = await _remoteDataSource.getEventProgress(
         eventUuid: eventUuid,
         visitDate: visitDate,
+        ticketUuid: ticketUuid,
       );
       return model.toEntity();
     } on DioException catch (e) {

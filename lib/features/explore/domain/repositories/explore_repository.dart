@@ -14,6 +14,7 @@ abstract class ExploreRepository {
   Future<EventProgress> getEventProgress({
     required String eventUuid,
     required String visitDate,
+    required String ticketUuid,
   });
 
   Future<ScanResult> scanPoi({

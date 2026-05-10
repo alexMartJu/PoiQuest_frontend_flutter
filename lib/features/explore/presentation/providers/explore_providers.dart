@@ -152,9 +152,13 @@ class ExploreEventsNotifier extends Notifier<ExploreEventsState> {
 
 /// Provider que obtiene el progreso de un evento (rutas y POIs escaneados).
 final eventProgressProvider = FutureProvider.family<EventProgress,
-    ({String eventUuid, String visitDate})>((ref, params) async {
+    ({String eventUuid, String visitDate, String ticketUuid})>((ref, params) async {
   final usecase = ref.watch(getEventProgressUseCaseProvider);
-  return usecase(eventUuid: params.eventUuid, visitDate: params.visitDate);
+  return usecase(
+    eventUuid: params.eventUuid,
+    visitDate: params.visitDate,
+    ticketUuid: params.ticketUuid,
+  );
 });
 
 /// Provider que obtiene la navegación de una ruta (mapa y lista de POIs).
