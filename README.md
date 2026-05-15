@@ -1,414 +1,255 @@
-# 🎯 PoiQuest - Frontend Flutter
+﻿<p align="center">
+  <img src="assets/images/app_logo_light.png" alt="PoiQuest Logo" width="110"/>
+</p>
 
-**PoiQuest** es una aplicación móvil desarrollada en Flutter que permite a los usuarios explorar, descubrir y gestionar eventos culturales y de interés. La aplicación ofrece funcionalidades de autenticación, navegación por categorías de eventos, gestión de perfil de usuario y un panel de administración para usuarios con permisos especiales.
+<h1 align="center">PoiQuest — App de Usuario/Validador</h1>
 
----
+<p align="center">
+  <em>Explora, escanea y descubre experiencias culturales únicas</em>
+</p>
 
-## 📋 Tabla de Contenidos
-
-- [Objetivo](#-objetivo)
-- [Características Principales](#-características-principales)
-- [Requisitos Previos](#-requisitos-previos)
-- [Instalación y Configuración](#-instalación-y-configuración)
-- [Cómo Ejecutar la Aplicación](#-cómo-ejecutar-la-aplicación)
-- [Endpoints del Backend](#-endpoints-del-backend)
-- [Persistencia Local](#-persistencia-local)
-- [Arquitectura del Proyecto](#-arquitectura-del-proyecto)
-- [Tecnologías Utilizadas](#-tecnologías-utilizadas)
-- [Contribuciones](#-contribuciones)
-- [Licencia](#-licencia)
-
----
-
-## 🎯 Objetivo
-
-El objetivo de **PoiQuest** es proporcionar una plataforma móvil intuitiva y moderna para:
-
-- **Usuarios estándar**: Explorar eventos culturales, buscar por categorías, gestionar su perfil y participar en eventos de su interés.
-- **Administradores**: Crear, editar y eliminar eventos, así como gestionar categorías y contenido de la plataforma.
-- **Experiencia de usuario**: Ofrecer una interfaz fluida con soporte multiidioma (español/inglés), tema claro/oscuro y navegación intuitiva.
+<p align="center">
+  <a href="https://flutter.dev"><img src="https://img.shields.io/badge/Flutter-3.x-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Flutter"/></a>
+  <a href="https://dart.dev"><img src="https://img.shields.io/badge/Dart-3.x-0175C2?style=flat-square&logo=dart&logoColor=white" alt="Dart"/></a>
+  <a href="https://riverpod.dev"><img src="https://img.shields.io/badge/Riverpod-3.x-1565C0?style=flat-square" alt="Riverpod"/></a>
+  <a href="https://m3.material.io"><img src="https://img.shields.io/badge/Material%20Design-3-757575?style=flat-square&logo=materialdesign&logoColor=white" alt="Material Design 3"/></a>
+  <a href="https://developer.android.com"><img src="https://img.shields.io/badge/Android-ARCore-3DDC84?style=flat-square&logo=android&logoColor=white" alt="Android ARCore"/></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-16A34A?style=flat-square" alt="MIT License"/></a>
+</p>
 
 ---
 
-## ✨ Características Principales
-
-### 🔐 Autenticación y Autorización
-- Registro de usuarios con información de perfil (nombre, apellidos, email, avatar, biografía)
-- Login con email y contraseña
-- Gestión de tokens JWT (access token y refresh token)
-- Logout individual o en todos los dispositivos
-- Protección de rutas según permisos de usuario
-
-### 🎭 Exploración de Eventos
-- Navegación por categorías de eventos
-- Visualización de eventos con paginación infinita
-- Vista detallada de cada evento con imágenes, descripción, ubicación y fechas
-- Sistema de búsqueda y filtrado
-
-### 👤 Gestión de Perfil
-- Visualización y edición de información personal
-- Cambio de avatar
-- Actualización de biografía
-- Cambio de contraseña seguro
-
-### 🛠️ Panel de Administración
-- Gestión completa de eventos (crear, editar, eliminar)
-- Asignación de categorías a eventos
-- Gestión de imágenes de eventos
-- Vista de eventos activos con paginación
-
-### 🌐 Funcionalidades Adicionales
-- **Internacionalización (i18n)**: Soporte para español e inglés
-- **Temas**: Modo claro y modo oscuro
-- **Persistencia**: Preferencias del usuario guardadas localmente
-- **Caché de imágenes**: Optimización de carga de imágenes con `cached_network_image`
-- **Navegación declarativa**: Implementada con `go_router`
-- **Gestión de estado**: Utilizando `Riverpod`
+> Aplicación móvil multiplataforma del ecosistema **PoiQuest** dirigida tanto al **usuario final** (descubrir eventos, comprar entradas, explorar POIs, gestión del perfil personal y gamificación) como a los **validadores** (validación de tickets QR en el acceso físico con historial de entradas registradas).
 
 ---
 
-## 📦 Requisitos Previos
+## Índice
 
-Antes de ejecutar la aplicación, asegúrate de tener instalado:
-
-- **Flutter SDK**: versión 3.9.2 o superior
-  - Descargar desde: [https://flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install)
-- **Dart SDK**: versión 3.9.2 o superior (incluido con Flutter)
-- **Android Studio** o **VS Code** con extensiones de Flutter/Dart
-- **Emulador Android** o **dispositivo físico** (Android/iOS)
-- **Backend de PoiQuest**: El backend debe estar ejecutándose (por defecto en `http://localhost:8000`)
-
-### Verificar instalación de Flutter:
-
-```bash
-flutter doctor
-```
-
-Este comando verificará que todas las dependencias necesarias estén correctamente instaladas.
+1. [¿Qué hace esta app?](#qué-hace-esta-app)
+2. [Capturas de pantalla](#capturas-de-pantalla)
+3. [Características principales](#características-principales)
+4. [Stack tecnológico](#stack-tecnológico)
+5. [Arquitectura](#arquitectura)
+6. [Estructura del proyecto](#estructura-del-proyecto)
+7. [Puesta en marcha](#puesta-en-marcha)
+8. [Variables de entorno](#variables-de-entorno)
+9. [Features](#features)
+10. [Contribución](#contribución)
+11. [Autor](#autor)
+12. [Licencia](#licencia)
 
 ---
 
-## 🔧 Instalación y Configuración
+## ¿Qué hace esta app?
 
-### 1. Clonar el repositorio
+PoiQuest transforma la asistencia a eventos culturales en una experiencia interactiva y gamificada:
 
-```bash
-git clone https://github.com/alexMartJu/PoiQuest_frontend_flutter.git
-cd PoiQuest_frontend_flutter
-```
-
-### 2. Instalar dependencias
-
-```bash
-flutter pub get
-```
-
-### 3. Configurar la URL del backend
-
-La aplicación utiliza variables de entorno para configurar la URL del backend. Por defecto:
-
-- **Web**: `http://localhost:8000`
-- **Android Emulator**: `http://10.0.2.2:8000`
-- **iOS Simulator**: `http://localhost:8000`
-
-Para personalizar la URL del backend, usa el parámetro `--dart-define`:
-
-```bash
-# Ejemplo para desarrollo local
-flutter run --dart-define=API_BASE_URL=http://127.0.0.1:8000
-
-# Ejemplo para Android Emulator
-flutter run -d emulator-5554 --dart-define=API_BASE_URL=http://10.0.2.2:8000
-
-# Ejemplo para producción
-flutter build apk --dart-define=API_BASE_URL=https://tu-dominio.com
-```
+1. **Descubre eventos culturales** — Navega por el catálogo filtrado por categoría, precio y fecha. Consulta el detalle de cada evento junto con sus rutas y puntos de interés asociados.
+2. **Adquiere tu entrada** — Reserva acceso gratuito o compra entradas de pago mediante el formulario de Stripe integrado directamente en la pantalla del evento.
+3. **Valida tu ticket en el acceso** — El organizador escanea el QR de tu entrada para darte acceso físico. Tu ticket queda activado para iniciar la exploración.
+4. **Explora las rutas y escanea POIs** — Sigue rutas culturales en un mapa interactivo con geolocalización en tiempo real y escanea los QR de los puntos de interés para desbloquear contenido enriquecido.
+5. **Visualiza en realidad aumentada** — Apunta la cámara al entorno físico y accede al modelo 3D del punto de interés o a su información histórica mediante ARCore.
+6. **Gestiona tu perfil** — Edita tus datos personales, cambia tu avatar, consulta tus estadísticas de actividad y revisa los logros desbloqueados desde una pantalla de perfil dedicada.
+7. **Acumula puntos y sube de nivel** — Cada escaneo, ruta completada y evento premium suma puntos que permiten progresar por los 5 niveles (Explorador → Maestro Cultural) y desbloquear logros y recompensas.
 
 ---
 
-## 🚀 Cómo Ejecutar la Aplicación
+## Capturas de pantalla
 
-### Modo Debug (Desarrollo)
+<p align="center">
+  <img src="docs/screenshots/events.png" width="210" alt="Eventos"/>
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/explore.png" width="210" alt="Explorar"/>
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/tickets.png" width="210" alt="Entradas"/>
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/profile.png" width="210" alt="Perfil"/>
+</p>
 
-#### Opción 1: Ejecución por defecto
-
-```bash
-flutter run
-```
-
-Esto ejecutará la app con las URLs por defecto según la plataforma.
-
-#### Opción 2: Con URL personalizada del backend
-
-```bash
-# Para web o iOS (localhost)
-flutter run --dart-define=API_BASE_URL=http://127.0.0.1:8000
-
-# Para Android Emulator (necesita 10.0.2.2)
-flutter run -d emulator-5554 --dart-define=API_BASE_URL=http://10.0.2.2:8000
-
-# Para Android Genymotion
-flutter run -d emulator-5554 --dart-define=API_BASE_URL=http://10.0.3.2:8000
-```
-
-#### Opción 3: Seleccionar dispositivo específico
-
-```bash
-# Listar dispositivos disponibles
-flutter devices
-
-# Ejecutar en un dispositivo específico
-flutter run -d <device-id>
-```
-
-### Hot Reload durante el desarrollo
-
-Durante el desarrollo puedes usar Hot Reload para aplicar cambios en la UI sin reiniciar completamente la aplicación:
-
-- En la terminal donde ejecutaste `flutter run`, presiona `r` para Hot Reload (presiona `R` para Hot Restart).
-- En Android Studio o VS Code, guarda el archivo (`Ctrl+S` / `Cmd+S`) para que el IDE aplique Hot Reload automáticamente.
-- Hot Reload suele preservar el estado de la app; si necesitas reiniciar el estado, usa Hot Restart.
-
-## 🌐 Endpoints del Backend
-
-La aplicación consume los siguientes endpoints del backend:
-
-### Autenticación (`/auth/`)
-
-| Método | Endpoint | Descripción |
-|--------|----------|-------------|
-| POST | `/auth/register-standard-user` | Registrar nuevo usuario estándar |
-| POST | `/auth/login` | Iniciar sesión (devuelve access y refresh token) |
-| POST | `/auth/logout` | Cerrar sesión (invalida refresh token) |
-| POST | `/auth/logout-all` | Cerrar sesión en todos los dispositivos |
-| POST | `/auth/refresh` | Refrescar access token usando refresh token |
-| GET | `/auth/me` | Obtener información del usuario autenticado |
-| POST | `/auth/change-password` | Cambiar contraseña del usuario |
-
-### Categorías de Eventos
-
-| Método | Endpoint | Descripción |
-|--------|----------|-------------|
-| GET | `/event-categories` | Obtener todas las categorías de eventos |
-
-### Eventos (`/events/`)
-
-| Método | Endpoint | Descripción |
-|--------|----------|-------------|
-| GET | `/events` | Obtener listado de eventos |
-| GET | `/events/category/{categoryUuid}` | Obtener eventos por categoría específica |
-| POST | `/events` | Crear nuevo evento (admin) |
-| GET | `/events/{uuid}` | Obtener detalle de un evento específico |
-| PATCH | `/events/{uuid}` | Actualizar evento existente (admin) |
-| DELETE | `/events/{uuid}` | Eliminar evento (admin) |
-
-### Perfil (`/profile/`)
-
-| Método | Endpoint | Descripción |
-|--------|----------|-------------|
-| GET | `/profile/me` | Obtener perfil del usuario autenticado |
-| PATCH | `/profile/me` | Actualizar información del perfil |
-| PUT | `/profile/me/avatar` | Actualizar avatar del usuario |
-
-**Headers requeridos:**
-- `Authorization: Bearer <access_token>` (para endpoints autenticados)
-- `Content-Type: application/json`
-
-**Configuración de timeouts:**
-- Connection timeout: 10 segundos
-- Receive timeout: 10 segundos
-## 💾 Persistencia Local
-
-La aplicación utiliza varios mecanismos de persistencia local:
-
-### 1. **Flutter Secure Storage** (`flutter_secure_storage`)
-
-**Qué se persiste:**
-- ✅ **Access Token**: Token JWT para autenticación en el backend
-- ✅ **Refresh Token**: Token para renovar el access token cuando expire
-
-**Ubicación:**
-- Android: EncryptedSharedPreferences (almacenamiento encriptado)
-- iOS: Keychain (almacenamiento seguro del sistema)
-
-**Características:**
-- Almacenamiento seguro y encriptado
-- Los tokens persisten incluso después de cerrar la app
-- Se borran solo al hacer logout
-
-### 2. **Shared Preferences** (`shared_preferences`)
-
-**Qué se persiste:**
-- ✅ **Modo oscuro/claro** (`darkmode`): `bool`
-- ✅ **Idioma preferido** (`language`): `String` ('es' o 'en')
-- ✅ **Notificaciones activas** (`notifications`): `bool`
-
-**Ubicación:**
-- Android: SharedPreferences (archivo XML en `/data/data/<package>/shared_prefs/`)
-- iOS: NSUserDefaults (plist en Library/Preferences/)
-
-**Características:**
-- Almacenamiento simple de pares clave-valor
-- Persiste las preferencias del usuario
-- Se mantiene entre sesiones de la app
-
-### 3. **Caché de Imágenes** (`cached_network_image`)
-
-**Qué se persiste:**
-- ✅ **Imágenes de eventos**: URLs de imágenes descargadas
-- ✅ **Avatares de usuario**: Fotos de perfil
-
-**Ubicación:**
-- Android: `/data/data/<package>/cache/`
-- iOS: `Library/Caches/`
-
-**Características:**
-- Caché automático de imágenes de red
-- Reduce consumo de datos y mejora rendimiento
-- Se puede limpiar manualmente desde configuración del dispositivo
-
-### Ejemplo de uso:
-
-```dart
-// Guardar token de acceso
-await FlutterSecureStorage().write(key: 'access_token', value: token);
-
-// Leer preferencias
-final prefs = await SharedPreferences.getInstance();
-final isDarkMode = prefs.getBool('darkmode') ?? false;
-
-// Cargar imagen con caché
-CachedNetworkImage(imageUrl: event.imageUrls.first)
-```
+> Las capturas muestran el modo claro de la interfaz. La app soporta también modo oscuro completo.
 
 ---
 
-## 🏗️ Arquitectura del Proyecto
+## Características principales
 
-El proyecto sigue una arquitectura **Clean Architecture** con separación de responsabilidades:
+- **Renovación automática de JWT** — Interceptor Dio detecta el 401, renueva el access token con el refresh almacenado en `flutter_secure_storage` y reintenta la petición original sin intervención del usuario.
+- **Realidad aumentada nativa** — `arcore_flutter_plus` descarga el modelo 3D GLB del POI directamente desde MinIO y lo renderiza sobre la cámara del dispositivo sin intermediarios web ni WebView.
+- **Validación QR multicapa** — El escaneo con `mobile_scanner` valida en backend que el ticket está en estado `USED`, la fecha de visita coincide con el día actual y el POI pertenece al evento del ticket.
+- **Pagos nativos con Stripe** — `flutter_stripe` integra el PaymentSheet nativo sin WebView ni redirecciones externas; el backend controla el aforo en tiempo real antes de confirmar el pago.
+- **Paginación por cursor** — Eventos, notificaciones y entradas usan paginación por cursor en lugar de offset, evitando duplicados al insertar nuevos registros entre páginas.
+- **Geolocalización en tiempo real** — `geolocator` actualiza la posición del usuario continuamente en el mapa de ruta (`flutter_map`) con marcadores de POIs ordenados y estado de progreso por punto.
+- **Internacionalización generada** — Textos ES/EN definidos en archivos ARB y clases de localización generadas automáticamente con `flutter gen-l10n` + `flutter_localizations`; idioma seleccionable desde preferencias.
+- **Modo claro/oscuro con paleta propia** — Tema Material Design 3 con paleta personalizada (verde, azul oscuro, dorado, rojo) que soporta ambos modos, seleccionable desde preferencias y persistido con `shared_preferences`.
+- **Clean Architecture por features con Riverpod** — Cada módulo es completamente independiente y se estructura en tres capas (domain, data, presentation); Riverpod actúa como contenedor de inyección de dependencias entre capas sin acoplar la UI al origen de datos.
+
+---
+
+## Stack tecnológico
+
+| Tecnología | Versión | Uso en el proyecto |
+|---|---|---|
+| [Flutter](https://flutter.dev) | 3.x | Framework UI multiplataforma |
+| [Dart](https://dart.dev) | 3.x | Lenguaje principal |
+| [Riverpod](https://riverpod.dev) | 3.x | Gestión de estado reactivo y DI |
+| [go_router](https://pub.dev/packages/go_router) | 16.x | Navegación declarativa con guardas de autenticación |
+| [Dio](https://pub.dev/packages/dio) | 5.x | Cliente HTTP con interceptores de refresco JWT |
+| [flutter_stripe](https://pub.dev/packages/flutter_stripe) | 12.x | Integración nativa de pagos con Stripe |
+| [mobile_scanner](https://pub.dev/packages/mobile_scanner) | 7.x | Escaneo de códigos QR en tiempo real |
+| [arcore_flutter_plus](https://pub.dev/packages/arcore_flutter_plus) | 1.x | Realidad aumentada (ARCore) |
+| [flutter_map](https://pub.dev/packages/flutter_map) | 7.x | Mapas interactivos sobre OpenStreetMap |
+| [geolocator](https://pub.dev/packages/geolocator) | 13.x | Geolocalización del usuario en tiempo real |
+| [flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage) | 9.x | Almacenamiento seguro de tokens JWT |
+| [Material Design 3](https://m3.material.io) | — | Sistema de diseño con paleta y tema personalizados |
+
+---
+
+## Arquitectura
+
+La app sigue **Clean Architecture por features**: cada módulo funcional es completamente independiente del resto y se estructura en tres capas verticales.
+
+| Capa | Responsabilidad | Archivos típicos |
+|------|----------------|-----------------|
+| **domain** | Lógica de negocio pura, sin dependencias externas | `entities/`, `repositories/` (abstractos), `usecases/` |
+| **data** | Acceso a datos remotos y persistencia local | `datasources/`, `models/` (JSON ↔ entidad), `repositories/` (implementaciones) |
+| **presentation** | Interfaz de usuario y estado reactivo | `pages/`, `widgets/`, `providers/` (Riverpod Notifiers) |
+
+Además de los features, la app tiene dos directorios transversales:
+
+| Directorio | Contenido |
+|-----------|-----------|
+| `app/` | Router global (`go_router`) y definición del `ThemeData` claro/oscuro con Material Design 3 |
+| `core/` | Widgets reutilizables, `AppService` (Dio + interceptores), utilidades, `l10n` y helpers de fecha y URL |
+
+---
+
+## Estructura del proyecto
 
 ```
 lib/
-├── app/                          # Configuración de la aplicación
-│   ├── router.dart              # Configuración de rutas con go_router
-│   └── theme/                   # Temas (claro/oscuro)
-│
-├── core/                        # Código compartido
-│   ├── l10n/                    # Internacionalización (es/en)
-│   ├── utils/                   # Utilidades (env, constants, services)
-│   └── widgets/                 # Widgets reutilizables
-│
-├── features/                    # Características por módulo
-│   ├── auth/                    # Autenticación
-│   │   ├── data/               # Data sources, repositories, models
-│   │   ├── domain/             # Entities, repositories (interfaces)
-│   │   └── presentation/       # UI, providers, pages
-│   │
-│   ├── events/                  # Eventos
-│   │   ├── data/
-│   │   ├── domain/
-│   │   └── presentation/
-│   │
-│   ├── profile/                 # Perfil de usuario
-│   │   ├── data/
-│   │   ├── domain/
-│   │   └── presentation/
-│   │
-│   ├── admin/                   # Panel de administración
-│   │   ├── data/
-│   │   ├── domain/
-│   │   └── presentation/
-│   │
-│   ├── preferences/             # Preferencias de usuario
-│   │   ├── data/
-│   │   ├── domain/
-│   │   └── presentation/
-│   │
-│   ├── tickets/                 # Gestión de tickets (futuro)
-│   └── scan/                    # Escaneo QR (futuro)
-│
-└── main.dart                    # Punto de entrada de la aplicación
+├── app/
+│   ├── router.dart              # Rutas declarativas y guardas de auth
+│   └── theme/
+│       ├── app_theme.dart       # ThemeData claro y oscuro
+│       └── app_palette.dart     # Paleta de colores personalizada
+├── core/
+│   ├── l10n/                    # Archivos ARB + AppLocalizations generado
+│   ├── utils/                   # Env, Constants, AppService, DateUtils…
+│   └── widgets/                 # AppButton, AppCard, AppTextField, AppBadge…
+└── features/
+    ├── auth/
+    ├── events/
+    ├── explore/
+    ├── tickets/
+    ├── profile/
+    ├── gamification/
+    ├── notifications/
+    ├── preferences/
+    └── ticket_validator/
 ```
 
-### Capas de la arquitectura:
+Cada feature sigue la misma estructura interna:
 
-- **Presentation**: UI, widgets, providers (Riverpod)
-- **Domain**: Entidades de negocio, interfaces de repositorios
-- **Data**: Implementación de repositorios, data sources, modelos
-
----
-
-## 🛠️ Tecnologías Utilizadas
-
-### Framework y Lenguaje
-- **Flutter**: ^3.9.2
-- **Dart**: ^3.9.2
-
-### Gestión de Estado
-- **flutter_riverpod**: ^3.0.3 - Gestión de estado reactiva
-
-### Navegación
-- **go_router**: ^16.2.4 - Navegación declarativa
-
-### Networking
-- **dio**: ^5.7.0 - Cliente HTTP
-
-### Almacenamiento Local
-- **shared_preferences**: ^2.5.3 - Persistencia de preferencias
-- **flutter_secure_storage**: ^9.2.2 - Almacenamiento seguro de tokens
-
-### UI y UX
-- **cached_network_image**: ^3.2.3 - Caché de imágenes
-- **cupertino_icons**: ^1.0.8 - Iconos de iOS
-
-### Internacionalización
-- **intl**: ^0.20.2 - Formateo de fechas y números
-- **flutter_localizations**: SDK - Localizaciones de Flutter
-
-### Utilidades
-- **equatable**: ^2.0.7 - Comparación de objetos
-
-### Desarrollo
-- **flutter_lints**: ^5.0.0 - Reglas de linting
-- **custom_lint**: ^0.8.0 - Linting personalizado
-- **riverpod_lint**: ^3.0.3 - Linting específico para Riverpod
+```
+feature/
+├── data/
+│   ├── datasources/             # Llamadas HTTP con Dio
+│   ├── models/                  # Modelos JSON con fromJson / toJson
+│   └── repositories/            # Implementaciones de los repositorios
+├── domain/
+│   ├── entities/                # Clases Dart puras (sin anotaciones)
+│   ├── repositories/            # Contratos abstractos (interfaces)
+│   └── usecases/                # Un caso de uso por operación de negocio
+└── presentation/
+    ├── pages/                   # Pantallas completas (ConsumerWidget)
+    ├── providers/               # Notifiers y Providers de Riverpod
+    └── widgets/                 # Widgets específicos del feature
+```
 
 ---
 
-## 🤝 Contribuciones
+## Puesta en marcha
 
-Las contribuciones son bienvenidas. Para contribuir:
+### Requisitos previos
 
-1. Fork el repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) ≥ 3.x
+- Dispositivo Android físico con **ARCore** para probar la realidad aumentada
+- Backend PoiQuest en ejecución (ver [poiquest_backend_nestjs](https://github.com/alexMartJu/PoiQuest_backend_nestjs))
+
+### Pasos
+
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/alexMartJu/PoiQuest_frontend_flutter.git
+cd PoiQuest_frontend_flutter
+
+# 2. Instalar dependencias
+flutter pub get
+
+# 3. Configurar variables de entorno
+cp .env.example .env
+# Edita .env y añade tu STRIPE_PUBLISHABLE_KEY
+
+# 4a. Ejecutar en emulador Android
+flutter run --dart-define=API_BASE_URL=http://10.0.2.2:8000
+
+# 4b. Ejecutar en dispositivo físico
+# Sustituye la IP por la de tu máquina en la red local y el DEVICE_ID
+# por el número de serie de tu dispositivo (obtenido con: flutter devices)
+flutter run -d <DEVICE_ID> --dart-define=API_BASE_URL=http://<IP_LOCAL>:8000
+
+# 5. (Producción) Generar APK firmado
+flutter build apk --dart-define=API_BASE_URL=https://api.tudominio.com
+```
+
+> **Nota AR:** La realidad aumentada requiere un dispositivo Android físico con soporte para ARCore. En emuladores, el flujo QR funciona con normalidad pero la vista AR no renderizará el modelo 3D.
 
 ---
 
-## 📄 Licencia
+## Variables de entorno
 
-Este proyecto está bajo una licencia personalizada. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+| Variable | Origen | Descripción | Ejemplo |
+|---|---|---|---|
+| `API_BASE_URL` | `--dart-define` (compilación) | URL base de la API REST del backend | `http://10.0.2.2:8000` |
+| `STRIPE_PUBLISHABLE_KEY` | `.env` (flutter_dotenv) | Clave pública de Stripe para el SDK de pagos | `pk_test_51…` |
 
----
-
-## 👨‍💻 Autor
-
-**Alex Martínez**
-- GitHub: [@alexMartJu](https://github.com/alexMartJu)
-- Repositorio: [PoiQuest_frontend_flutter](https://github.com/alexMartJu/PoiQuest_frontend_flutter)
+Copia `.env.example` como `.env` y rellena los valores antes de ejecutar la app.
 
 ---
 
-## 📞 Soporte
+## Features
 
-Si encuentras algún problema o tienes preguntas:
-
-1. Revisa la sección de [Issues](https://github.com/alexMartJu/PoiQuest_frontend_flutter/issues)
-2. Crea un nuevo issue si tu problema no está documentado
-3. Proporciona detalles sobre tu entorno (versión de Flutter, dispositivo, etc.)
+| Feature | Páginas principales | Descripción |
+|---------|-------------------|-------------|
+| `auth` | `AuthPage` | Login y registro con JWT. Refresco automático del token con interceptor Dio. Tokens persistidos en `flutter_secure_storage` |
+| `events` | `EventsPage`, `EventDetailPage`, `PoiDetailPage`, `RouteDetailPage` | Catálogo paginado por cursor, filtros por categoría/precio/fecha, detalle de evento con rutas y POIs |
+| `explore` | `ExplorePage`, `ExploreEventDetailPage`, `ExplorePoiScanPage`, `ExplorePoiArPage`, `ExploreRouteNavigationPage` | Núcleo de la experiencia: progreso de visita → escaneo QR → realidad aumentada → mapa de ruta con GPS |
+| `tickets` | `TicketsPage` | Mis entradas activas y usadas, código QR presentable y compra integrada con Stripe |
+| `profile` | `ProfilePage`, `ProfileEditPage`, `ProfileChangeAvatarPage`, `ProfileChangePasswordPage` | Información personal, nivel de gamificación, logros desbloqueados y gestión de cuenta |
+| `gamification` | *(embebido en Perfil)* | 5 niveles (Explorador → Maestro Cultural), 11 logros con progreso y estadísticas de actividad |
+| `notifications` | `NotificationsPage` | Historial paginado con cursor, contador de no leídas en AppBar y marcado individual / masivo |
+| `preferences` | `PreferencesPage` | Modo claro/oscuro, idioma (ES/EN) y activación de notificaciones persistidos con `shared_preferences` |
+| `ticket_validator` | `TicketValidatorPage`, `ValidationHistoryPage` | Validador QR para organizadores con confirmación de resultado y historial filtrable por fecha |
 
 ---
 
-**¡Gracias por usar PoiQuest! 🎉**
+## Contribución
+
+1. Haz un fork del repositorio y crea tu rama: `git checkout -b feature/mi-mejora`
+2. Verifica el análisis estático sin errores: `flutter analyze`
+3. Ejecuta los tests: `flutter test`
+4. Formatea el código: `dart format .`
+5. Haz commit con mensaje descriptivo: `git commit -m "feat: descripción de la mejora"`
+6. Abre una Pull Request detallando los cambios y el contexto
+
+---
+
+## Autor
+
+**Alex Martinez Juan**  
+GitHub: [@alexMartJu](https://github.com/alexMartJu)
+
+---
+
+## Licencia
+
+Este proyecto está publicado bajo la [Licencia MIT](LICENSE).
